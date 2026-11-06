@@ -1,0 +1,8 @@
+{
+  "list_induction": [
+    "intro h0",
+    [
+      "| ∀ (α β : Type) (f : α → β) (xs ys : List α), List.map f (xs ++ ys) = List.map f xs ++ List.map f ys"
+    ]
+  ]
+}

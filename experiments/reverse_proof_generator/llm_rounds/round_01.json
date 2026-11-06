@@ -1,0 +1,10 @@
+{
+  "a": ["exact h0", ["h0:P,h1:Q | P"]],
+  "b": ["exact h0.right", ["h0:P ∧ Q | Q"]],
+  "c": ["exact h1", ["h0:P → Q,h1:P | P"]],
+  "d": ["exact h0", ["h0:P | P"]],
+  "e": ["exact h1", ["h0:P → Q,h1:Q | Q"]],
+  "f": ["exact h1", ["h0:R,h1:Q | Q"]],
+  "g": ["exact h2", ["h0:P → Q,h1:Q → R,h2:P | P"]],
+  "h": ["exact h0.left", ["h0:P ∧ Q | P"]]
+}

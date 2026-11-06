@@ -1,0 +1,2384 @@
+{
+  "lean": "Lean (version 4.19.0, x86_64-unknown-linux-gnu, commit 6caaee842e94, Release)",
+  "summary": {
+    "llm_reverse": {
+      "all": {
+        "attempts": 6,
+        "proved": 6,
+        "satisfying_contract": 6,
+        "unique_up_to_renaming": 6,
+        "unique_connective_skeletons": 6,
+        "proof_lengths": [
+          11,
+          10,
+          6,
+          13,
+          12,
+          8
+        ],
+        "tactic_families": [
+          "apply",
+          "cases",
+          "exact",
+          "intro",
+          "left",
+          "right"
+        ],
+        "proofs_with_cases": 6,
+        "accepted_edges": 60,
+        "rejected_edges": 0
+      },
+      "chain": {
+        "attempts": 3,
+        "proved": 3,
+        "satisfying_contract": 3,
+        "unique_up_to_renaming": 3,
+        "unique_connective_skeletons": 3,
+        "proof_lengths": [
+          11,
+          10,
+          6
+        ],
+        "tactic_families": [
+          "apply",
+          "cases",
+          "exact",
+          "intro",
+          "left",
+          "right"
+        ],
+        "proofs_with_cases": 3,
+        "accepted_edges": 27,
+        "rejected_edges": 0
+      },
+      "balanced": {
+        "attempts": 3,
+        "proved": 3,
+        "satisfying_contract": 3,
+        "unique_up_to_renaming": 3,
+        "unique_connective_skeletons": 3,
+        "proof_lengths": [
+          13,
+          12,
+          8
+        ],
+        "tactic_families": [
+          "apply",
+          "cases",
+          "exact",
+          "intro",
+          "left",
+          "right"
+        ],
+        "proofs_with_cases": 3,
+        "accepted_edges": 33,
+        "rejected_edges": 0
+      }
+    },
+    "rules": {
+      "all": {
+        "attempts": 6,
+        "proved": 6,
+        "satisfying_contract": 6,
+        "unique_up_to_renaming": 6,
+        "unique_connective_skeletons": 6,
+        "proof_lengths": [
+          6,
+          9,
+          10,
+          8,
+          12,
+          14
+        ],
+        "tactic_families": [
+          "apply",
+          "cases",
+          "exact",
+          "intro",
+          "left",
+          "right"
+        ],
+        "proofs_with_cases": 6,
+        "accepted_edges": 59,
+        "rejected_edges": 0
+      },
+      "chain": {
+        "attempts": 3,
+        "proved": 3,
+        "satisfying_contract": 3,
+        "unique_up_to_renaming": 3,
+        "unique_connective_skeletons": 3,
+        "proof_lengths": [
+          6,
+          9,
+          10
+        ],
+        "tactic_families": [
+          "apply",
+          "cases",
+          "exact",
+          "intro",
+          "left",
+          "right"
+        ],
+        "proofs_with_cases": 3,
+        "accepted_edges": 25,
+        "rejected_edges": 0
+      },
+      "balanced": {
+        "attempts": 3,
+        "proved": 3,
+        "satisfying_contract": 3,
+        "unique_up_to_renaming": 3,
+        "unique_connective_skeletons": 3,
+        "proof_lengths": [
+          8,
+          12,
+          14
+        ],
+        "tactic_families": [
+          "apply",
+          "cases",
+          "exact",
+          "intro",
+          "left",
+          "right"
+        ],
+        "proofs_with_cases": 3,
+        "accepted_edges": 34,
+        "rejected_edges": 0
+      }
+    },
+    "llm_direct": {
+      "all": {
+        "attempts": 6,
+        "proved": 6,
+        "satisfying_contract": 6,
+        "unique_up_to_renaming": 6,
+        "unique_connective_skeletons": 6,
+        "proof_lengths": [
+          11,
+          10,
+          6,
+          16,
+          8,
+          13
+        ],
+        "tactic_families": [
+          "apply",
+          "cases",
+          "exact",
+          "intro",
+          "left",
+          "right"
+        ],
+        "proofs_with_cases": 6,
+        "accepted_edges": 0,
+        "rejected_edges": 0
+      },
+      "chain": {
+        "attempts": 3,
+        "proved": 3,
+        "satisfying_contract": 3,
+        "unique_up_to_renaming": 3,
+        "unique_connective_skeletons": 3,
+        "proof_lengths": [
+          11,
+          10,
+          6
+        ],
+        "tactic_families": [
+          "apply",
+          "cases",
+          "exact",
+          "intro",
+          "left",
+          "right"
+        ],
+        "proofs_with_cases": 3,
+        "accepted_edges": 0,
+        "rejected_edges": 0
+      },
+      "balanced": {
+        "attempts": 3,
+        "proved": 3,
+        "satisfying_contract": 3,
+        "unique_up_to_renaming": 3,
+        "unique_connective_skeletons": 3,
+        "proof_lengths": [
+          16,
+          8,
+          13
+        ],
+        "tactic_families": [
+          "apply",
+          "cases",
+          "exact",
+          "intro",
+          "left",
+          "right"
+        ],
+        "proofs_with_cases": 3,
+        "accepted_edges": 0,
+        "rejected_edges": 0
+      }
+    }
+  },
+  "methods": {
+    "llm_reverse": {
+      "a": {
+        "states": [
+          [],
+          [
+            "h0:P → R,h4:R | R"
+          ],
+          [
+            "h0:P → R,h4:R | Q ∨ R"
+          ],
+          [
+            "h0:P → R,h4:P | P",
+            "h0:P → R,h4:R | Q ∨ R"
+          ],
+          [
+            "h0:P → R,h4:P | R",
+            "h0:P → R,h4:R | Q ∨ R"
+          ],
+          [
+            "h0:P → R,h4:P | Q ∨ R",
+            "h0:P → R,h4:R | Q ∨ R"
+          ],
+          [
+            "h0:P → R,h5:P ∨ R | Q ∨ R"
+          ],
+          [
+            "h0:P → R,h5:Q | Q",
+            "h0:P → R,h5:P ∨ R | Q ∨ R"
+          ],
+          [
+            "h0:P → R,h5:Q | Q ∨ R",
+            "h0:P → R,h5:P ∨ R | Q ∨ R"
+          ],
+          [
+            "h0:P → R,h6:Q ∨ (P ∨ R) | Q ∨ R"
+          ],
+          [
+            "h0:P → R | (Q ∨ (P ∨ R)) → (Q ∨ R)"
+          ],
+          [
+            "| (P → R) → (Q ∨ (P ∨ R)) → (Q ∨ R)"
+          ]
+        ],
+        "edges": [
+          {
+            "tactic": "exact h4",
+            "proposed_state": [
+              "h0:P → R,h4:R | R"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h0 : (P → R)) (h4 : R), R)] to [] using exact h4\n  exact True.intro\n"
+          },
+          {
+            "tactic": "right",
+            "proposed_state": [
+              "h0:P → R,h4:R | Q ∨ R"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h0 : (P → R)) (h4 : R), (Q ∨ R))] to [(∀ (h0 : (P → R)) (h4 : R), R)] using right\n  exact True.intro\n"
+          },
+          {
+            "tactic": "exact h4",
+            "proposed_state": [
+              "h0:P → R,h4:P | P",
+              "h0:P → R,h4:R | Q ∨ R"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h0 : (P → R)) (h4 : P), P), (∀ (h0 : (P → R)) (h4 : R), (Q ∨ R))] to [(∀ (h0 : (P → R)) (h4 : R), (Q ∨ R))] using exact h4\n  exact True.intro\n"
+          },
+          {
+            "tactic": "apply h0",
+            "proposed_state": [
+              "h0:P → R,h4:P | R",
+              "h0:P → R,h4:R | Q ∨ R"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h0 : (P → R)) (h4 : P), R), (∀ (h0 : (P → R)) (h4 : R), (Q ∨ R))] to [(∀ (h0 : (P → R)) (h4 : P), P), (∀ (h0 : (P → R)) (h4 : R), (Q ∨ R))] using apply h0\n  exact True.intro\n"
+          },
+          {
+            "tactic": "right",
+            "proposed_state": [
+              "h0:P → R,h4:P | Q ∨ R",
+              "h0:P → R,h4:R | Q ∨ R"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h0 : (P → R)) (h4 : P), (Q ∨ R)), (∀ (h0 : (P → R)) (h4 : R), (Q ∨ R))] to [(∀ (h0 : (P → R)) (h4 : P), R), (∀ (h0 : (P → R)) (h4 : R), (Q ∨ R))] using right\n  exact True.intro\n"
+          },
+          {
+            "tactic": "cases h5 <;> rename_i h4",
+            "proposed_state": [
+              "h0:P → R,h5:P ∨ R | Q ∨ R"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h0 : (P → R)) (h5 : (P ∨ R)), (Q ∨ R))] to [(∀ (h0 : (P → R)) (h4 : P), (Q ∨ R)), (∀ (h0 : (P → R)) (h4 : R), (Q ∨ R))] using cases h5 <;> rename_i h4\n  exact True.intro\n"
+          },
+          {
+            "tactic": "exact h5",
+            "proposed_state": [
+              "h0:P → R,h5:Q | Q",
+              "h0:P → R,h5:P ∨ R | Q ∨ R"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h0 : (P → R)) (h5 : Q), Q), (∀ (h0 : (P → R)) (h5 : (P ∨ R)), (Q ∨ R))] to [(∀ (h0 : (P → R)) (h5 : (P ∨ R)), (Q ∨ R))] using exact h5\n  exact True.intro\n"
+          },
+          {
+            "tactic": "left",
+            "proposed_state": [
+              "h0:P → R,h5:Q | Q ∨ R",
+              "h0:P → R,h5:P ∨ R | Q ∨ R"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h0 : (P → R)) (h5 : Q), (Q ∨ R)), (∀ (h0 : (P → R)) (h5 : (P ∨ R)), (Q ∨ R))] to [(∀ (h0 : (P → R)) (h5 : Q), Q), (∀ (h0 : (P → R)) (h5 : (P ∨ R)), (Q ∨ R))] using left\n  exact True.intro\n"
+          },
+          {
+            "tactic": "cases h6 <;> rename_i h5",
+            "proposed_state": [
+              "h0:P → R,h6:Q ∨ (P ∨ R) | Q ∨ R"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h0 : (P → R)) (h6 : (Q ∨ (P ∨ R))), (Q ∨ R))] to [(∀ (h0 : (P → R)) (h5 : Q), (Q ∨ R)), (∀ (h0 : (P → R)) (h5 : (P ∨ R)), (Q ∨ R))] using cases h6 <;> rename_i h5\n  exact True.intro\n"
+          },
+          {
+            "tactic": "intro h6",
+            "proposed_state": [
+              "h0:P → R | (Q ∨ (P ∨ R)) → (Q ∨ R)"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h0 : (P → R)), ((Q ∨ (P ∨ R)) → (Q ∨ R)))] to [(∀ (h0 : (P → R)) (h6 : (Q ∨ (P ∨ R))), (Q ∨ R))] using intro h6\n  exact True.intro\n"
+          },
+          {
+            "tactic": "intro h0",
+            "proposed_state": [
+              "| (P → R) → (Q ∨ (P ∨ R)) → (Q ∨ R)"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [((P → R) → ((Q ∨ (P ∨ R)) → (Q ∨ R)))] to [(∀ (h0 : (P → R)), ((Q ∨ (P ∨ R)) → (Q ∨ R)))] using intro h0\n  exact True.intro\n"
+          }
+        ],
+        "status": "closed",
+        "target": "(P → R) → (Q ∨ (P ∨ R)) → (Q ∨ R)",
+        "tactics": [
+          "intro h0",
+          "intro h6",
+          "cases h6 <;> rename_i h5",
+          "left",
+          "exact h5",
+          "cases h5 <;> rename_i h4",
+          "right",
+          "apply h0",
+          "exact h4",
+          "right",
+          "exact h4"
+        ],
+        "proof": {
+          "ok": true,
+          "diagnostic": "'generated' does not depend on any axioms",
+          "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem generated (P Q R S : Prop) : ((P → R) → ((Q ∨ (P ∨ R)) → (Q ∨ R))) := by\n  assert_state [((P → R) → ((Q ∨ (P ∨ R)) → (Q ∨ R)))]\n  intro h0\n  assert_state [(∀ (h0 : (P → R)), ((Q ∨ (P ∨ R)) → (Q ∨ R)))]\n  intro h6\n  assert_state [(∀ (h0 : (P → R)) (h6 : (Q ∨ (P ∨ R))), (Q ∨ R))]\n  cases h6 <;> rename_i h5\n  assert_state [(∀ (h0 : (P → R)) (h5 : Q), (Q ∨ R)), (∀ (h0 : (P → R)) (h5 : (P ∨ R)), (Q ∨ R))]\n  left\n  assert_state [(∀ (h0 : (P → R)) (h5 : Q), Q), (∀ (h0 : (P → R)) (h5 : (P ∨ R)), (Q ∨ R))]\n  exact h5\n  assert_state [(∀ (h0 : (P → R)) (h5 : (P ∨ R)), (Q ∨ R))]\n  cases h5 <;> rename_i h4\n  assert_state [(∀ (h0 : (P → R)) (h4 : P), (Q ∨ R)), (∀ (h0 : (P → R)) (h4 : R), (Q ∨ R))]\n  right\n  assert_state [(∀ (h0 : (P → R)) (h4 : P), R), (∀ (h0 : (P → R)) (h4 : R), (Q ∨ R))]\n  apply h0\n  assert_state [(∀ (h0 : (P → R)) (h4 : P), P), (∀ (h0 : (P → R)) (h4 : R), (Q ∨ R))]\n  exact h4\n  assert_state [(∀ (h0 : (P → R)) (h4 : R), (Q ∨ R))]\n  right\n  assert_state [(∀ (h0 : (P → R)) (h4 : R), R)]\n  exact h4\n  assert_state []\n#print axioms generated\n"
+        },
+        "contract": {
+          "ok": true,
+          "diagnostic": "'generated' does not depend on any axioms",
+          "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem generated (P Q R S : Prop) : ((P → R) → ((Q ∨ (P ∨ R)) → (Q ∨ R))) := by\n  check_structure chain [\n    intro h0,\n    intro h6,\n    cases h6 <;> rename_i h5,\n    left,\n    exact h5,\n    cases h5 <;> rename_i h4,\n    right,\n    apply h0,\n    exact h4,\n    right,\n    exact h4\n  ]\n#print axioms generated\n"
+        }
+      },
+      "b": {
+        "states": [
+          [],
+          [
+            "h0:P → R,h1:Q → R,h4:R | R"
+          ],
+          [
+            "h0:P → R,h1:Q → R,h4:Q | Q",
+            "h0:P → R,h1:Q → R,h4:R | R"
+          ],
+          [
+            "h0:P → R,h1:Q → R,h4:Q | R",
+            "h0:P → R,h1:Q → R,h4:R | R"
+          ],
+          [
+            "h0:P → R,h1:Q → R,h4:P | P",
+            "h0:P → R,h1:Q → R,h4:Q | R",
+            "h0:P → R,h1:Q → R,h4:R | R"
+          ],
+          [
+            "h0:P → R,h1:Q → R,h4:P | R",
+            "h0:P → R,h1:Q → R,h4:Q | R",
+            "h0:P → R,h1:Q → R,h4:R | R"
+          ],
+          [
+            "h0:P → R,h1:Q → R,h4:P ∨ Q | R",
+            "h0:P → R,h1:Q → R,h4:R | R"
+          ],
+          [
+            "h0:P → R,h1:Q → R,h6:(P ∨ Q) ∨ R | R"
+          ],
+          [
+            "h0:P → R,h1:Q → R | ((P ∨ Q) ∨ R) → R"
+          ],
+          [
+            "h0:P → R | (Q → R) → ((P ∨ Q) ∨ R) → R"
+          ],
+          [
+            "| (P → R) → (Q → R) → ((P ∨ Q) ∨ R) → R"
+          ]
+        ],
+        "edges": [
+          {
+            "tactic": "exact h4",
+            "proposed_state": [
+              "h0:P → R,h1:Q → R,h4:R | R"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h0 : (P → R)) (h1 : (Q → R)) (h4 : R), R)] to [] using exact h4\n  exact True.intro\n"
+          },
+          {
+            "tactic": "exact h4",
+            "proposed_state": [
+              "h0:P → R,h1:Q → R,h4:Q | Q",
+              "h0:P → R,h1:Q → R,h4:R | R"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h0 : (P → R)) (h1 : (Q → R)) (h4 : Q), Q), (∀ (h0 : (P → R)) (h1 : (Q → R)) (h4 : R), R)] to [(∀ (h0 : (P → R)) (h1 : (Q → R)) (h4 : R), R)] using exact h4\n  exact True.intro\n"
+          },
+          {
+            "tactic": "apply h1",
+            "proposed_state": [
+              "h0:P → R,h1:Q → R,h4:Q | R",
+              "h0:P → R,h1:Q → R,h4:R | R"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h0 : (P → R)) (h1 : (Q → R)) (h4 : Q), R), (∀ (h0 : (P → R)) (h1 : (Q → R)) (h4 : R), R)] to [(∀ (h0 : (P → R)) (h1 : (Q → R)) (h4 : Q), Q), (∀ (h0 : (P → R)) (h1 : (Q → R)) (h4 : R), R)] using apply h1\n  exact True.intro\n"
+          },
+          {
+            "tactic": "exact h4",
+            "proposed_state": [
+              "h0:P → R,h1:Q → R,h4:P | P",
+              "h0:P → R,h1:Q → R,h4:Q | R",
+              "h0:P → R,h1:Q → R,h4:R | R"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h0 : (P → R)) (h1 : (Q → R)) (h4 : P), P), (∀ (h0 : (P → R)) (h1 : (Q → R)) (h4 : Q), R), (∀ (h0 : (P → R)) (h1 : (Q → R)) (h4 : R), R)] to [(∀ (h0 : (P → R)) (h1 : (Q → R)) (h4 : Q), R), (∀ (h0 : (P → R)) (h1 : (Q → R)) (h4 : R), R)] using exact h4\n  exact True.intro\n"
+          },
+          {
+            "tactic": "apply h0",
+            "proposed_state": [
+              "h0:P → R,h1:Q → R,h4:P | R",
+              "h0:P → R,h1:Q → R,h4:Q | R",
+              "h0:P → R,h1:Q → R,h4:R | R"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h0 : (P → R)) (h1 : (Q → R)) (h4 : P), R), (∀ (h0 : (P → R)) (h1 : (Q → R)) (h4 : Q), R), (∀ (h0 : (P → R)) (h1 : (Q → R)) (h4 : R), R)] to [(∀ (h0 : (P → R)) (h1 : (Q → R)) (h4 : P), P), (∀ (h0 : (P → R)) (h1 : (Q → R)) (h4 : Q), R), (∀ (h0 : (P → R)) (h1 : (Q → R)) (h4 : R), R)] using apply h0\n  exact True.intro\n"
+          },
+          {
+            "tactic": "cases h4 <;> rename_i h4",
+            "proposed_state": [
+              "h0:P → R,h1:Q → R,h4:P ∨ Q | R",
+              "h0:P → R,h1:Q → R,h4:R | R"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h0 : (P → R)) (h1 : (Q → R)) (h4 : (P ∨ Q)), R), (∀ (h0 : (P → R)) (h1 : (Q → R)) (h4 : R), R)] to [(∀ (h0 : (P → R)) (h1 : (Q → R)) (h4 : P), R), (∀ (h0 : (P → R)) (h1 : (Q → R)) (h4 : Q), R), (∀ (h0 : (P → R)) (h1 : (Q → R)) (h4 : R), R)] using cases h4 <;> rename_i h4\n  exact True.intro\n"
+          },
+          {
+            "tactic": "cases h6 <;> rename_i h4",
+            "proposed_state": [
+              "h0:P → R,h1:Q → R,h6:(P ∨ Q) ∨ R | R"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h0 : (P → R)) (h1 : (Q → R)) (h6 : ((P ∨ Q) ∨ R)), R)] to [(∀ (h0 : (P → R)) (h1 : (Q → R)) (h4 : (P ∨ Q)), R), (∀ (h0 : (P → R)) (h1 : (Q → R)) (h4 : R), R)] using cases h6 <;> rename_i h4\n  exact True.intro\n"
+          },
+          {
+            "tactic": "intro h6",
+            "proposed_state": [
+              "h0:P → R,h1:Q → R | ((P ∨ Q) ∨ R) → R"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h0 : (P → R)) (h1 : (Q → R)), (((P ∨ Q) ∨ R) → R))] to [(∀ (h0 : (P → R)) (h1 : (Q → R)) (h6 : ((P ∨ Q) ∨ R)), R)] using intro h6\n  exact True.intro\n"
+          },
+          {
+            "tactic": "intro h1",
+            "proposed_state": [
+              "h0:P → R | (Q → R) → ((P ∨ Q) ∨ R) → R"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h0 : (P → R)), ((Q → R) → (((P ∨ Q) ∨ R) → R)))] to [(∀ (h0 : (P → R)) (h1 : (Q → R)), (((P ∨ Q) ∨ R) → R))] using intro h1\n  exact True.intro\n"
+          },
+          {
+            "tactic": "intro h0",
+            "proposed_state": [
+              "| (P → R) → (Q → R) → ((P ∨ Q) ∨ R) → R"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [((P → R) → ((Q → R) → (((P ∨ Q) ∨ R) → R)))] to [(∀ (h0 : (P → R)), ((Q → R) → (((P ∨ Q) ∨ R) → R)))] using intro h0\n  exact True.intro\n"
+          }
+        ],
+        "status": "closed",
+        "target": "(P → R) → (Q → R) → ((P ∨ Q) ∨ R) → R",
+        "tactics": [
+          "intro h0",
+          "intro h1",
+          "intro h6",
+          "cases h6 <;> rename_i h4",
+          "cases h4 <;> rename_i h4",
+          "apply h0",
+          "exact h4",
+          "apply h1",
+          "exact h4",
+          "exact h4"
+        ],
+        "proof": {
+          "ok": true,
+          "diagnostic": "'generated' does not depend on any axioms",
+          "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem generated (P Q R S : Prop) : ((P → R) → ((Q → R) → (((P ∨ Q) ∨ R) → R))) := by\n  assert_state [((P → R) → ((Q → R) → (((P ∨ Q) ∨ R) → R)))]\n  intro h0\n  assert_state [(∀ (h0 : (P → R)), ((Q → R) → (((P ∨ Q) ∨ R) → R)))]\n  intro h1\n  assert_state [(∀ (h0 : (P → R)) (h1 : (Q → R)), (((P ∨ Q) ∨ R) → R))]\n  intro h6\n  assert_state [(∀ (h0 : (P → R)) (h1 : (Q → R)) (h6 : ((P ∨ Q) ∨ R)), R)]\n  cases h6 <;> rename_i h4\n  assert_state [(∀ (h0 : (P → R)) (h1 : (Q → R)) (h4 : (P ∨ Q)), R), (∀ (h0 : (P → R)) (h1 : (Q → R)) (h4 : R), R)]\n  cases h4 <;> rename_i h4\n  assert_state [(∀ (h0 : (P → R)) (h1 : (Q → R)) (h4 : P), R), (∀ (h0 : (P → R)) (h1 : (Q → R)) (h4 : Q), R), (∀ (h0 : (P → R)) (h1 : (Q → R)) (h4 : R), R)]\n  apply h0\n  assert_state [(∀ (h0 : (P → R)) (h1 : (Q → R)) (h4 : P), P), (∀ (h0 : (P → R)) (h1 : (Q → R)) (h4 : Q), R), (∀ (h0 : (P → R)) (h1 : (Q → R)) (h4 : R), R)]\n  exact h4\n  assert_state [(∀ (h0 : (P → R)) (h1 : (Q → R)) (h4 : Q), R), (∀ (h0 : (P → R)) (h1 : (Q → R)) (h4 : R), R)]\n  apply h1\n  assert_state [(∀ (h0 : (P → R)) (h1 : (Q → R)) (h4 : Q), Q), (∀ (h0 : (P → R)) (h1 : (Q → R)) (h4 : R), R)]\n  exact h4\n  assert_state [(∀ (h0 : (P → R)) (h1 : (Q → R)) (h4 : R), R)]\n  exact h4\n  assert_state []\n#print axioms generated\n"
+        },
+        "contract": {
+          "ok": true,
+          "diagnostic": "'generated' does not depend on any axioms",
+          "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem generated (P Q R S : Prop) : ((P → R) → ((Q → R) → (((P ∨ Q) ∨ R) → R))) := by\n  check_structure chain [\n    intro h0,\n    intro h1,\n    intro h6,\n    cases h6 <;> rename_i h4,\n    cases h4 <;> rename_i h4,\n    apply h0,\n    exact h4,\n    apply h1,\n    exact h4,\n    exact h4\n  ]\n#print axioms generated\n"
+        }
+      },
+      "c": {
+        "states": [
+          [],
+          [
+            "h4:(R ∧ S) ∧ Q | R ∧ S"
+          ],
+          [
+            "h4:R ∧ S | R ∧ S",
+            "h4:(R ∧ S) ∧ Q | R ∧ S"
+          ],
+          [
+            "h5:(R ∧ S) ∨ ((R ∧ S) ∧ Q) | R ∧ S"
+          ],
+          [
+            "h5:P ∧ (R ∧ S) | R ∧ S",
+            "h5:(R ∧ S) ∨ ((R ∧ S) ∧ Q) | R ∧ S"
+          ],
+          [
+            "h6:(P ∧ (R ∧ S)) ∨ ((R ∧ S) ∨ ((R ∧ S) ∧ Q)) | R ∧ S"
+          ],
+          [
+            "| ((P ∧ (R ∧ S)) ∨ ((R ∧ S) ∨ ((R ∧ S) ∧ Q))) → (R ∧ S)"
+          ]
+        ],
+        "edges": [
+          {
+            "tactic": "exact h4.left",
+            "proposed_state": [
+              "h4:(R ∧ S) ∧ Q | R ∧ S"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h4 : ((R ∧ S) ∧ Q)), (R ∧ S))] to [] using exact h4.left\n  exact True.intro\n"
+          },
+          {
+            "tactic": "exact h4",
+            "proposed_state": [
+              "h4:R ∧ S | R ∧ S",
+              "h4:(R ∧ S) ∧ Q | R ∧ S"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h4 : (R ∧ S)), (R ∧ S)), (∀ (h4 : ((R ∧ S) ∧ Q)), (R ∧ S))] to [(∀ (h4 : ((R ∧ S) ∧ Q)), (R ∧ S))] using exact h4\n  exact True.intro\n"
+          },
+          {
+            "tactic": "cases h5 <;> rename_i h4",
+            "proposed_state": [
+              "h5:(R ∧ S) ∨ ((R ∧ S) ∧ Q) | R ∧ S"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h5 : ((R ∧ S) ∨ ((R ∧ S) ∧ Q))), (R ∧ S))] to [(∀ (h4 : (R ∧ S)), (R ∧ S)), (∀ (h4 : ((R ∧ S) ∧ Q)), (R ∧ S))] using cases h5 <;> rename_i h4\n  exact True.intro\n"
+          },
+          {
+            "tactic": "exact h5.right",
+            "proposed_state": [
+              "h5:P ∧ (R ∧ S) | R ∧ S",
+              "h5:(R ∧ S) ∨ ((R ∧ S) ∧ Q) | R ∧ S"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h5 : (P ∧ (R ∧ S))), (R ∧ S)), (∀ (h5 : ((R ∧ S) ∨ ((R ∧ S) ∧ Q))), (R ∧ S))] to [(∀ (h5 : ((R ∧ S) ∨ ((R ∧ S) ∧ Q))), (R ∧ S))] using exact h5.right\n  exact True.intro\n"
+          },
+          {
+            "tactic": "cases h6 <;> rename_i h5",
+            "proposed_state": [
+              "h6:(P ∧ (R ∧ S)) ∨ ((R ∧ S) ∨ ((R ∧ S) ∧ Q)) | R ∧ S"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h6 : ((P ∧ (R ∧ S)) ∨ ((R ∧ S) ∨ ((R ∧ S) ∧ Q)))), (R ∧ S))] to [(∀ (h5 : (P ∧ (R ∧ S))), (R ∧ S)), (∀ (h5 : ((R ∧ S) ∨ ((R ∧ S) ∧ Q))), (R ∧ S))] using cases h6 <;> rename_i h5\n  exact True.intro\n"
+          },
+          {
+            "tactic": "intro h6",
+            "proposed_state": [
+              "| ((P ∧ (R ∧ S)) ∨ ((R ∧ S) ∨ ((R ∧ S) ∧ Q))) → (R ∧ S)"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(((P ∧ (R ∧ S)) ∨ ((R ∧ S) ∨ ((R ∧ S) ∧ Q))) → (R ∧ S))] to [(∀ (h6 : ((P ∧ (R ∧ S)) ∨ ((R ∧ S) ∨ ((R ∧ S) ∧ Q)))), (R ∧ S))] using intro h6\n  exact True.intro\n"
+          }
+        ],
+        "status": "closed",
+        "target": "((P ∧ (R ∧ S)) ∨ ((R ∧ S) ∨ ((R ∧ S) ∧ Q))) → (R ∧ S)",
+        "tactics": [
+          "intro h6",
+          "cases h6 <;> rename_i h5",
+          "exact h5.right",
+          "cases h5 <;> rename_i h4",
+          "exact h4",
+          "exact h4.left"
+        ],
+        "proof": {
+          "ok": true,
+          "diagnostic": "'generated' does not depend on any axioms",
+          "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem generated (P Q R S : Prop) : (((P ∧ (R ∧ S)) ∨ ((R ∧ S) ∨ ((R ∧ S) ∧ Q))) → (R ∧ S)) := by\n  assert_state [(((P ∧ (R ∧ S)) ∨ ((R ∧ S) ∨ ((R ∧ S) ∧ Q))) → (R ∧ S))]\n  intro h6\n  assert_state [(∀ (h6 : ((P ∧ (R ∧ S)) ∨ ((R ∧ S) ∨ ((R ∧ S) ∧ Q)))), (R ∧ S))]\n  cases h6 <;> rename_i h5\n  assert_state [(∀ (h5 : (P ∧ (R ∧ S))), (R ∧ S)), (∀ (h5 : ((R ∧ S) ∨ ((R ∧ S) ∧ Q))), (R ∧ S))]\n  exact h5.right\n  assert_state [(∀ (h5 : ((R ∧ S) ∨ ((R ∧ S) ∧ Q))), (R ∧ S))]\n  cases h5 <;> rename_i h4\n  assert_state [(∀ (h4 : (R ∧ S)), (R ∧ S)), (∀ (h4 : ((R ∧ S) ∧ Q)), (R ∧ S))]\n  exact h4\n  assert_state [(∀ (h4 : ((R ∧ S) ∧ Q)), (R ∧ S))]\n  exact h4.left\n  assert_state []\n#print axioms generated\n"
+        },
+        "contract": {
+          "ok": true,
+          "diagnostic": "'generated' does not depend on any axioms",
+          "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem generated (P Q R S : Prop) : (((P ∧ (R ∧ S)) ∨ ((R ∧ S) ∨ ((R ∧ S) ∧ Q))) → (R ∧ S)) := by\n  check_structure chain [\n    intro h6,\n    cases h6 <;> rename_i h5,\n    exact h5.right,\n    cases h5 <;> rename_i h4,\n    exact h4,\n    exact h4.left\n  ]\n#print axioms generated\n"
+        }
+      },
+      "d": {
+        "states": [
+          [],
+          [
+            "h0:(P ∨ Q) → R,h4:R ∧ S | R"
+          ],
+          [
+            "h0:(P ∨ Q) → R,h4:R | R",
+            "h0:(P ∨ Q) → R,h4:R ∧ S | R"
+          ],
+          [
+            "h0:(P ∨ Q) → R,h5:R ∨ (R ∧ S) | R"
+          ],
+          [
+            "h0:(P ∨ Q) → R,h4:Q | Q",
+            "h0:(P ∨ Q) → R,h5:R ∨ (R ∧ S) | R"
+          ],
+          [
+            "h0:(P ∨ Q) → R,h4:Q | P ∨ Q",
+            "h0:(P ∨ Q) → R,h5:R ∨ (R ∧ S) | R"
+          ],
+          [
+            "h0:(P ∨ Q) → R,h4:Q | R",
+            "h0:(P ∨ Q) → R,h5:R ∨ (R ∧ S) | R"
+          ],
+          [
+            "h0:(P ∨ Q) → R,h4:P | P",
+            "h0:(P ∨ Q) → R,h4:Q | R",
+            "h0:(P ∨ Q) → R,h5:R ∨ (R ∧ S) | R"
+          ],
+          [
+            "h0:(P ∨ Q) → R,h4:P | P ∨ Q",
+            "h0:(P ∨ Q) → R,h4:Q | R",
+            "h0:(P ∨ Q) → R,h5:R ∨ (R ∧ S) | R"
+          ],
+          [
+            "h0:(P ∨ Q) → R,h4:P | R",
+            "h0:(P ∨ Q) → R,h4:Q | R",
+            "h0:(P ∨ Q) → R,h5:R ∨ (R ∧ S) | R"
+          ],
+          [
+            "h0:(P ∨ Q) → R,h5:P ∨ Q | R",
+            "h0:(P ∨ Q) → R,h5:R ∨ (R ∧ S) | R"
+          ],
+          [
+            "h0:(P ∨ Q) → R,h6:(P ∨ Q) ∨ (R ∨ (R ∧ S)) | R"
+          ],
+          [
+            "h0:(P ∨ Q) → R | ((P ∨ Q) ∨ (R ∨ (R ∧ S))) → R"
+          ],
+          [
+            "| ((P ∨ Q) → R) → ((P ∨ Q) ∨ (R ∨ (R ∧ S))) → R"
+          ]
+        ],
+        "edges": [
+          {
+            "tactic": "exact h4.left",
+            "proposed_state": [
+              "h0:(P ∨ Q) → R,h4:R ∧ S | R"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h0 : ((P ∨ Q) → R)) (h4 : (R ∧ S)), R)] to [] using exact h4.left\n  exact True.intro\n"
+          },
+          {
+            "tactic": "exact h4",
+            "proposed_state": [
+              "h0:(P ∨ Q) → R,h4:R | R",
+              "h0:(P ∨ Q) → R,h4:R ∧ S | R"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h0 : ((P ∨ Q) → R)) (h4 : R), R), (∀ (h0 : ((P ∨ Q) → R)) (h4 : (R ∧ S)), R)] to [(∀ (h0 : ((P ∨ Q) → R)) (h4 : (R ∧ S)), R)] using exact h4\n  exact True.intro\n"
+          },
+          {
+            "tactic": "cases h5 <;> rename_i h4",
+            "proposed_state": [
+              "h0:(P ∨ Q) → R,h5:R ∨ (R ∧ S) | R"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h0 : ((P ∨ Q) → R)) (h5 : (R ∨ (R ∧ S))), R)] to [(∀ (h0 : ((P ∨ Q) → R)) (h4 : R), R), (∀ (h0 : ((P ∨ Q) → R)) (h4 : (R ∧ S)), R)] using cases h5 <;> rename_i h4\n  exact True.intro\n"
+          },
+          {
+            "tactic": "exact h4",
+            "proposed_state": [
+              "h0:(P ∨ Q) → R,h4:Q | Q",
+              "h0:(P ∨ Q) → R,h5:R ∨ (R ∧ S) | R"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h0 : ((P ∨ Q) → R)) (h4 : Q), Q), (∀ (h0 : ((P ∨ Q) → R)) (h5 : (R ∨ (R ∧ S))), R)] to [(∀ (h0 : ((P ∨ Q) → R)) (h5 : (R ∨ (R ∧ S))), R)] using exact h4\n  exact True.intro\n"
+          },
+          {
+            "tactic": "right",
+            "proposed_state": [
+              "h0:(P ∨ Q) → R,h4:Q | P ∨ Q",
+              "h0:(P ∨ Q) → R,h5:R ∨ (R ∧ S) | R"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h0 : ((P ∨ Q) → R)) (h4 : Q), (P ∨ Q)), (∀ (h0 : ((P ∨ Q) → R)) (h5 : (R ∨ (R ∧ S))), R)] to [(∀ (h0 : ((P ∨ Q) → R)) (h4 : Q), Q), (∀ (h0 : ((P ∨ Q) → R)) (h5 : (R ∨ (R ∧ S))), R)] using right\n  exact True.intro\n"
+          },
+          {
+            "tactic": "apply h0",
+            "proposed_state": [
+              "h0:(P ∨ Q) → R,h4:Q | R",
+              "h0:(P ∨ Q) → R,h5:R ∨ (R ∧ S) | R"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h0 : ((P ∨ Q) → R)) (h4 : Q), R), (∀ (h0 : ((P ∨ Q) → R)) (h5 : (R ∨ (R ∧ S))), R)] to [(∀ (h0 : ((P ∨ Q) → R)) (h4 : Q), (P ∨ Q)), (∀ (h0 : ((P ∨ Q) → R)) (h5 : (R ∨ (R ∧ S))), R)] using apply h0\n  exact True.intro\n"
+          },
+          {
+            "tactic": "exact h4",
+            "proposed_state": [
+              "h0:(P ∨ Q) → R,h4:P | P",
+              "h0:(P ∨ Q) → R,h4:Q | R",
+              "h0:(P ∨ Q) → R,h5:R ∨ (R ∧ S) | R"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h0 : ((P ∨ Q) → R)) (h4 : P), P), (∀ (h0 : ((P ∨ Q) → R)) (h4 : Q), R), (∀ (h0 : ((P ∨ Q) → R)) (h5 : (R ∨ (R ∧ S))), R)] to [(∀ (h0 : ((P ∨ Q) → R)) (h4 : Q), R), (∀ (h0 : ((P ∨ Q) → R)) (h5 : (R ∨ (R ∧ S))), R)] using exact h4\n  exact True.intro\n"
+          },
+          {
+            "tactic": "left",
+            "proposed_state": [
+              "h0:(P ∨ Q) → R,h4:P | P ∨ Q",
+              "h0:(P ∨ Q) → R,h4:Q | R",
+              "h0:(P ∨ Q) → R,h5:R ∨ (R ∧ S) | R"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h0 : ((P ∨ Q) → R)) (h4 : P), (P ∨ Q)), (∀ (h0 : ((P ∨ Q) → R)) (h4 : Q), R), (∀ (h0 : ((P ∨ Q) → R)) (h5 : (R ∨ (R ∧ S))), R)] to [(∀ (h0 : ((P ∨ Q) → R)) (h4 : P), P), (∀ (h0 : ((P ∨ Q) → R)) (h4 : Q), R), (∀ (h0 : ((P ∨ Q) → R)) (h5 : (R ∨ (R ∧ S))), R)] using left\n  exact True.intro\n"
+          },
+          {
+            "tactic": "apply h0",
+            "proposed_state": [
+              "h0:(P ∨ Q) → R,h4:P | R",
+              "h0:(P ∨ Q) → R,h4:Q | R",
+              "h0:(P ∨ Q) → R,h5:R ∨ (R ∧ S) | R"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h0 : ((P ∨ Q) → R)) (h4 : P), R), (∀ (h0 : ((P ∨ Q) → R)) (h4 : Q), R), (∀ (h0 : ((P ∨ Q) → R)) (h5 : (R ∨ (R ∧ S))), R)] to [(∀ (h0 : ((P ∨ Q) → R)) (h4 : P), (P ∨ Q)), (∀ (h0 : ((P ∨ Q) → R)) (h4 : Q), R), (∀ (h0 : ((P ∨ Q) → R)) (h5 : (R ∨ (R ∧ S))), R)] using apply h0\n  exact True.intro\n"
+          },
+          {
+            "tactic": "cases h5 <;> rename_i h4",
+            "proposed_state": [
+              "h0:(P ∨ Q) → R,h5:P ∨ Q | R",
+              "h0:(P ∨ Q) → R,h5:R ∨ (R ∧ S) | R"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h0 : ((P ∨ Q) → R)) (h5 : (P ∨ Q)), R), (∀ (h0 : ((P ∨ Q) → R)) (h5 : (R ∨ (R ∧ S))), R)] to [(∀ (h0 : ((P ∨ Q) → R)) (h4 : P), R), (∀ (h0 : ((P ∨ Q) → R)) (h4 : Q), R), (∀ (h0 : ((P ∨ Q) → R)) (h5 : (R ∨ (R ∧ S))), R)] using cases h5 <;> rename_i h4\n  exact True.intro\n"
+          },
+          {
+            "tactic": "cases h6 <;> rename_i h5",
+            "proposed_state": [
+              "h0:(P ∨ Q) → R,h6:(P ∨ Q) ∨ (R ∨ (R ∧ S)) | R"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h0 : ((P ∨ Q) → R)) (h6 : ((P ∨ Q) ∨ (R ∨ (R ∧ S)))), R)] to [(∀ (h0 : ((P ∨ Q) → R)) (h5 : (P ∨ Q)), R), (∀ (h0 : ((P ∨ Q) → R)) (h5 : (R ∨ (R ∧ S))), R)] using cases h6 <;> rename_i h5\n  exact True.intro\n"
+          },
+          {
+            "tactic": "intro h6",
+            "proposed_state": [
+              "h0:(P ∨ Q) → R | ((P ∨ Q) ∨ (R ∨ (R ∧ S))) → R"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h0 : ((P ∨ Q) → R)), (((P ∨ Q) ∨ (R ∨ (R ∧ S))) → R))] to [(∀ (h0 : ((P ∨ Q) → R)) (h6 : ((P ∨ Q) ∨ (R ∨ (R ∧ S)))), R)] using intro h6\n  exact True.intro\n"
+          },
+          {
+            "tactic": "intro h0",
+            "proposed_state": [
+              "| ((P ∨ Q) → R) → ((P ∨ Q) ∨ (R ∨ (R ∧ S))) → R"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(((P ∨ Q) → R) → (((P ∨ Q) ∨ (R ∨ (R ∧ S))) → R))] to [(∀ (h0 : ((P ∨ Q) → R)), (((P ∨ Q) ∨ (R ∨ (R ∧ S))) → R))] using intro h0\n  exact True.intro\n"
+          }
+        ],
+        "status": "closed",
+        "target": "((P ∨ Q) → R) → ((P ∨ Q) ∨ (R ∨ (R ∧ S))) → R",
+        "tactics": [
+          "intro h0",
+          "intro h6",
+          "cases h6 <;> rename_i h5",
+          "cases h5 <;> rename_i h4",
+          "apply h0",
+          "left",
+          "exact h4",
+          "apply h0",
+          "right",
+          "exact h4",
+          "cases h5 <;> rename_i h4",
+          "exact h4",
+          "exact h4.left"
+        ],
+        "proof": {
+          "ok": true,
+          "diagnostic": "'generated' does not depend on any axioms",
+          "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem generated (P Q R S : Prop) : (((P ∨ Q) → R) → (((P ∨ Q) ∨ (R ∨ (R ∧ S))) → R)) := by\n  assert_state [(((P ∨ Q) → R) → (((P ∨ Q) ∨ (R ∨ (R ∧ S))) → R))]\n  intro h0\n  assert_state [(∀ (h0 : ((P ∨ Q) → R)), (((P ∨ Q) ∨ (R ∨ (R ∧ S))) → R))]\n  intro h6\n  assert_state [(∀ (h0 : ((P ∨ Q) → R)) (h6 : ((P ∨ Q) ∨ (R ∨ (R ∧ S)))), R)]\n  cases h6 <;> rename_i h5\n  assert_state [(∀ (h0 : ((P ∨ Q) → R)) (h5 : (P ∨ Q)), R), (∀ (h0 : ((P ∨ Q) → R)) (h5 : (R ∨ (R ∧ S))), R)]\n  cases h5 <;> rename_i h4\n  assert_state [(∀ (h0 : ((P ∨ Q) → R)) (h4 : P), R), (∀ (h0 : ((P ∨ Q) → R)) (h4 : Q), R), (∀ (h0 : ((P ∨ Q) → R)) (h5 : (R ∨ (R ∧ S))), R)]\n  apply h0\n  assert_state [(∀ (h0 : ((P ∨ Q) → R)) (h4 : P), (P ∨ Q)), (∀ (h0 : ((P ∨ Q) → R)) (h4 : Q), R), (∀ (h0 : ((P ∨ Q) → R)) (h5 : (R ∨ (R ∧ S))), R)]\n  left\n  assert_state [(∀ (h0 : ((P ∨ Q) → R)) (h4 : P), P), (∀ (h0 : ((P ∨ Q) → R)) (h4 : Q), R), (∀ (h0 : ((P ∨ Q) → R)) (h5 : (R ∨ (R ∧ S))), R)]\n  exact h4\n  assert_state [(∀ (h0 : ((P ∨ Q) → R)) (h4 : Q), R), (∀ (h0 : ((P ∨ Q) → R)) (h5 : (R ∨ (R ∧ S))), R)]\n  apply h0\n  assert_state [(∀ (h0 : ((P ∨ Q) → R)) (h4 : Q), (P ∨ Q)), (∀ (h0 : ((P ∨ Q) → R)) (h5 : (R ∨ (R ∧ S))), R)]\n  right\n  assert_state [(∀ (h0 : ((P ∨ Q) → R)) (h4 : Q), Q), (∀ (h0 : ((P ∨ Q) → R)) (h5 : (R ∨ (R ∧ S))), R)]\n  exact h4\n  assert_state [(∀ (h0 : ((P ∨ Q) → R)) (h5 : (R ∨ (R ∧ S))), R)]\n  cases h5 <;> rename_i h4\n  assert_state [(∀ (h0 : ((P ∨ Q) → R)) (h4 : R), R), (∀ (h0 : ((P ∨ Q) → R)) (h4 : (R ∧ S)), R)]\n  exact h4\n  assert_state [(∀ (h0 : ((P ∨ Q) → R)) (h4 : (R ∧ S)), R)]\n  exact h4.left\n  assert_state []\n#print axioms generated\n"
+        },
+        "contract": {
+          "ok": true,
+          "diagnostic": "'generated' does not depend on any axioms",
+          "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem generated (P Q R S : Prop) : (((P ∨ Q) → R) → (((P ∨ Q) ∨ (R ∨ (R ∧ S))) → R)) := by\n  check_structure balanced [\n    intro h0,\n    intro h6,\n    cases h6 <;> rename_i h5,\n    cases h5 <;> rename_i h4,\n    apply h0,\n    left,\n    exact h4,\n    apply h0,\n    right,\n    exact h4,\n    cases h5 <;> rename_i h4,\n    exact h4,\n    exact h4.left\n  ]\n#print axioms generated\n"
+        }
+      },
+      "e": {
+        "states": [
+          [],
+          [
+            "h4:Q ∧ S | Q"
+          ],
+          [
+            "h4:Q ∧ S | Q ∨ P"
+          ],
+          [
+            "h4:P ∧ S | P",
+            "h4:Q ∧ S | Q ∨ P"
+          ],
+          [
+            "h4:P ∧ S | Q ∨ P",
+            "h4:Q ∧ S | Q ∨ P"
+          ],
+          [
+            "h5:(P ∧ S) ∨ (Q ∧ S) | Q ∨ P"
+          ],
+          [
+            "h4:Q | Q",
+            "h5:(P ∧ S) ∨ (Q ∧ S) | Q ∨ P"
+          ],
+          [
+            "h4:Q | Q ∨ P",
+            "h5:(P ∧ S) ∨ (Q ∧ S) | Q ∨ P"
+          ],
+          [
+            "h4:P | P",
+            "h4:Q | Q ∨ P",
+            "h5:(P ∧ S) ∨ (Q ∧ S) | Q ∨ P"
+          ],
+          [
+            "h4:P | Q ∨ P",
+            "h4:Q | Q ∨ P",
+            "h5:(P ∧ S) ∨ (Q ∧ S) | Q ∨ P"
+          ],
+          [
+            "h5:P ∨ Q | Q ∨ P",
+            "h5:(P ∧ S) ∨ (Q ∧ S) | Q ∨ P"
+          ],
+          [
+            "h6:(P ∨ Q) ∨ ((P ∧ S) ∨ (Q ∧ S)) | Q ∨ P"
+          ],
+          [
+            "| ((P ∨ Q) ∨ ((P ∧ S) ∨ (Q ∧ S))) → (Q ∨ P)"
+          ]
+        ],
+        "edges": [
+          {
+            "tactic": "exact h4.left",
+            "proposed_state": [
+              "h4:Q ∧ S | Q"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h4 : (Q ∧ S)), Q)] to [] using exact h4.left\n  exact True.intro\n"
+          },
+          {
+            "tactic": "left",
+            "proposed_state": [
+              "h4:Q ∧ S | Q ∨ P"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h4 : (Q ∧ S)), (Q ∨ P))] to [(∀ (h4 : (Q ∧ S)), Q)] using left\n  exact True.intro\n"
+          },
+          {
+            "tactic": "exact h4.left",
+            "proposed_state": [
+              "h4:P ∧ S | P",
+              "h4:Q ∧ S | Q ∨ P"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h4 : (P ∧ S)), P), (∀ (h4 : (Q ∧ S)), (Q ∨ P))] to [(∀ (h4 : (Q ∧ S)), (Q ∨ P))] using exact h4.left\n  exact True.intro\n"
+          },
+          {
+            "tactic": "right",
+            "proposed_state": [
+              "h4:P ∧ S | Q ∨ P",
+              "h4:Q ∧ S | Q ∨ P"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h4 : (P ∧ S)), (Q ∨ P)), (∀ (h4 : (Q ∧ S)), (Q ∨ P))] to [(∀ (h4 : (P ∧ S)), P), (∀ (h4 : (Q ∧ S)), (Q ∨ P))] using right\n  exact True.intro\n"
+          },
+          {
+            "tactic": "cases h5 <;> rename_i h4",
+            "proposed_state": [
+              "h5:(P ∧ S) ∨ (Q ∧ S) | Q ∨ P"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h5 : ((P ∧ S) ∨ (Q ∧ S))), (Q ∨ P))] to [(∀ (h4 : (P ∧ S)), (Q ∨ P)), (∀ (h4 : (Q ∧ S)), (Q ∨ P))] using cases h5 <;> rename_i h4\n  exact True.intro\n"
+          },
+          {
+            "tactic": "exact h4",
+            "proposed_state": [
+              "h4:Q | Q",
+              "h5:(P ∧ S) ∨ (Q ∧ S) | Q ∨ P"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h4 : Q), Q), (∀ (h5 : ((P ∧ S) ∨ (Q ∧ S))), (Q ∨ P))] to [(∀ (h5 : ((P ∧ S) ∨ (Q ∧ S))), (Q ∨ P))] using exact h4\n  exact True.intro\n"
+          },
+          {
+            "tactic": "left",
+            "proposed_state": [
+              "h4:Q | Q ∨ P",
+              "h5:(P ∧ S) ∨ (Q ∧ S) | Q ∨ P"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h4 : Q), (Q ∨ P)), (∀ (h5 : ((P ∧ S) ∨ (Q ∧ S))), (Q ∨ P))] to [(∀ (h4 : Q), Q), (∀ (h5 : ((P ∧ S) ∨ (Q ∧ S))), (Q ∨ P))] using left\n  exact True.intro\n"
+          },
+          {
+            "tactic": "exact h4",
+            "proposed_state": [
+              "h4:P | P",
+              "h4:Q | Q ∨ P",
+              "h5:(P ∧ S) ∨ (Q ∧ S) | Q ∨ P"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h4 : P), P), (∀ (h4 : Q), (Q ∨ P)), (∀ (h5 : ((P ∧ S) ∨ (Q ∧ S))), (Q ∨ P))] to [(∀ (h4 : Q), (Q ∨ P)), (∀ (h5 : ((P ∧ S) ∨ (Q ∧ S))), (Q ∨ P))] using exact h4\n  exact True.intro\n"
+          },
+          {
+            "tactic": "right",
+            "proposed_state": [
+              "h4:P | Q ∨ P",
+              "h4:Q | Q ∨ P",
+              "h5:(P ∧ S) ∨ (Q ∧ S) | Q ∨ P"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h4 : P), (Q ∨ P)), (∀ (h4 : Q), (Q ∨ P)), (∀ (h5 : ((P ∧ S) ∨ (Q ∧ S))), (Q ∨ P))] to [(∀ (h4 : P), P), (∀ (h4 : Q), (Q ∨ P)), (∀ (h5 : ((P ∧ S) ∨ (Q ∧ S))), (Q ∨ P))] using right\n  exact True.intro\n"
+          },
+          {
+            "tactic": "cases h5 <;> rename_i h4",
+            "proposed_state": [
+              "h5:P ∨ Q | Q ∨ P",
+              "h5:(P ∧ S) ∨ (Q ∧ S) | Q ∨ P"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h5 : (P ∨ Q)), (Q ∨ P)), (∀ (h5 : ((P ∧ S) ∨ (Q ∧ S))), (Q ∨ P))] to [(∀ (h4 : P), (Q ∨ P)), (∀ (h4 : Q), (Q ∨ P)), (∀ (h5 : ((P ∧ S) ∨ (Q ∧ S))), (Q ∨ P))] using cases h5 <;> rename_i h4\n  exact True.intro\n"
+          },
+          {
+            "tactic": "cases h6 <;> rename_i h5",
+            "proposed_state": [
+              "h6:(P ∨ Q) ∨ ((P ∧ S) ∨ (Q ∧ S)) | Q ∨ P"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h6 : ((P ∨ Q) ∨ ((P ∧ S) ∨ (Q ∧ S)))), (Q ∨ P))] to [(∀ (h5 : (P ∨ Q)), (Q ∨ P)), (∀ (h5 : ((P ∧ S) ∨ (Q ∧ S))), (Q ∨ P))] using cases h6 <;> rename_i h5\n  exact True.intro\n"
+          },
+          {
+            "tactic": "intro h6",
+            "proposed_state": [
+              "| ((P ∨ Q) ∨ ((P ∧ S) ∨ (Q ∧ S))) → (Q ∨ P)"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(((P ∨ Q) ∨ ((P ∧ S) ∨ (Q ∧ S))) → (Q ∨ P))] to [(∀ (h6 : ((P ∨ Q) ∨ ((P ∧ S) ∨ (Q ∧ S)))), (Q ∨ P))] using intro h6\n  exact True.intro\n"
+          }
+        ],
+        "status": "closed",
+        "target": "((P ∨ Q) ∨ ((P ∧ S) ∨ (Q ∧ S))) → (Q ∨ P)",
+        "tactics": [
+          "intro h6",
+          "cases h6 <;> rename_i h5",
+          "cases h5 <;> rename_i h4",
+          "right",
+          "exact h4",
+          "left",
+          "exact h4",
+          "cases h5 <;> rename_i h4",
+          "right",
+          "exact h4.left",
+          "left",
+          "exact h4.left"
+        ],
+        "proof": {
+          "ok": true,
+          "diagnostic": "'generated' does not depend on any axioms",
+          "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem generated (P Q R S : Prop) : (((P ∨ Q) ∨ ((P ∧ S) ∨ (Q ∧ S))) → (Q ∨ P)) := by\n  assert_state [(((P ∨ Q) ∨ ((P ∧ S) ∨ (Q ∧ S))) → (Q ∨ P))]\n  intro h6\n  assert_state [(∀ (h6 : ((P ∨ Q) ∨ ((P ∧ S) ∨ (Q ∧ S)))), (Q ∨ P))]\n  cases h6 <;> rename_i h5\n  assert_state [(∀ (h5 : (P ∨ Q)), (Q ∨ P)), (∀ (h5 : ((P ∧ S) ∨ (Q ∧ S))), (Q ∨ P))]\n  cases h5 <;> rename_i h4\n  assert_state [(∀ (h4 : P), (Q ∨ P)), (∀ (h4 : Q), (Q ∨ P)), (∀ (h5 : ((P ∧ S) ∨ (Q ∧ S))), (Q ∨ P))]\n  right\n  assert_state [(∀ (h4 : P), P), (∀ (h4 : Q), (Q ∨ P)), (∀ (h5 : ((P ∧ S) ∨ (Q ∧ S))), (Q ∨ P))]\n  exact h4\n  assert_state [(∀ (h4 : Q), (Q ∨ P)), (∀ (h5 : ((P ∧ S) ∨ (Q ∧ S))), (Q ∨ P))]\n  left\n  assert_state [(∀ (h4 : Q), Q), (∀ (h5 : ((P ∧ S) ∨ (Q ∧ S))), (Q ∨ P))]\n  exact h4\n  assert_state [(∀ (h5 : ((P ∧ S) ∨ (Q ∧ S))), (Q ∨ P))]\n  cases h5 <;> rename_i h4\n  assert_state [(∀ (h4 : (P ∧ S)), (Q ∨ P)), (∀ (h4 : (Q ∧ S)), (Q ∨ P))]\n  right\n  assert_state [(∀ (h4 : (P ∧ S)), P), (∀ (h4 : (Q ∧ S)), (Q ∨ P))]\n  exact h4.left\n  assert_state [(∀ (h4 : (Q ∧ S)), (Q ∨ P))]\n  left\n  assert_state [(∀ (h4 : (Q ∧ S)), Q)]\n  exact h4.left\n  assert_state []\n#print axioms generated\n"
+        },
+        "contract": {
+          "ok": true,
+          "diagnostic": "'generated' does not depend on any axioms",
+          "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem generated (P Q R S : Prop) : (((P ∨ Q) ∨ ((P ∧ S) ∨ (Q ∧ S))) → (Q ∨ P)) := by\n  check_structure balanced [\n    intro h6,\n    cases h6 <;> rename_i h5,\n    cases h5 <;> rename_i h4,\n    right,\n    exact h4,\n    left,\n    exact h4,\n    cases h5 <;> rename_i h4,\n    right,\n    exact h4.left,\n    left,\n    exact h4.left\n  ]\n#print axioms generated\n"
+        }
+      },
+      "f": {
+        "states": [
+          [],
+          [
+            "h4:(R ∧ Q) ∧ S | R"
+          ],
+          [
+            "h4:P ∧ R | R",
+            "h4:(R ∧ Q) ∧ S | R"
+          ],
+          [
+            "h5:(P ∧ R) ∨ ((R ∧ Q) ∧ S) | R"
+          ],
+          [
+            "h4:R ∧ P | R",
+            "h5:(P ∧ R) ∨ ((R ∧ Q) ∧ S) | R"
+          ],
+          [
+            "h4:R | R",
+            "h4:R ∧ P | R",
+            "h5:(P ∧ R) ∨ ((R ∧ Q) ∧ S) | R"
+          ],
+          [
+            "h5:R ∨ (R ∧ P) | R",
+            "h5:(P ∧ R) ∨ ((R ∧ Q) ∧ S) | R"
+          ],
+          [
+            "h6:(R ∨ (R ∧ P)) ∨ ((P ∧ R) ∨ ((R ∧ Q) ∧ S)) | R"
+          ],
+          [
+            "| ((R ∨ (R ∧ P)) ∨ ((P ∧ R) ∨ ((R ∧ Q) ∧ S))) → R"
+          ]
+        ],
+        "edges": [
+          {
+            "tactic": "exact h4.left.left",
+            "proposed_state": [
+              "h4:(R ∧ Q) ∧ S | R"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h4 : ((R ∧ Q) ∧ S)), R)] to [] using exact h4.left.left\n  exact True.intro\n"
+          },
+          {
+            "tactic": "exact h4.right",
+            "proposed_state": [
+              "h4:P ∧ R | R",
+              "h4:(R ∧ Q) ∧ S | R"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h4 : (P ∧ R)), R), (∀ (h4 : ((R ∧ Q) ∧ S)), R)] to [(∀ (h4 : ((R ∧ Q) ∧ S)), R)] using exact h4.right\n  exact True.intro\n"
+          },
+          {
+            "tactic": "cases h5 <;> rename_i h4",
+            "proposed_state": [
+              "h5:(P ∧ R) ∨ ((R ∧ Q) ∧ S) | R"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h5 : ((P ∧ R) ∨ ((R ∧ Q) ∧ S))), R)] to [(∀ (h4 : (P ∧ R)), R), (∀ (h4 : ((R ∧ Q) ∧ S)), R)] using cases h5 <;> rename_i h4\n  exact True.intro\n"
+          },
+          {
+            "tactic": "exact h4.left",
+            "proposed_state": [
+              "h4:R ∧ P | R",
+              "h5:(P ∧ R) ∨ ((R ∧ Q) ∧ S) | R"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h4 : (R ∧ P)), R), (∀ (h5 : ((P ∧ R) ∨ ((R ∧ Q) ∧ S))), R)] to [(∀ (h5 : ((P ∧ R) ∨ ((R ∧ Q) ∧ S))), R)] using exact h4.left\n  exact True.intro\n"
+          },
+          {
+            "tactic": "exact h4",
+            "proposed_state": [
+              "h4:R | R",
+              "h4:R ∧ P | R",
+              "h5:(P ∧ R) ∨ ((R ∧ Q) ∧ S) | R"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h4 : R), R), (∀ (h4 : (R ∧ P)), R), (∀ (h5 : ((P ∧ R) ∨ ((R ∧ Q) ∧ S))), R)] to [(∀ (h4 : (R ∧ P)), R), (∀ (h5 : ((P ∧ R) ∨ ((R ∧ Q) ∧ S))), R)] using exact h4\n  exact True.intro\n"
+          },
+          {
+            "tactic": "cases h5 <;> rename_i h4",
+            "proposed_state": [
+              "h5:R ∨ (R ∧ P) | R",
+              "h5:(P ∧ R) ∨ ((R ∧ Q) ∧ S) | R"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h5 : (R ∨ (R ∧ P))), R), (∀ (h5 : ((P ∧ R) ∨ ((R ∧ Q) ∧ S))), R)] to [(∀ (h4 : R), R), (∀ (h4 : (R ∧ P)), R), (∀ (h5 : ((P ∧ R) ∨ ((R ∧ Q) ∧ S))), R)] using cases h5 <;> rename_i h4\n  exact True.intro\n"
+          },
+          {
+            "tactic": "cases h6 <;> rename_i h5",
+            "proposed_state": [
+              "h6:(R ∨ (R ∧ P)) ∨ ((P ∧ R) ∨ ((R ∧ Q) ∧ S)) | R"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h6 : ((R ∨ (R ∧ P)) ∨ ((P ∧ R) ∨ ((R ∧ Q) ∧ S)))), R)] to [(∀ (h5 : (R ∨ (R ∧ P))), R), (∀ (h5 : ((P ∧ R) ∨ ((R ∧ Q) ∧ S))), R)] using cases h6 <;> rename_i h5\n  exact True.intro\n"
+          },
+          {
+            "tactic": "intro h6",
+            "proposed_state": [
+              "| ((R ∨ (R ∧ P)) ∨ ((P ∧ R) ∨ ((R ∧ Q) ∧ S))) → R"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(((R ∨ (R ∧ P)) ∨ ((P ∧ R) ∨ ((R ∧ Q) ∧ S))) → R)] to [(∀ (h6 : ((R ∨ (R ∧ P)) ∨ ((P ∧ R) ∨ ((R ∧ Q) ∧ S)))), R)] using intro h6\n  exact True.intro\n"
+          }
+        ],
+        "status": "closed",
+        "target": "((R ∨ (R ∧ P)) ∨ ((P ∧ R) ∨ ((R ∧ Q) ∧ S))) → R",
+        "tactics": [
+          "intro h6",
+          "cases h6 <;> rename_i h5",
+          "cases h5 <;> rename_i h4",
+          "exact h4",
+          "exact h4.left",
+          "cases h5 <;> rename_i h4",
+          "exact h4.right",
+          "exact h4.left.left"
+        ],
+        "proof": {
+          "ok": true,
+          "diagnostic": "'generated' does not depend on any axioms",
+          "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem generated (P Q R S : Prop) : (((R ∨ (R ∧ P)) ∨ ((P ∧ R) ∨ ((R ∧ Q) ∧ S))) → R) := by\n  assert_state [(((R ∨ (R ∧ P)) ∨ ((P ∧ R) ∨ ((R ∧ Q) ∧ S))) → R)]\n  intro h6\n  assert_state [(∀ (h6 : ((R ∨ (R ∧ P)) ∨ ((P ∧ R) ∨ ((R ∧ Q) ∧ S)))), R)]\n  cases h6 <;> rename_i h5\n  assert_state [(∀ (h5 : (R ∨ (R ∧ P))), R), (∀ (h5 : ((P ∧ R) ∨ ((R ∧ Q) ∧ S))), R)]\n  cases h5 <;> rename_i h4\n  assert_state [(∀ (h4 : R), R), (∀ (h4 : (R ∧ P)), R), (∀ (h5 : ((P ∧ R) ∨ ((R ∧ Q) ∧ S))), R)]\n  exact h4\n  assert_state [(∀ (h4 : (R ∧ P)), R), (∀ (h5 : ((P ∧ R) ∨ ((R ∧ Q) ∧ S))), R)]\n  exact h4.left\n  assert_state [(∀ (h5 : ((P ∧ R) ∨ ((R ∧ Q) ∧ S))), R)]\n  cases h5 <;> rename_i h4\n  assert_state [(∀ (h4 : (P ∧ R)), R), (∀ (h4 : ((R ∧ Q) ∧ S)), R)]\n  exact h4.right\n  assert_state [(∀ (h4 : ((R ∧ Q) ∧ S)), R)]\n  exact h4.left.left\n  assert_state []\n#print axioms generated\n"
+        },
+        "contract": {
+          "ok": true,
+          "diagnostic": "'generated' does not depend on any axioms",
+          "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem generated (P Q R S : Prop) : (((R ∨ (R ∧ P)) ∨ ((P ∧ R) ∨ ((R ∧ Q) ∧ S))) → R) := by\n  check_structure balanced [\n    intro h6,\n    cases h6 <;> rename_i h5,\n    cases h5 <;> rename_i h4,\n    exact h4,\n    exact h4.left,\n    cases h5 <;> rename_i h4,\n    exact h4.right,\n    exact h4.left.left\n  ]\n#print axioms generated\n"
+        }
+      }
+    },
+    "rules": {
+      "a": {
+        "states": [
+          [],
+          [
+            "h5:R ∧ P | P"
+          ],
+          [
+            "h4:P ∧ Q | P",
+            "h5:R ∧ P | P"
+          ],
+          [
+            "h4:P | P",
+            "h4:P ∧ Q | P",
+            "h5:R ∧ P | P"
+          ],
+          [
+            "h5:(P) ∨ (P ∧ Q) | P",
+            "h5:R ∧ P | P"
+          ],
+          [
+            "h6:((P) ∨ (P ∧ Q)) ∨ (R ∧ P) | P"
+          ],
+          [
+            " | (((P) ∨ (P ∧ Q)) ∨ (R ∧ P)) → (P)"
+          ]
+        ],
+        "edges": [
+          {
+            "tactic": "exact h5.right",
+            "proposed_state": [
+              "h5:R ∧ P | P"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h5 : (R ∧ P)), P)] to [] using exact h5.right\n  exact True.intro\n"
+          },
+          {
+            "tactic": "exact h4.left",
+            "proposed_state": [
+              "h4:P ∧ Q | P",
+              "h5:R ∧ P | P"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h4 : (P ∧ Q)), P), (∀ (h5 : (R ∧ P)), P)] to [(∀ (h5 : (R ∧ P)), P)] using exact h4.left\n  exact True.intro\n"
+          },
+          {
+            "tactic": "exact h4",
+            "proposed_state": [
+              "h4:P | P",
+              "h4:P ∧ Q | P",
+              "h5:R ∧ P | P"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h4 : P), P), (∀ (h4 : (P ∧ Q)), P), (∀ (h5 : (R ∧ P)), P)] to [(∀ (h4 : (P ∧ Q)), P), (∀ (h5 : (R ∧ P)), P)] using exact h4\n  exact True.intro\n"
+          },
+          {
+            "tactic": "cases h5 <;> rename_i h4",
+            "proposed_state": [
+              "h5:(P) ∨ (P ∧ Q) | P",
+              "h5:R ∧ P | P"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h5 : (P ∨ (P ∧ Q))), P), (∀ (h5 : (R ∧ P)), P)] to [(∀ (h4 : P), P), (∀ (h4 : (P ∧ Q)), P), (∀ (h5 : (R ∧ P)), P)] using cases h5 <;> rename_i h4\n  exact True.intro\n"
+          },
+          {
+            "tactic": "cases h6 <;> rename_i h5",
+            "proposed_state": [
+              "h6:((P) ∨ (P ∧ Q)) ∨ (R ∧ P) | P"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h6 : ((P ∨ (P ∧ Q)) ∨ (R ∧ P))), P)] to [(∀ (h5 : (P ∨ (P ∧ Q))), P), (∀ (h5 : (R ∧ P)), P)] using cases h6 <;> rename_i h5\n  exact True.intro\n"
+          },
+          {
+            "tactic": "intro h6",
+            "proposed_state": [
+              " | (((P) ∨ (P ∧ Q)) ∨ (R ∧ P)) → (P)"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(((P ∨ (P ∧ Q)) ∨ (R ∧ P)) → P)] to [(∀ (h6 : ((P ∨ (P ∧ Q)) ∨ (R ∧ P))), P)] using intro h6\n  exact True.intro\n"
+          }
+        ],
+        "status": "closed",
+        "target": "(((P) ∨ (P ∧ Q)) ∨ (R ∧ P)) → (P)",
+        "tactics": [
+          "intro h6",
+          "cases h6 <;> rename_i h5",
+          "cases h5 <;> rename_i h4",
+          "exact h4",
+          "exact h4.left",
+          "exact h5.right"
+        ],
+        "proof": {
+          "ok": true,
+          "diagnostic": "'generated' does not depend on any axioms",
+          "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem generated (P Q R S : Prop) : (((P ∨ (P ∧ Q)) ∨ (R ∧ P)) → P) := by\n  assert_state [(((P ∨ (P ∧ Q)) ∨ (R ∧ P)) → P)]\n  intro h6\n  assert_state [(∀ (h6 : ((P ∨ (P ∧ Q)) ∨ (R ∧ P))), P)]\n  cases h6 <;> rename_i h5\n  assert_state [(∀ (h5 : (P ∨ (P ∧ Q))), P), (∀ (h5 : (R ∧ P)), P)]\n  cases h5 <;> rename_i h4\n  assert_state [(∀ (h4 : P), P), (∀ (h4 : (P ∧ Q)), P), (∀ (h5 : (R ∧ P)), P)]\n  exact h4\n  assert_state [(∀ (h4 : (P ∧ Q)), P), (∀ (h5 : (R ∧ P)), P)]\n  exact h4.left\n  assert_state [(∀ (h5 : (R ∧ P)), P)]\n  exact h5.right\n  assert_state []\n#print axioms generated\n"
+        },
+        "contract": {
+          "ok": true,
+          "diagnostic": "'generated' does not depend on any axioms",
+          "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem generated (P Q R S : Prop) : (((P ∨ (P ∧ Q)) ∨ (R ∧ P)) → P) := by\n  check_structure chain [\n    intro h6,\n    cases h6 <;> rename_i h5,\n    cases h5 <;> rename_i h4,\n    exact h4,\n    exact h4.left,\n    exact h5.right\n  ]\n#print axioms generated\n"
+        }
+      },
+      "b": {
+        "states": [
+          [],
+          [
+            "h4:P ∧ R | R"
+          ],
+          [
+            "h4:P ∧ R | Q ∨ R"
+          ],
+          [
+            "h4:R | R",
+            "h4:P ∧ R | Q ∨ R"
+          ],
+          [
+            "h4:R | Q ∨ R",
+            "h4:P ∧ R | Q ∨ R"
+          ],
+          [
+            "h5:(R) ∨ (P ∧ R) | Q ∨ R"
+          ],
+          [
+            "h5:Q | Q",
+            "h5:(R) ∨ (P ∧ R) | Q ∨ R"
+          ],
+          [
+            "h5:Q | Q ∨ R",
+            "h5:(R) ∨ (P ∧ R) | Q ∨ R"
+          ],
+          [
+            "h6:(Q) ∨ ((R) ∨ (P ∧ R)) | Q ∨ R"
+          ],
+          [
+            " | ((Q) ∨ ((R) ∨ (P ∧ R))) → (Q ∨ R)"
+          ]
+        ],
+        "edges": [
+          {
+            "tactic": "exact h4.right",
+            "proposed_state": [
+              "h4:P ∧ R | R"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h4 : (P ∧ R)), R)] to [] using exact h4.right\n  exact True.intro\n"
+          },
+          {
+            "tactic": "right",
+            "proposed_state": [
+              "h4:P ∧ R | Q ∨ R"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h4 : (P ∧ R)), (Q ∨ R))] to [(∀ (h4 : (P ∧ R)), R)] using right\n  exact True.intro\n"
+          },
+          {
+            "tactic": "exact h4",
+            "proposed_state": [
+              "h4:R | R",
+              "h4:P ∧ R | Q ∨ R"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h4 : R), R), (∀ (h4 : (P ∧ R)), (Q ∨ R))] to [(∀ (h4 : (P ∧ R)), (Q ∨ R))] using exact h4\n  exact True.intro\n"
+          },
+          {
+            "tactic": "right",
+            "proposed_state": [
+              "h4:R | Q ∨ R",
+              "h4:P ∧ R | Q ∨ R"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h4 : R), (Q ∨ R)), (∀ (h4 : (P ∧ R)), (Q ∨ R))] to [(∀ (h4 : R), R), (∀ (h4 : (P ∧ R)), (Q ∨ R))] using right\n  exact True.intro\n"
+          },
+          {
+            "tactic": "cases h5 <;> rename_i h4",
+            "proposed_state": [
+              "h5:(R) ∨ (P ∧ R) | Q ∨ R"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h5 : (R ∨ (P ∧ R))), (Q ∨ R))] to [(∀ (h4 : R), (Q ∨ R)), (∀ (h4 : (P ∧ R)), (Q ∨ R))] using cases h5 <;> rename_i h4\n  exact True.intro\n"
+          },
+          {
+            "tactic": "exact h5",
+            "proposed_state": [
+              "h5:Q | Q",
+              "h5:(R) ∨ (P ∧ R) | Q ∨ R"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h5 : Q), Q), (∀ (h5 : (R ∨ (P ∧ R))), (Q ∨ R))] to [(∀ (h5 : (R ∨ (P ∧ R))), (Q ∨ R))] using exact h5\n  exact True.intro\n"
+          },
+          {
+            "tactic": "left",
+            "proposed_state": [
+              "h5:Q | Q ∨ R",
+              "h5:(R) ∨ (P ∧ R) | Q ∨ R"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h5 : Q), (Q ∨ R)), (∀ (h5 : (R ∨ (P ∧ R))), (Q ∨ R))] to [(∀ (h5 : Q), Q), (∀ (h5 : (R ∨ (P ∧ R))), (Q ∨ R))] using left\n  exact True.intro\n"
+          },
+          {
+            "tactic": "cases h6 <;> rename_i h5",
+            "proposed_state": [
+              "h6:(Q) ∨ ((R) ∨ (P ∧ R)) | Q ∨ R"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h6 : (Q ∨ (R ∨ (P ∧ R)))), (Q ∨ R))] to [(∀ (h5 : Q), (Q ∨ R)), (∀ (h5 : (R ∨ (P ∧ R))), (Q ∨ R))] using cases h6 <;> rename_i h5\n  exact True.intro\n"
+          },
+          {
+            "tactic": "intro h6",
+            "proposed_state": [
+              " | ((Q) ∨ ((R) ∨ (P ∧ R))) → (Q ∨ R)"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [((Q ∨ (R ∨ (P ∧ R))) → (Q ∨ R))] to [(∀ (h6 : (Q ∨ (R ∨ (P ∧ R)))), (Q ∨ R))] using intro h6\n  exact True.intro\n"
+          }
+        ],
+        "status": "closed",
+        "target": "((Q) ∨ ((R) ∨ (P ∧ R))) → (Q ∨ R)",
+        "tactics": [
+          "intro h6",
+          "cases h6 <;> rename_i h5",
+          "left",
+          "exact h5",
+          "cases h5 <;> rename_i h4",
+          "right",
+          "exact h4",
+          "right",
+          "exact h4.right"
+        ],
+        "proof": {
+          "ok": true,
+          "diagnostic": "'generated' does not depend on any axioms",
+          "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem generated (P Q R S : Prop) : ((Q ∨ (R ∨ (P ∧ R))) → (Q ∨ R)) := by\n  assert_state [((Q ∨ (R ∨ (P ∧ R))) → (Q ∨ R))]\n  intro h6\n  assert_state [(∀ (h6 : (Q ∨ (R ∨ (P ∧ R)))), (Q ∨ R))]\n  cases h6 <;> rename_i h5\n  assert_state [(∀ (h5 : Q), (Q ∨ R)), (∀ (h5 : (R ∨ (P ∧ R))), (Q ∨ R))]\n  left\n  assert_state [(∀ (h5 : Q), Q), (∀ (h5 : (R ∨ (P ∧ R))), (Q ∨ R))]\n  exact h5\n  assert_state [(∀ (h5 : (R ∨ (P ∧ R))), (Q ∨ R))]\n  cases h5 <;> rename_i h4\n  assert_state [(∀ (h4 : R), (Q ∨ R)), (∀ (h4 : (P ∧ R)), (Q ∨ R))]\n  right\n  assert_state [(∀ (h4 : R), R), (∀ (h4 : (P ∧ R)), (Q ∨ R))]\n  exact h4\n  assert_state [(∀ (h4 : (P ∧ R)), (Q ∨ R))]\n  right\n  assert_state [(∀ (h4 : (P ∧ R)), R)]\n  exact h4.right\n  assert_state []\n#print axioms generated\n"
+        },
+        "contract": {
+          "ok": true,
+          "diagnostic": "'generated' does not depend on any axioms",
+          "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem generated (P Q R S : Prop) : ((Q ∨ (R ∨ (P ∧ R))) → (Q ∨ R)) := by\n  check_structure chain [\n    intro h6,\n    cases h6 <;> rename_i h5,\n    left,\n    exact h5,\n    cases h5 <;> rename_i h4,\n    right,\n    exact h4,\n    right,\n    exact h4.right\n  ]\n#print axioms generated\n"
+        }
+      },
+      "c": {
+        "states": [
+          [],
+          [
+            "h0:P → S,h1:Q → S,h5:S | S"
+          ],
+          [
+            "h0:P → S,h1:Q → S,h4:Q | Q",
+            "h0:P → S,h1:Q → S,h5:S | S"
+          ],
+          [
+            "h0:P → S,h1:Q → S,h4:Q | S",
+            "h0:P → S,h1:Q → S,h5:S | S"
+          ],
+          [
+            "h0:P → S,h1:Q → S,h4:P | P",
+            "h0:P → S,h1:Q → S,h4:Q | S",
+            "h0:P → S,h1:Q → S,h5:S | S"
+          ],
+          [
+            "h0:P → S,h1:Q → S,h4:P | S",
+            "h0:P → S,h1:Q → S,h4:Q | S",
+            "h0:P → S,h1:Q → S,h5:S | S"
+          ],
+          [
+            "h0:P → S,h1:Q → S,h5:(P) ∨ (Q) | S",
+            "h0:P → S,h1:Q → S,h5:S | S"
+          ],
+          [
+            "h0:P → S,h1:Q → S,h6:((P) ∨ (Q)) ∨ (S) | S"
+          ],
+          [
+            "h0:P → S,h1:Q → S | (((P) ∨ (Q)) ∨ (S)) → (S)"
+          ],
+          [
+            "h0:P → S | (Q → S) → ((((P) ∨ (Q)) ∨ (S)) → (S))"
+          ],
+          [
+            " | (P → S) → ((Q → S) → ((((P) ∨ (Q)) ∨ (S)) → (S)))"
+          ]
+        ],
+        "edges": [
+          {
+            "tactic": "exact h5",
+            "proposed_state": [
+              "h0:P → S,h1:Q → S,h5:S | S"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h0 : (P → S)) (h1 : (Q → S)) (h5 : S), S)] to [] using exact h5\n  exact True.intro\n"
+          },
+          {
+            "tactic": "exact h4",
+            "proposed_state": [
+              "h0:P → S,h1:Q → S,h4:Q | Q",
+              "h0:P → S,h1:Q → S,h5:S | S"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h0 : (P → S)) (h1 : (Q → S)) (h4 : Q), Q), (∀ (h0 : (P → S)) (h1 : (Q → S)) (h5 : S), S)] to [(∀ (h0 : (P → S)) (h1 : (Q → S)) (h5 : S), S)] using exact h4\n  exact True.intro\n"
+          },
+          {
+            "tactic": "apply h1",
+            "proposed_state": [
+              "h0:P → S,h1:Q → S,h4:Q | S",
+              "h0:P → S,h1:Q → S,h5:S | S"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h0 : (P → S)) (h1 : (Q → S)) (h4 : Q), S), (∀ (h0 : (P → S)) (h1 : (Q → S)) (h5 : S), S)] to [(∀ (h0 : (P → S)) (h1 : (Q → S)) (h4 : Q), Q), (∀ (h0 : (P → S)) (h1 : (Q → S)) (h5 : S), S)] using apply h1\n  exact True.intro\n"
+          },
+          {
+            "tactic": "exact h4",
+            "proposed_state": [
+              "h0:P → S,h1:Q → S,h4:P | P",
+              "h0:P → S,h1:Q → S,h4:Q | S",
+              "h0:P → S,h1:Q → S,h5:S | S"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h0 : (P → S)) (h1 : (Q → S)) (h4 : P), P), (∀ (h0 : (P → S)) (h1 : (Q → S)) (h4 : Q), S), (∀ (h0 : (P → S)) (h1 : (Q → S)) (h5 : S), S)] to [(∀ (h0 : (P → S)) (h1 : (Q → S)) (h4 : Q), S), (∀ (h0 : (P → S)) (h1 : (Q → S)) (h5 : S), S)] using exact h4\n  exact True.intro\n"
+          },
+          {
+            "tactic": "apply h0",
+            "proposed_state": [
+              "h0:P → S,h1:Q → S,h4:P | S",
+              "h0:P → S,h1:Q → S,h4:Q | S",
+              "h0:P → S,h1:Q → S,h5:S | S"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h0 : (P → S)) (h1 : (Q → S)) (h4 : P), S), (∀ (h0 : (P → S)) (h1 : (Q → S)) (h4 : Q), S), (∀ (h0 : (P → S)) (h1 : (Q → S)) (h5 : S), S)] to [(∀ (h0 : (P → S)) (h1 : (Q → S)) (h4 : P), P), (∀ (h0 : (P → S)) (h1 : (Q → S)) (h4 : Q), S), (∀ (h0 : (P → S)) (h1 : (Q → S)) (h5 : S), S)] using apply h0\n  exact True.intro\n"
+          },
+          {
+            "tactic": "cases h5 <;> rename_i h4",
+            "proposed_state": [
+              "h0:P → S,h1:Q → S,h5:(P) ∨ (Q) | S",
+              "h0:P → S,h1:Q → S,h5:S | S"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h0 : (P → S)) (h1 : (Q → S)) (h5 : (P ∨ Q)), S), (∀ (h0 : (P → S)) (h1 : (Q → S)) (h5 : S), S)] to [(∀ (h0 : (P → S)) (h1 : (Q → S)) (h4 : P), S), (∀ (h0 : (P → S)) (h1 : (Q → S)) (h4 : Q), S), (∀ (h0 : (P → S)) (h1 : (Q → S)) (h5 : S), S)] using cases h5 <;> rename_i h4\n  exact True.intro\n"
+          },
+          {
+            "tactic": "cases h6 <;> rename_i h5",
+            "proposed_state": [
+              "h0:P → S,h1:Q → S,h6:((P) ∨ (Q)) ∨ (S) | S"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h0 : (P → S)) (h1 : (Q → S)) (h6 : ((P ∨ Q) ∨ S)), S)] to [(∀ (h0 : (P → S)) (h1 : (Q → S)) (h5 : (P ∨ Q)), S), (∀ (h0 : (P → S)) (h1 : (Q → S)) (h5 : S), S)] using cases h6 <;> rename_i h5\n  exact True.intro\n"
+          },
+          {
+            "tactic": "intro h6",
+            "proposed_state": [
+              "h0:P → S,h1:Q → S | (((P) ∨ (Q)) ∨ (S)) → (S)"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h0 : (P → S)) (h1 : (Q → S)), (((P ∨ Q) ∨ S) → S))] to [(∀ (h0 : (P → S)) (h1 : (Q → S)) (h6 : ((P ∨ Q) ∨ S)), S)] using intro h6\n  exact True.intro\n"
+          },
+          {
+            "tactic": "intro h1",
+            "proposed_state": [
+              "h0:P → S | (Q → S) → ((((P) ∨ (Q)) ∨ (S)) → (S))"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h0 : (P → S)), ((Q → S) → (((P ∨ Q) ∨ S) → S)))] to [(∀ (h0 : (P → S)) (h1 : (Q → S)), (((P ∨ Q) ∨ S) → S))] using intro h1\n  exact True.intro\n"
+          },
+          {
+            "tactic": "intro h0",
+            "proposed_state": [
+              " | (P → S) → ((Q → S) → ((((P) ∨ (Q)) ∨ (S)) → (S)))"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [((P → S) → ((Q → S) → (((P ∨ Q) ∨ S) → S)))] to [(∀ (h0 : (P → S)), ((Q → S) → (((P ∨ Q) ∨ S) → S)))] using intro h0\n  exact True.intro\n"
+          }
+        ],
+        "status": "closed",
+        "target": "(P → S) → ((Q → S) → ((((P) ∨ (Q)) ∨ (S)) → (S)))",
+        "tactics": [
+          "intro h0",
+          "intro h1",
+          "intro h6",
+          "cases h6 <;> rename_i h5",
+          "cases h5 <;> rename_i h4",
+          "apply h0",
+          "exact h4",
+          "apply h1",
+          "exact h4",
+          "exact h5"
+        ],
+        "proof": {
+          "ok": true,
+          "diagnostic": "'generated' does not depend on any axioms",
+          "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem generated (P Q R S : Prop) : ((P → S) → ((Q → S) → (((P ∨ Q) ∨ S) → S))) := by\n  assert_state [((P → S) → ((Q → S) → (((P ∨ Q) ∨ S) → S)))]\n  intro h0\n  assert_state [(∀ (h0 : (P → S)), ((Q → S) → (((P ∨ Q) ∨ S) → S)))]\n  intro h1\n  assert_state [(∀ (h0 : (P → S)) (h1 : (Q → S)), (((P ∨ Q) ∨ S) → S))]\n  intro h6\n  assert_state [(∀ (h0 : (P → S)) (h1 : (Q → S)) (h6 : ((P ∨ Q) ∨ S)), S)]\n  cases h6 <;> rename_i h5\n  assert_state [(∀ (h0 : (P → S)) (h1 : (Q → S)) (h5 : (P ∨ Q)), S), (∀ (h0 : (P → S)) (h1 : (Q → S)) (h5 : S), S)]\n  cases h5 <;> rename_i h4\n  assert_state [(∀ (h0 : (P → S)) (h1 : (Q → S)) (h4 : P), S), (∀ (h0 : (P → S)) (h1 : (Q → S)) (h4 : Q), S), (∀ (h0 : (P → S)) (h1 : (Q → S)) (h5 : S), S)]\n  apply h0\n  assert_state [(∀ (h0 : (P → S)) (h1 : (Q → S)) (h4 : P), P), (∀ (h0 : (P → S)) (h1 : (Q → S)) (h4 : Q), S), (∀ (h0 : (P → S)) (h1 : (Q → S)) (h5 : S), S)]\n  exact h4\n  assert_state [(∀ (h0 : (P → S)) (h1 : (Q → S)) (h4 : Q), S), (∀ (h0 : (P → S)) (h1 : (Q → S)) (h5 : S), S)]\n  apply h1\n  assert_state [(∀ (h0 : (P → S)) (h1 : (Q → S)) (h4 : Q), Q), (∀ (h0 : (P → S)) (h1 : (Q → S)) (h5 : S), S)]\n  exact h4\n  assert_state [(∀ (h0 : (P → S)) (h1 : (Q → S)) (h5 : S), S)]\n  exact h5\n  assert_state []\n#print axioms generated\n"
+        },
+        "contract": {
+          "ok": true,
+          "diagnostic": "'generated' does not depend on any axioms",
+          "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem generated (P Q R S : Prop) : ((P → S) → ((Q → S) → (((P ∨ Q) ∨ S) → S))) := by\n  check_structure chain [\n    intro h0,\n    intro h1,\n    intro h6,\n    cases h6 <;> rename_i h5,\n    cases h5 <;> rename_i h4,\n    apply h0,\n    exact h4,\n    apply h1,\n    exact h4,\n    exact h5\n  ]\n#print axioms generated\n"
+        }
+      },
+      "d": {
+        "states": [
+          [],
+          [
+            "h4:(P ∧ R) ∧ S | P"
+          ],
+          [
+            "h4:Q ∧ P | P",
+            "h4:(P ∧ R) ∧ S | P"
+          ],
+          [
+            "h5:(Q ∧ P) ∨ ((P ∧ R) ∧ S) | P"
+          ],
+          [
+            "h4:P ∧ Q | P",
+            "h5:(Q ∧ P) ∨ ((P ∧ R) ∧ S) | P"
+          ],
+          [
+            "h4:P | P",
+            "h4:P ∧ Q | P",
+            "h5:(Q ∧ P) ∨ ((P ∧ R) ∧ S) | P"
+          ],
+          [
+            "h5:(P) ∨ (P ∧ Q) | P",
+            "h5:(Q ∧ P) ∨ ((P ∧ R) ∧ S) | P"
+          ],
+          [
+            "h6:((P) ∨ (P ∧ Q)) ∨ ((Q ∧ P) ∨ ((P ∧ R) ∧ S)) | P"
+          ],
+          [
+            " | (((P) ∨ (P ∧ Q)) ∨ ((Q ∧ P) ∨ ((P ∧ R) ∧ S))) → (P)"
+          ]
+        ],
+        "edges": [
+          {
+            "tactic": "exact h4.left.left",
+            "proposed_state": [
+              "h4:(P ∧ R) ∧ S | P"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h4 : ((P ∧ R) ∧ S)), P)] to [] using exact h4.left.left\n  exact True.intro\n"
+          },
+          {
+            "tactic": "exact h4.right",
+            "proposed_state": [
+              "h4:Q ∧ P | P",
+              "h4:(P ∧ R) ∧ S | P"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h4 : (Q ∧ P)), P), (∀ (h4 : ((P ∧ R) ∧ S)), P)] to [(∀ (h4 : ((P ∧ R) ∧ S)), P)] using exact h4.right\n  exact True.intro\n"
+          },
+          {
+            "tactic": "cases h5 <;> rename_i h4",
+            "proposed_state": [
+              "h5:(Q ∧ P) ∨ ((P ∧ R) ∧ S) | P"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h5 : ((Q ∧ P) ∨ ((P ∧ R) ∧ S))), P)] to [(∀ (h4 : (Q ∧ P)), P), (∀ (h4 : ((P ∧ R) ∧ S)), P)] using cases h5 <;> rename_i h4\n  exact True.intro\n"
+          },
+          {
+            "tactic": "exact h4.left",
+            "proposed_state": [
+              "h4:P ∧ Q | P",
+              "h5:(Q ∧ P) ∨ ((P ∧ R) ∧ S) | P"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h4 : (P ∧ Q)), P), (∀ (h5 : ((Q ∧ P) ∨ ((P ∧ R) ∧ S))), P)] to [(∀ (h5 : ((Q ∧ P) ∨ ((P ∧ R) ∧ S))), P)] using exact h4.left\n  exact True.intro\n"
+          },
+          {
+            "tactic": "exact h4",
+            "proposed_state": [
+              "h4:P | P",
+              "h4:P ∧ Q | P",
+              "h5:(Q ∧ P) ∨ ((P ∧ R) ∧ S) | P"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h4 : P), P), (∀ (h4 : (P ∧ Q)), P), (∀ (h5 : ((Q ∧ P) ∨ ((P ∧ R) ∧ S))), P)] to [(∀ (h4 : (P ∧ Q)), P), (∀ (h5 : ((Q ∧ P) ∨ ((P ∧ R) ∧ S))), P)] using exact h4\n  exact True.intro\n"
+          },
+          {
+            "tactic": "cases h5 <;> rename_i h4",
+            "proposed_state": [
+              "h5:(P) ∨ (P ∧ Q) | P",
+              "h5:(Q ∧ P) ∨ ((P ∧ R) ∧ S) | P"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h5 : (P ∨ (P ∧ Q))), P), (∀ (h5 : ((Q ∧ P) ∨ ((P ∧ R) ∧ S))), P)] to [(∀ (h4 : P), P), (∀ (h4 : (P ∧ Q)), P), (∀ (h5 : ((Q ∧ P) ∨ ((P ∧ R) ∧ S))), P)] using cases h5 <;> rename_i h4\n  exact True.intro\n"
+          },
+          {
+            "tactic": "cases h6 <;> rename_i h5",
+            "proposed_state": [
+              "h6:((P) ∨ (P ∧ Q)) ∨ ((Q ∧ P) ∨ ((P ∧ R) ∧ S)) | P"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h6 : ((P ∨ (P ∧ Q)) ∨ ((Q ∧ P) ∨ ((P ∧ R) ∧ S)))), P)] to [(∀ (h5 : (P ∨ (P ∧ Q))), P), (∀ (h5 : ((Q ∧ P) ∨ ((P ∧ R) ∧ S))), P)] using cases h6 <;> rename_i h5\n  exact True.intro\n"
+          },
+          {
+            "tactic": "intro h6",
+            "proposed_state": [
+              " | (((P) ∨ (P ∧ Q)) ∨ ((Q ∧ P) ∨ ((P ∧ R) ∧ S))) → (P)"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(((P ∨ (P ∧ Q)) ∨ ((Q ∧ P) ∨ ((P ∧ R) ∧ S))) → P)] to [(∀ (h6 : ((P ∨ (P ∧ Q)) ∨ ((Q ∧ P) ∨ ((P ∧ R) ∧ S)))), P)] using intro h6\n  exact True.intro\n"
+          }
+        ],
+        "status": "closed",
+        "target": "(((P) ∨ (P ∧ Q)) ∨ ((Q ∧ P) ∨ ((P ∧ R) ∧ S))) → (P)",
+        "tactics": [
+          "intro h6",
+          "cases h6 <;> rename_i h5",
+          "cases h5 <;> rename_i h4",
+          "exact h4",
+          "exact h4.left",
+          "cases h5 <;> rename_i h4",
+          "exact h4.right",
+          "exact h4.left.left"
+        ],
+        "proof": {
+          "ok": true,
+          "diagnostic": "'generated' does not depend on any axioms",
+          "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem generated (P Q R S : Prop) : (((P ∨ (P ∧ Q)) ∨ ((Q ∧ P) ∨ ((P ∧ R) ∧ S))) → P) := by\n  assert_state [(((P ∨ (P ∧ Q)) ∨ ((Q ∧ P) ∨ ((P ∧ R) ∧ S))) → P)]\n  intro h6\n  assert_state [(∀ (h6 : ((P ∨ (P ∧ Q)) ∨ ((Q ∧ P) ∨ ((P ∧ R) ∧ S)))), P)]\n  cases h6 <;> rename_i h5\n  assert_state [(∀ (h5 : (P ∨ (P ∧ Q))), P), (∀ (h5 : ((Q ∧ P) ∨ ((P ∧ R) ∧ S))), P)]\n  cases h5 <;> rename_i h4\n  assert_state [(∀ (h4 : P), P), (∀ (h4 : (P ∧ Q)), P), (∀ (h5 : ((Q ∧ P) ∨ ((P ∧ R) ∧ S))), P)]\n  exact h4\n  assert_state [(∀ (h4 : (P ∧ Q)), P), (∀ (h5 : ((Q ∧ P) ∨ ((P ∧ R) ∧ S))), P)]\n  exact h4.left\n  assert_state [(∀ (h5 : ((Q ∧ P) ∨ ((P ∧ R) ∧ S))), P)]\n  cases h5 <;> rename_i h4\n  assert_state [(∀ (h4 : (Q ∧ P)), P), (∀ (h4 : ((P ∧ R) ∧ S)), P)]\n  exact h4.right\n  assert_state [(∀ (h4 : ((P ∧ R) ∧ S)), P)]\n  exact h4.left.left\n  assert_state []\n#print axioms generated\n"
+        },
+        "contract": {
+          "ok": true,
+          "diagnostic": "'generated' does not depend on any axioms",
+          "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem generated (P Q R S : Prop) : (((P ∨ (P ∧ Q)) ∨ ((Q ∧ P) ∨ ((P ∧ R) ∧ S))) → P) := by\n  check_structure balanced [\n    intro h6,\n    cases h6 <;> rename_i h5,\n    cases h5 <;> rename_i h4,\n    exact h4,\n    exact h4.left,\n    cases h5 <;> rename_i h4,\n    exact h4.right,\n    exact h4.left.left\n  ]\n#print axioms generated\n"
+        }
+      },
+      "e": {
+        "states": [
+          [],
+          [
+            "h4:Q ∧ S | Q"
+          ],
+          [
+            "h4:Q ∧ S | P ∨ Q"
+          ],
+          [
+            "h4:R ∧ P | P",
+            "h4:Q ∧ S | P ∨ Q"
+          ],
+          [
+            "h4:R ∧ P | P ∨ Q",
+            "h4:Q ∧ S | P ∨ Q"
+          ],
+          [
+            "h5:(R ∧ P) ∨ (Q ∧ S) | P ∨ Q"
+          ],
+          [
+            "h4:Q | Q",
+            "h5:(R ∧ P) ∨ (Q ∧ S) | P ∨ Q"
+          ],
+          [
+            "h4:Q | P ∨ Q",
+            "h5:(R ∧ P) ∨ (Q ∧ S) | P ∨ Q"
+          ],
+          [
+            "h4:P | P",
+            "h4:Q | P ∨ Q",
+            "h5:(R ∧ P) ∨ (Q ∧ S) | P ∨ Q"
+          ],
+          [
+            "h4:P | P ∨ Q",
+            "h4:Q | P ∨ Q",
+            "h5:(R ∧ P) ∨ (Q ∧ S) | P ∨ Q"
+          ],
+          [
+            "h5:(P) ∨ (Q) | P ∨ Q",
+            "h5:(R ∧ P) ∨ (Q ∧ S) | P ∨ Q"
+          ],
+          [
+            "h6:((P) ∨ (Q)) ∨ ((R ∧ P) ∨ (Q ∧ S)) | P ∨ Q"
+          ],
+          [
+            " | (((P) ∨ (Q)) ∨ ((R ∧ P) ∨ (Q ∧ S))) → (P ∨ Q)"
+          ]
+        ],
+        "edges": [
+          {
+            "tactic": "exact h4.left",
+            "proposed_state": [
+              "h4:Q ∧ S | Q"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h4 : (Q ∧ S)), Q)] to [] using exact h4.left\n  exact True.intro\n"
+          },
+          {
+            "tactic": "right",
+            "proposed_state": [
+              "h4:Q ∧ S | P ∨ Q"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h4 : (Q ∧ S)), (P ∨ Q))] to [(∀ (h4 : (Q ∧ S)), Q)] using right\n  exact True.intro\n"
+          },
+          {
+            "tactic": "exact h4.right",
+            "proposed_state": [
+              "h4:R ∧ P | P",
+              "h4:Q ∧ S | P ∨ Q"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h4 : (R ∧ P)), P), (∀ (h4 : (Q ∧ S)), (P ∨ Q))] to [(∀ (h4 : (Q ∧ S)), (P ∨ Q))] using exact h4.right\n  exact True.intro\n"
+          },
+          {
+            "tactic": "left",
+            "proposed_state": [
+              "h4:R ∧ P | P ∨ Q",
+              "h4:Q ∧ S | P ∨ Q"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h4 : (R ∧ P)), (P ∨ Q)), (∀ (h4 : (Q ∧ S)), (P ∨ Q))] to [(∀ (h4 : (R ∧ P)), P), (∀ (h4 : (Q ∧ S)), (P ∨ Q))] using left\n  exact True.intro\n"
+          },
+          {
+            "tactic": "cases h5 <;> rename_i h4",
+            "proposed_state": [
+              "h5:(R ∧ P) ∨ (Q ∧ S) | P ∨ Q"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h5 : ((R ∧ P) ∨ (Q ∧ S))), (P ∨ Q))] to [(∀ (h4 : (R ∧ P)), (P ∨ Q)), (∀ (h4 : (Q ∧ S)), (P ∨ Q))] using cases h5 <;> rename_i h4\n  exact True.intro\n"
+          },
+          {
+            "tactic": "exact h4",
+            "proposed_state": [
+              "h4:Q | Q",
+              "h5:(R ∧ P) ∨ (Q ∧ S) | P ∨ Q"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h4 : Q), Q), (∀ (h5 : ((R ∧ P) ∨ (Q ∧ S))), (P ∨ Q))] to [(∀ (h5 : ((R ∧ P) ∨ (Q ∧ S))), (P ∨ Q))] using exact h4\n  exact True.intro\n"
+          },
+          {
+            "tactic": "right",
+            "proposed_state": [
+              "h4:Q | P ∨ Q",
+              "h5:(R ∧ P) ∨ (Q ∧ S) | P ∨ Q"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h4 : Q), (P ∨ Q)), (∀ (h5 : ((R ∧ P) ∨ (Q ∧ S))), (P ∨ Q))] to [(∀ (h4 : Q), Q), (∀ (h5 : ((R ∧ P) ∨ (Q ∧ S))), (P ∨ Q))] using right\n  exact True.intro\n"
+          },
+          {
+            "tactic": "exact h4",
+            "proposed_state": [
+              "h4:P | P",
+              "h4:Q | P ∨ Q",
+              "h5:(R ∧ P) ∨ (Q ∧ S) | P ∨ Q"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h4 : P), P), (∀ (h4 : Q), (P ∨ Q)), (∀ (h5 : ((R ∧ P) ∨ (Q ∧ S))), (P ∨ Q))] to [(∀ (h4 : Q), (P ∨ Q)), (∀ (h5 : ((R ∧ P) ∨ (Q ∧ S))), (P ∨ Q))] using exact h4\n  exact True.intro\n"
+          },
+          {
+            "tactic": "left",
+            "proposed_state": [
+              "h4:P | P ∨ Q",
+              "h4:Q | P ∨ Q",
+              "h5:(R ∧ P) ∨ (Q ∧ S) | P ∨ Q"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h4 : P), (P ∨ Q)), (∀ (h4 : Q), (P ∨ Q)), (∀ (h5 : ((R ∧ P) ∨ (Q ∧ S))), (P ∨ Q))] to [(∀ (h4 : P), P), (∀ (h4 : Q), (P ∨ Q)), (∀ (h5 : ((R ∧ P) ∨ (Q ∧ S))), (P ∨ Q))] using left\n  exact True.intro\n"
+          },
+          {
+            "tactic": "cases h5 <;> rename_i h4",
+            "proposed_state": [
+              "h5:(P) ∨ (Q) | P ∨ Q",
+              "h5:(R ∧ P) ∨ (Q ∧ S) | P ∨ Q"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h5 : (P ∨ Q)), (P ∨ Q)), (∀ (h5 : ((R ∧ P) ∨ (Q ∧ S))), (P ∨ Q))] to [(∀ (h4 : P), (P ∨ Q)), (∀ (h4 : Q), (P ∨ Q)), (∀ (h5 : ((R ∧ P) ∨ (Q ∧ S))), (P ∨ Q))] using cases h5 <;> rename_i h4\n  exact True.intro\n"
+          },
+          {
+            "tactic": "cases h6 <;> rename_i h5",
+            "proposed_state": [
+              "h6:((P) ∨ (Q)) ∨ ((R ∧ P) ∨ (Q ∧ S)) | P ∨ Q"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h6 : ((P ∨ Q) ∨ ((R ∧ P) ∨ (Q ∧ S)))), (P ∨ Q))] to [(∀ (h5 : (P ∨ Q)), (P ∨ Q)), (∀ (h5 : ((R ∧ P) ∨ (Q ∧ S))), (P ∨ Q))] using cases h6 <;> rename_i h5\n  exact True.intro\n"
+          },
+          {
+            "tactic": "intro h6",
+            "proposed_state": [
+              " | (((P) ∨ (Q)) ∨ ((R ∧ P) ∨ (Q ∧ S))) → (P ∨ Q)"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(((P ∨ Q) ∨ ((R ∧ P) ∨ (Q ∧ S))) → (P ∨ Q))] to [(∀ (h6 : ((P ∨ Q) ∨ ((R ∧ P) ∨ (Q ∧ S)))), (P ∨ Q))] using intro h6\n  exact True.intro\n"
+          }
+        ],
+        "status": "closed",
+        "target": "(((P) ∨ (Q)) ∨ ((R ∧ P) ∨ (Q ∧ S))) → (P ∨ Q)",
+        "tactics": [
+          "intro h6",
+          "cases h6 <;> rename_i h5",
+          "cases h5 <;> rename_i h4",
+          "left",
+          "exact h4",
+          "right",
+          "exact h4",
+          "cases h5 <;> rename_i h4",
+          "left",
+          "exact h4.right",
+          "right",
+          "exact h4.left"
+        ],
+        "proof": {
+          "ok": true,
+          "diagnostic": "'generated' does not depend on any axioms",
+          "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem generated (P Q R S : Prop) : (((P ∨ Q) ∨ ((R ∧ P) ∨ (Q ∧ S))) → (P ∨ Q)) := by\n  assert_state [(((P ∨ Q) ∨ ((R ∧ P) ∨ (Q ∧ S))) → (P ∨ Q))]\n  intro h6\n  assert_state [(∀ (h6 : ((P ∨ Q) ∨ ((R ∧ P) ∨ (Q ∧ S)))), (P ∨ Q))]\n  cases h6 <;> rename_i h5\n  assert_state [(∀ (h5 : (P ∨ Q)), (P ∨ Q)), (∀ (h5 : ((R ∧ P) ∨ (Q ∧ S))), (P ∨ Q))]\n  cases h5 <;> rename_i h4\n  assert_state [(∀ (h4 : P), (P ∨ Q)), (∀ (h4 : Q), (P ∨ Q)), (∀ (h5 : ((R ∧ P) ∨ (Q ∧ S))), (P ∨ Q))]\n  left\n  assert_state [(∀ (h4 : P), P), (∀ (h4 : Q), (P ∨ Q)), (∀ (h5 : ((R ∧ P) ∨ (Q ∧ S))), (P ∨ Q))]\n  exact h4\n  assert_state [(∀ (h4 : Q), (P ∨ Q)), (∀ (h5 : ((R ∧ P) ∨ (Q ∧ S))), (P ∨ Q))]\n  right\n  assert_state [(∀ (h4 : Q), Q), (∀ (h5 : ((R ∧ P) ∨ (Q ∧ S))), (P ∨ Q))]\n  exact h4\n  assert_state [(∀ (h5 : ((R ∧ P) ∨ (Q ∧ S))), (P ∨ Q))]\n  cases h5 <;> rename_i h4\n  assert_state [(∀ (h4 : (R ∧ P)), (P ∨ Q)), (∀ (h4 : (Q ∧ S)), (P ∨ Q))]\n  left\n  assert_state [(∀ (h4 : (R ∧ P)), P), (∀ (h4 : (Q ∧ S)), (P ∨ Q))]\n  exact h4.right\n  assert_state [(∀ (h4 : (Q ∧ S)), (P ∨ Q))]\n  right\n  assert_state [(∀ (h4 : (Q ∧ S)), Q)]\n  exact h4.left\n  assert_state []\n#print axioms generated\n"
+        },
+        "contract": {
+          "ok": true,
+          "diagnostic": "'generated' does not depend on any axioms",
+          "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem generated (P Q R S : Prop) : (((P ∨ Q) ∨ ((R ∧ P) ∨ (Q ∧ S))) → (P ∨ Q)) := by\n  check_structure balanced [\n    intro h6,\n    cases h6 <;> rename_i h5,\n    cases h5 <;> rename_i h4,\n    left,\n    exact h4,\n    right,\n    exact h4,\n    cases h5 <;> rename_i h4,\n    left,\n    exact h4.right,\n    right,\n    exact h4.left\n  ]\n#print axioms generated\n"
+        }
+      },
+      "f": {
+        "states": [
+          [],
+          [
+            "h0:P → R,h1:Q → R,h2:S → R,h4:R | R"
+          ],
+          [
+            "h0:P → R,h1:Q → R,h2:S → R,h4:S | S",
+            "h0:P → R,h1:Q → R,h2:S → R,h4:R | R"
+          ],
+          [
+            "h0:P → R,h1:Q → R,h2:S → R,h4:S | R",
+            "h0:P → R,h1:Q → R,h2:S → R,h4:R | R"
+          ],
+          [
+            "h0:P → R,h1:Q → R,h2:S → R,h5:(S) ∨ (R) | R"
+          ],
+          [
+            "h0:P → R,h1:Q → R,h2:S → R,h4:Q | Q",
+            "h0:P → R,h1:Q → R,h2:S → R,h5:(S) ∨ (R) | R"
+          ],
+          [
+            "h0:P → R,h1:Q → R,h2:S → R,h4:Q | R",
+            "h0:P → R,h1:Q → R,h2:S → R,h5:(S) ∨ (R) | R"
+          ],
+          [
+            "h0:P → R,h1:Q → R,h2:S → R,h4:P | P",
+            "h0:P → R,h1:Q → R,h2:S → R,h4:Q | R",
+            "h0:P → R,h1:Q → R,h2:S → R,h5:(S) ∨ (R) | R"
+          ],
+          [
+            "h0:P → R,h1:Q → R,h2:S → R,h4:P | R",
+            "h0:P → R,h1:Q → R,h2:S → R,h4:Q | R",
+            "h0:P → R,h1:Q → R,h2:S → R,h5:(S) ∨ (R) | R"
+          ],
+          [
+            "h0:P → R,h1:Q → R,h2:S → R,h5:(P) ∨ (Q) | R",
+            "h0:P → R,h1:Q → R,h2:S → R,h5:(S) ∨ (R) | R"
+          ],
+          [
+            "h0:P → R,h1:Q → R,h2:S → R,h6:((P) ∨ (Q)) ∨ ((S) ∨ (R)) | R"
+          ],
+          [
+            "h0:P → R,h1:Q → R,h2:S → R | (((P) ∨ (Q)) ∨ ((S) ∨ (R))) → (R)"
+          ],
+          [
+            "h0:P → R,h1:Q → R | (S → R) → ((((P) ∨ (Q)) ∨ ((S) ∨ (R))) → (R))"
+          ],
+          [
+            "h0:P → R | (Q → R) → ((S → R) → ((((P) ∨ (Q)) ∨ ((S) ∨ (R))) → (R)))"
+          ],
+          [
+            " | (P → R) → ((Q → R) → ((S → R) → ((((P) ∨ (Q)) ∨ ((S) ∨ (R))) → (R))))"
+          ]
+        ],
+        "edges": [
+          {
+            "tactic": "exact h4",
+            "proposed_state": [
+              "h0:P → R,h1:Q → R,h2:S → R,h4:R | R"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h0 : (P → R)) (h1 : (Q → R)) (h2 : (S → R)) (h4 : R), R)] to [] using exact h4\n  exact True.intro\n"
+          },
+          {
+            "tactic": "exact h4",
+            "proposed_state": [
+              "h0:P → R,h1:Q → R,h2:S → R,h4:S | S",
+              "h0:P → R,h1:Q → R,h2:S → R,h4:R | R"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h0 : (P → R)) (h1 : (Q → R)) (h2 : (S → R)) (h4 : S), S), (∀ (h0 : (P → R)) (h1 : (Q → R)) (h2 : (S → R)) (h4 : R), R)] to [(∀ (h0 : (P → R)) (h1 : (Q → R)) (h2 : (S → R)) (h4 : R), R)] using exact h4\n  exact True.intro\n"
+          },
+          {
+            "tactic": "apply h2",
+            "proposed_state": [
+              "h0:P → R,h1:Q → R,h2:S → R,h4:S | R",
+              "h0:P → R,h1:Q → R,h2:S → R,h4:R | R"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h0 : (P → R)) (h1 : (Q → R)) (h2 : (S → R)) (h4 : S), R), (∀ (h0 : (P → R)) (h1 : (Q → R)) (h2 : (S → R)) (h4 : R), R)] to [(∀ (h0 : (P → R)) (h1 : (Q → R)) (h2 : (S → R)) (h4 : S), S), (∀ (h0 : (P → R)) (h1 : (Q → R)) (h2 : (S → R)) (h4 : R), R)] using apply h2\n  exact True.intro\n"
+          },
+          {
+            "tactic": "cases h5 <;> rename_i h4",
+            "proposed_state": [
+              "h0:P → R,h1:Q → R,h2:S → R,h5:(S) ∨ (R) | R"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h0 : (P → R)) (h1 : (Q → R)) (h2 : (S → R)) (h5 : (S ∨ R)), R)] to [(∀ (h0 : (P → R)) (h1 : (Q → R)) (h2 : (S → R)) (h4 : S), R), (∀ (h0 : (P → R)) (h1 : (Q → R)) (h2 : (S → R)) (h4 : R), R)] using cases h5 <;> rename_i h4\n  exact True.intro\n"
+          },
+          {
+            "tactic": "exact h4",
+            "proposed_state": [
+              "h0:P → R,h1:Q → R,h2:S → R,h4:Q | Q",
+              "h0:P → R,h1:Q → R,h2:S → R,h5:(S) ∨ (R) | R"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h0 : (P → R)) (h1 : (Q → R)) (h2 : (S → R)) (h4 : Q), Q), (∀ (h0 : (P → R)) (h1 : (Q → R)) (h2 : (S → R)) (h5 : (S ∨ R)), R)] to [(∀ (h0 : (P → R)) (h1 : (Q → R)) (h2 : (S → R)) (h5 : (S ∨ R)), R)] using exact h4\n  exact True.intro\n"
+          },
+          {
+            "tactic": "apply h1",
+            "proposed_state": [
+              "h0:P → R,h1:Q → R,h2:S → R,h4:Q | R",
+              "h0:P → R,h1:Q → R,h2:S → R,h5:(S) ∨ (R) | R"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h0 : (P → R)) (h1 : (Q → R)) (h2 : (S → R)) (h4 : Q), R), (∀ (h0 : (P → R)) (h1 : (Q → R)) (h2 : (S → R)) (h5 : (S ∨ R)), R)] to [(∀ (h0 : (P → R)) (h1 : (Q → R)) (h2 : (S → R)) (h4 : Q), Q), (∀ (h0 : (P → R)) (h1 : (Q → R)) (h2 : (S → R)) (h5 : (S ∨ R)), R)] using apply h1\n  exact True.intro\n"
+          },
+          {
+            "tactic": "exact h4",
+            "proposed_state": [
+              "h0:P → R,h1:Q → R,h2:S → R,h4:P | P",
+              "h0:P → R,h1:Q → R,h2:S → R,h4:Q | R",
+              "h0:P → R,h1:Q → R,h2:S → R,h5:(S) ∨ (R) | R"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h0 : (P → R)) (h1 : (Q → R)) (h2 : (S → R)) (h4 : P), P), (∀ (h0 : (P → R)) (h1 : (Q → R)) (h2 : (S → R)) (h4 : Q), R), (∀ (h0 : (P → R)) (h1 : (Q → R)) (h2 : (S → R)) (h5 : (S ∨ R)), R)] to [(∀ (h0 : (P → R)) (h1 : (Q → R)) (h2 : (S → R)) (h4 : Q), R), (∀ (h0 : (P → R)) (h1 : (Q → R)) (h2 : (S → R)) (h5 : (S ∨ R)), R)] using exact h4\n  exact True.intro\n"
+          },
+          {
+            "tactic": "apply h0",
+            "proposed_state": [
+              "h0:P → R,h1:Q → R,h2:S → R,h4:P | R",
+              "h0:P → R,h1:Q → R,h2:S → R,h4:Q | R",
+              "h0:P → R,h1:Q → R,h2:S → R,h5:(S) ∨ (R) | R"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h0 : (P → R)) (h1 : (Q → R)) (h2 : (S → R)) (h4 : P), R), (∀ (h0 : (P → R)) (h1 : (Q → R)) (h2 : (S → R)) (h4 : Q), R), (∀ (h0 : (P → R)) (h1 : (Q → R)) (h2 : (S → R)) (h5 : (S ∨ R)), R)] to [(∀ (h0 : (P → R)) (h1 : (Q → R)) (h2 : (S → R)) (h4 : P), P), (∀ (h0 : (P → R)) (h1 : (Q → R)) (h2 : (S → R)) (h4 : Q), R), (∀ (h0 : (P → R)) (h1 : (Q → R)) (h2 : (S → R)) (h5 : (S ∨ R)), R)] using apply h0\n  exact True.intro\n"
+          },
+          {
+            "tactic": "cases h5 <;> rename_i h4",
+            "proposed_state": [
+              "h0:P → R,h1:Q → R,h2:S → R,h5:(P) ∨ (Q) | R",
+              "h0:P → R,h1:Q → R,h2:S → R,h5:(S) ∨ (R) | R"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h0 : (P → R)) (h1 : (Q → R)) (h2 : (S → R)) (h5 : (P ∨ Q)), R), (∀ (h0 : (P → R)) (h1 : (Q → R)) (h2 : (S → R)) (h5 : (S ∨ R)), R)] to [(∀ (h0 : (P → R)) (h1 : (Q → R)) (h2 : (S → R)) (h4 : P), R), (∀ (h0 : (P → R)) (h1 : (Q → R)) (h2 : (S → R)) (h4 : Q), R), (∀ (h0 : (P → R)) (h1 : (Q → R)) (h2 : (S → R)) (h5 : (S ∨ R)), R)] using cases h5 <;> rename_i h4\n  exact True.intro\n"
+          },
+          {
+            "tactic": "cases h6 <;> rename_i h5",
+            "proposed_state": [
+              "h0:P → R,h1:Q → R,h2:S → R,h6:((P) ∨ (Q)) ∨ ((S) ∨ (R)) | R"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h0 : (P → R)) (h1 : (Q → R)) (h2 : (S → R)) (h6 : ((P ∨ Q) ∨ (S ∨ R))), R)] to [(∀ (h0 : (P → R)) (h1 : (Q → R)) (h2 : (S → R)) (h5 : (P ∨ Q)), R), (∀ (h0 : (P → R)) (h1 : (Q → R)) (h2 : (S → R)) (h5 : (S ∨ R)), R)] using cases h6 <;> rename_i h5\n  exact True.intro\n"
+          },
+          {
+            "tactic": "intro h6",
+            "proposed_state": [
+              "h0:P → R,h1:Q → R,h2:S → R | (((P) ∨ (Q)) ∨ ((S) ∨ (R))) → (R)"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h0 : (P → R)) (h1 : (Q → R)) (h2 : (S → R)), (((P ∨ Q) ∨ (S ∨ R)) → R))] to [(∀ (h0 : (P → R)) (h1 : (Q → R)) (h2 : (S → R)) (h6 : ((P ∨ Q) ∨ (S ∨ R))), R)] using intro h6\n  exact True.intro\n"
+          },
+          {
+            "tactic": "intro h2",
+            "proposed_state": [
+              "h0:P → R,h1:Q → R | (S → R) → ((((P) ∨ (Q)) ∨ ((S) ∨ (R))) → (R))"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h0 : (P → R)) (h1 : (Q → R)), ((S → R) → (((P ∨ Q) ∨ (S ∨ R)) → R)))] to [(∀ (h0 : (P → R)) (h1 : (Q → R)) (h2 : (S → R)), (((P ∨ Q) ∨ (S ∨ R)) → R))] using intro h2\n  exact True.intro\n"
+          },
+          {
+            "tactic": "intro h1",
+            "proposed_state": [
+              "h0:P → R | (Q → R) → ((S → R) → ((((P) ∨ (Q)) ∨ ((S) ∨ (R))) → (R)))"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h0 : (P → R)), ((Q → R) → ((S → R) → (((P ∨ Q) ∨ (S ∨ R)) → R))))] to [(∀ (h0 : (P → R)) (h1 : (Q → R)), ((S → R) → (((P ∨ Q) ∨ (S ∨ R)) → R)))] using intro h1\n  exact True.intro\n"
+          },
+          {
+            "tactic": "intro h0",
+            "proposed_state": [
+              " | (P → R) → ((Q → R) → ((S → R) → ((((P) ∨ (Q)) ∨ ((S) ∨ (R))) → (R))))"
+            ],
+            "ok": true,
+            "diagnostic": "",
+            "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [((P → R) → ((Q → R) → ((S → R) → (((P ∨ Q) ∨ (S ∨ R)) → R))))] to [(∀ (h0 : (P → R)), ((Q → R) → ((S → R) → (((P ∨ Q) ∨ (S ∨ R)) → R))))] using intro h0\n  exact True.intro\n"
+          }
+        ],
+        "status": "closed",
+        "target": "(P → R) → ((Q → R) → ((S → R) → ((((P) ∨ (Q)) ∨ ((S) ∨ (R))) → (R))))",
+        "tactics": [
+          "intro h0",
+          "intro h1",
+          "intro h2",
+          "intro h6",
+          "cases h6 <;> rename_i h5",
+          "cases h5 <;> rename_i h4",
+          "apply h0",
+          "exact h4",
+          "apply h1",
+          "exact h4",
+          "cases h5 <;> rename_i h4",
+          "apply h2",
+          "exact h4",
+          "exact h4"
+        ],
+        "proof": {
+          "ok": true,
+          "diagnostic": "'generated' does not depend on any axioms",
+          "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem generated (P Q R S : Prop) : ((P → R) → ((Q → R) → ((S → R) → (((P ∨ Q) ∨ (S ∨ R)) → R)))) := by\n  assert_state [((P → R) → ((Q → R) → ((S → R) → (((P ∨ Q) ∨ (S ∨ R)) → R))))]\n  intro h0\n  assert_state [(∀ (h0 : (P → R)), ((Q → R) → ((S → R) → (((P ∨ Q) ∨ (S ∨ R)) → R))))]\n  intro h1\n  assert_state [(∀ (h0 : (P → R)) (h1 : (Q → R)), ((S → R) → (((P ∨ Q) ∨ (S ∨ R)) → R)))]\n  intro h2\n  assert_state [(∀ (h0 : (P → R)) (h1 : (Q → R)) (h2 : (S → R)), (((P ∨ Q) ∨ (S ∨ R)) → R))]\n  intro h6\n  assert_state [(∀ (h0 : (P → R)) (h1 : (Q → R)) (h2 : (S → R)) (h6 : ((P ∨ Q) ∨ (S ∨ R))), R)]\n  cases h6 <;> rename_i h5\n  assert_state [(∀ (h0 : (P → R)) (h1 : (Q → R)) (h2 : (S → R)) (h5 : (P ∨ Q)), R), (∀ (h0 : (P → R)) (h1 : (Q → R)) (h2 : (S → R)) (h5 : (S ∨ R)), R)]\n  cases h5 <;> rename_i h4\n  assert_state [(∀ (h0 : (P → R)) (h1 : (Q → R)) (h2 : (S → R)) (h4 : P), R), (∀ (h0 : (P → R)) (h1 : (Q → R)) (h2 : (S → R)) (h4 : Q), R), (∀ (h0 : (P → R)) (h1 : (Q → R)) (h2 : (S → R)) (h5 : (S ∨ R)), R)]\n  apply h0\n  assert_state [(∀ (h0 : (P → R)) (h1 : (Q → R)) (h2 : (S → R)) (h4 : P), P), (∀ (h0 : (P → R)) (h1 : (Q → R)) (h2 : (S → R)) (h4 : Q), R), (∀ (h0 : (P → R)) (h1 : (Q → R)) (h2 : (S → R)) (h5 : (S ∨ R)), R)]\n  exact h4\n  assert_state [(∀ (h0 : (P → R)) (h1 : (Q → R)) (h2 : (S → R)) (h4 : Q), R), (∀ (h0 : (P → R)) (h1 : (Q → R)) (h2 : (S → R)) (h5 : (S ∨ R)), R)]\n  apply h1\n  assert_state [(∀ (h0 : (P → R)) (h1 : (Q → R)) (h2 : (S → R)) (h4 : Q), Q), (∀ (h0 : (P → R)) (h1 : (Q → R)) (h2 : (S → R)) (h5 : (S ∨ R)), R)]\n  exact h4\n  assert_state [(∀ (h0 : (P → R)) (h1 : (Q → R)) (h2 : (S → R)) (h5 : (S ∨ R)), R)]\n  cases h5 <;> rename_i h4\n  assert_state [(∀ (h0 : (P → R)) (h1 : (Q → R)) (h2 : (S → R)) (h4 : S), R), (∀ (h0 : (P → R)) (h1 : (Q → R)) (h2 : (S → R)) (h4 : R), R)]\n  apply h2\n  assert_state [(∀ (h0 : (P → R)) (h1 : (Q → R)) (h2 : (S → R)) (h4 : S), S), (∀ (h0 : (P → R)) (h1 : (Q → R)) (h2 : (S → R)) (h4 : R), R)]\n  exact h4\n  assert_state [(∀ (h0 : (P → R)) (h1 : (Q → R)) (h2 : (S → R)) (h4 : R), R)]\n  exact h4\n  assert_state []\n#print axioms generated\n"
+        },
+        "contract": {
+          "ok": true,
+          "diagnostic": "'generated' does not depend on any axioms",
+          "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem generated (P Q R S : Prop) : ((P → R) → ((Q → R) → ((S → R) → (((P ∨ Q) ∨ (S ∨ R)) → R)))) := by\n  check_structure balanced [\n    intro h0,\n    intro h1,\n    intro h2,\n    intro h6,\n    cases h6 <;> rename_i h5,\n    cases h5 <;> rename_i h4,\n    apply h0,\n    exact h4,\n    apply h1,\n    exact h4,\n    cases h5 <;> rename_i h4,\n    apply h2,\n    exact h4,\n    exact h4\n  ]\n#print axioms generated\n"
+        }
+      }
+    },
+    "llm_direct": {
+      "a": {
+        "target": "(P ∨ (Q ∨ R)) → (P ∨ (Q ∨ R))",
+        "tactics": [
+          "intro h6",
+          "cases h6 <;> rename_i h5",
+          "left",
+          "exact h5",
+          "cases h5 <;> rename_i h4",
+          "right",
+          "left",
+          "exact h4",
+          "right",
+          "right",
+          "exact h4"
+        ],
+        "status": "complete",
+        "proof": {
+          "ok": true,
+          "diagnostic": "'generated' does not depend on any axioms",
+          "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem generated (P Q R S : Prop) : ((P ∨ (Q ∨ R)) → (P ∨ (Q ∨ R))) := by\n  intro h6\n  cases h6 <;> rename_i h5\n  left\n  exact h5\n  cases h5 <;> rename_i h4\n  right\n  left\n  exact h4\n  right\n  right\n  exact h4\n#print axioms generated\n"
+        },
+        "contract": {
+          "ok": true,
+          "diagnostic": "'generated' does not depend on any axioms",
+          "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem generated (P Q R S : Prop) : ((P ∨ (Q ∨ R)) → (P ∨ (Q ∨ R))) := by\n  check_structure chain [\n    intro h6,\n    cases h6 <;> rename_i h5,\n    left,\n    exact h5,\n    cases h5 <;> rename_i h4,\n    right,\n    left,\n    exact h4,\n    right,\n    right,\n    exact h4\n  ]\n#print axioms generated\n"
+        }
+      },
+      "b": {
+        "target": "(P → R) → (Q → R) → ((P ∨ Q) ∨ R) → R",
+        "tactics": [
+          "intro h0",
+          "intro h1",
+          "intro h6",
+          "cases h6 <;> rename_i h5",
+          "cases h5 <;> rename_i h4",
+          "apply h0",
+          "exact h4",
+          "apply h1",
+          "exact h4",
+          "exact h5"
+        ],
+        "status": "complete",
+        "proof": {
+          "ok": true,
+          "diagnostic": "'generated' does not depend on any axioms",
+          "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem generated (P Q R S : Prop) : ((P → R) → ((Q → R) → (((P ∨ Q) ∨ R) → R))) := by\n  intro h0\n  intro h1\n  intro h6\n  cases h6 <;> rename_i h5\n  cases h5 <;> rename_i h4\n  apply h0\n  exact h4\n  apply h1\n  exact h4\n  exact h5\n#print axioms generated\n"
+        },
+        "contract": {
+          "ok": true,
+          "diagnostic": "'generated' does not depend on any axioms",
+          "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem generated (P Q R S : Prop) : ((P → R) → ((Q → R) → (((P ∨ Q) ∨ R) → R))) := by\n  check_structure chain [\n    intro h0,\n    intro h1,\n    intro h6,\n    cases h6 <;> rename_i h5,\n    cases h5 <;> rename_i h4,\n    apply h0,\n    exact h4,\n    apply h1,\n    exact h4,\n    exact h5\n  ]\n#print axioms generated\n"
+        }
+      },
+      "c": {
+        "target": "((P ∧ Q) ∨ ((Q ∧ R) ∨ (S ∧ Q))) → Q",
+        "tactics": [
+          "intro h6",
+          "cases h6 <;> rename_i h5",
+          "exact h5.right",
+          "cases h5 <;> rename_i h4",
+          "exact h4.left",
+          "exact h4.right"
+        ],
+        "status": "complete",
+        "proof": {
+          "ok": true,
+          "diagnostic": "'generated' does not depend on any axioms",
+          "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem generated (P Q R S : Prop) : (((P ∧ Q) ∨ ((Q ∧ R) ∨ (S ∧ Q))) → Q) := by\n  intro h6\n  cases h6 <;> rename_i h5\n  exact h5.right\n  cases h5 <;> rename_i h4\n  exact h4.left\n  exact h4.right\n#print axioms generated\n"
+        },
+        "contract": {
+          "ok": true,
+          "diagnostic": "'generated' does not depend on any axioms",
+          "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem generated (P Q R S : Prop) : (((P ∧ Q) ∨ ((Q ∧ R) ∨ (S ∧ Q))) → Q) := by\n  check_structure chain [\n    intro h6,\n    cases h6 <;> rename_i h5,\n    exact h5.right,\n    cases h5 <;> rename_i h4,\n    exact h4.left,\n    exact h4.right\n  ]\n#print axioms generated\n"
+        }
+      },
+      "d": {
+        "target": "((P ∨ Q) ∨ (R ∨ S)) → ((S ∨ R) ∨ (Q ∨ P))",
+        "tactics": [
+          "intro h6",
+          "cases h6 <;> rename_i h5",
+          "cases h5 <;> rename_i h4",
+          "right",
+          "right",
+          "exact h4",
+          "right",
+          "left",
+          "exact h4",
+          "cases h5 <;> rename_i h4",
+          "left",
+          "right",
+          "exact h4",
+          "left",
+          "left",
+          "exact h4"
+        ],
+        "status": "complete",
+        "proof": {
+          "ok": true,
+          "diagnostic": "'generated' does not depend on any axioms",
+          "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem generated (P Q R S : Prop) : (((P ∨ Q) ∨ (R ∨ S)) → ((S ∨ R) ∨ (Q ∨ P))) := by\n  intro h6\n  cases h6 <;> rename_i h5\n  cases h5 <;> rename_i h4\n  right\n  right\n  exact h4\n  right\n  left\n  exact h4\n  cases h5 <;> rename_i h4\n  left\n  right\n  exact h4\n  left\n  left\n  exact h4\n#print axioms generated\n"
+        },
+        "contract": {
+          "ok": true,
+          "diagnostic": "'generated' does not depend on any axioms",
+          "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem generated (P Q R S : Prop) : (((P ∨ Q) ∨ (R ∨ S)) → ((S ∨ R) ∨ (Q ∨ P))) := by\n  check_structure balanced [\n    intro h6,\n    cases h6 <;> rename_i h5,\n    cases h5 <;> rename_i h4,\n    right,\n    right,\n    exact h4,\n    right,\n    left,\n    exact h4,\n    cases h5 <;> rename_i h4,\n    left,\n    right,\n    exact h4,\n    left,\n    left,\n    exact h4\n  ]\n#print axioms generated\n"
+        }
+      },
+      "e": {
+        "target": "(((P ∧ Q) ∨ (Q ∧ P)) ∨ ((P ∧ R) ∨ (S ∧ P))) → P",
+        "tactics": [
+          "intro h6",
+          "cases h6 <;> rename_i h5",
+          "cases h5 <;> rename_i h4",
+          "exact h4.left",
+          "exact h4.right",
+          "cases h5 <;> rename_i h4",
+          "exact h4.left",
+          "exact h4.right"
+        ],
+        "status": "complete",
+        "proof": {
+          "ok": true,
+          "diagnostic": "'generated' does not depend on any axioms",
+          "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem generated (P Q R S : Prop) : ((((P ∧ Q) ∨ (Q ∧ P)) ∨ ((P ∧ R) ∨ (S ∧ P))) → P) := by\n  intro h6\n  cases h6 <;> rename_i h5\n  cases h5 <;> rename_i h4\n  exact h4.left\n  exact h4.right\n  cases h5 <;> rename_i h4\n  exact h4.left\n  exact h4.right\n#print axioms generated\n"
+        },
+        "contract": {
+          "ok": true,
+          "diagnostic": "'generated' does not depend on any axioms",
+          "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem generated (P Q R S : Prop) : ((((P ∧ Q) ∨ (Q ∧ P)) ∨ ((P ∧ R) ∨ (S ∧ P))) → P) := by\n  check_structure balanced [\n    intro h6,\n    cases h6 <;> rename_i h5,\n    cases h5 <;> rename_i h4,\n    exact h4.left,\n    exact h4.right,\n    cases h5 <;> rename_i h4,\n    exact h4.left,\n    exact h4.right\n  ]\n#print axioms generated\n"
+        }
+      },
+      "f": {
+        "target": "(P → R) → (Q → R) → ((P ∨ (P ∧ S)) ∨ (Q ∨ R)) → R",
+        "tactics": [
+          "intro h0",
+          "intro h1",
+          "intro h6",
+          "cases h6 <;> rename_i h5",
+          "cases h5 <;> rename_i h4",
+          "apply h0",
+          "exact h4",
+          "apply h0",
+          "exact h4.left",
+          "cases h5 <;> rename_i h4",
+          "apply h1",
+          "exact h4",
+          "exact h4"
+        ],
+        "status": "complete",
+        "proof": {
+          "ok": true,
+          "diagnostic": "'generated' does not depend on any axioms",
+          "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem generated (P Q R S : Prop) : ((P → R) → ((Q → R) → (((P ∨ (P ∧ S)) ∨ (Q ∨ R)) → R))) := by\n  intro h0\n  intro h1\n  intro h6\n  cases h6 <;> rename_i h5\n  cases h5 <;> rename_i h4\n  apply h0\n  exact h4\n  apply h0\n  exact h4.left\n  cases h5 <;> rename_i h4\n  apply h1\n  exact h4\n  exact h4\n#print axioms generated\n"
+        },
+        "contract": {
+          "ok": true,
+          "diagnostic": "'generated' does not depend on any axioms",
+          "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem generated (P Q R S : Prop) : ((P → R) → ((Q → R) → (((P ∨ (P ∧ S)) ∨ (Q ∨ R)) → R))) := by\n  check_structure balanced [\n    intro h0,\n    intro h1,\n    intro h6,\n    cases h6 <;> rename_i h5,\n    cases h5 <;> rename_i h4,\n    apply h0,\n    exact h4,\n    apply h0,\n    exact h4.left,\n    cases h5 <;> rename_i h4,\n    apply h1,\n    exact h4,\n    exact h4\n  ]\n#print axioms generated\n"
+        }
+      }
+    }
+  },
+  "controls": {
+    "correct_order": {
+      "ok": true,
+      "diagnostic": "",
+      "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h0 : (P ∨ Q)), (Q ∨ P))] to [(∀ (h1 : P), (Q ∨ P)), (∀ (h1 : Q), (Q ∨ P))] using cases h0 <;> rename_i h1\n  exact True.intro\n"
+    },
+    "reversed_goals": {
+      "ok": false,
+      "diagnostic": "control_wrong.lean:6:2: error: expected state Q → Q ∨ P, got P → Q ∨ P",
+      "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample (P Q R S : Prop) : True := by\n  probe_edge [(∀ (h0 : (P ∨ Q)), (Q ∨ P))] to [(∀ (h1 : Q), (Q ∨ P)), (∀ (h1 : P), (Q ∨ P))] using cases h0 <;> rename_i h1\n  exact True.intro\n"
+    },
+    "wrong_tree": {
+      "proof": {
+        "ok": true,
+        "diagnostic": "'generated' does not depend on any axioms",
+        "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem generated (P Q R S : Prop) : ((P ∨ Q) → ((P ∨ Q) → ((P ∨ Q) ∧ (P ∨ Q)))) := by\n  intro h0\n  intro h1\n  constructor\n  cases h0 <;> rename_i h4\n  left\n  exact h4\n  right\n  exact h4\n  cases h1 <;> rename_i h4\n  left\n  exact h4\n  right\n  exact h4\n#print axioms generated\n"
+      },
+      "contract": {
+        "ok": false,
+        "diagnostic": "control_wrong_tree_contract.lean:6:2: error: contract: multiple case splits at one ancestry\n'generated' depends on axioms: [sorryAx]",
+        "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem generated (P Q R S : Prop) : ((P ∨ Q) → ((P ∨ Q) → ((P ∨ Q) ∧ (P ∨ Q)))) := by\n  check_structure chain [\n    intro h0,\n    intro h1,\n    constructor,\n    cases h0 <;> rename_i h4,\n    left,\n    exact h4,\n    right,\n    exact h4,\n    cases h1 <;> rename_i h4,\n    left,\n    exact h4,\n    right,\n    exact h4\n  ]\n#print axioms generated\n"
+      }
+    },
+    "unused_branch": {
+      "proof": {
+        "ok": true,
+        "diagnostic": "'generated' does not depend on any axioms",
+        "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem generated (P Q R S : Prop) : ((P → R) → ((Q → R) → (R → (((P ∨ Q) ∨ S) → R)))) := by\n  intro h0\n  intro h1\n  intro h2\n  intro h6\n  cases h6 <;> rename_i h5\n  cases h5 <;> rename_i h4\n  apply h0\n  exact h4\n  apply h1\n  exact h4\n  exact h2\n#print axioms generated\n"
+      },
+      "contract": {
+        "ok": false,
+        "diagnostic": "control_unused_branch_contract.lean:6:2: error: contract: a branch hypothesis was unused\n'generated' does not depend on any axioms",
+        "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem generated (P Q R S : Prop) : ((P → R) → ((Q → R) → (R → (((P ∨ Q) ∨ S) → R)))) := by\n  check_structure chain [\n    intro h0,\n    intro h1,\n    intro h2,\n    intro h6,\n    cases h6 <;> rename_i h5,\n    cases h5 <;> rename_i h4,\n    apply h0,\n    exact h4,\n    apply h1,\n    exact h4,\n    exact h2\n  ]\n#print axioms generated\n"
+      }
+    }
+  }
+}

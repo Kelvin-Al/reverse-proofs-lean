@@ -1,0 +1,20 @@
+{
+  "a": [
+    "intro h0",
+    [
+      "| (P → R) → (Q ∨ (P ∨ R)) → (Q ∨ R)"
+    ]
+  ],
+  "d": [
+    "cases h6 <;> rename_i h5",
+    [
+      "h0:(P ∨ Q) → R,h6:(P ∨ Q) ∨ (R ∨ (R ∧ S)) | R"
+    ]
+  ],
+  "e": [
+    "cases h6 <;> rename_i h5",
+    [
+      "h6:(P ∨ Q) ∨ ((P ∧ S) ∨ (Q ∧ S)) | Q ∨ P"
+    ]
+  ]
+}

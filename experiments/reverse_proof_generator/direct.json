@@ -1,0 +1,10 @@
+{
+  "a": ["(P ∧ Q) → P", ["intro h0", "exact h0.left"]],
+  "b": ["P → Q → (P ∧ Q)", ["intro h0", "intro h1", "constructor", "exact h0", "exact h1"]],
+  "c": ["(P ∨ Q) → (Q ∨ P)", ["intro h0", "cases h0 <;> rename_i h1", "right", "exact h1", "left", "exact h1"]],
+  "d": ["(P → Q) → P → Q", ["intro h0", "intro h1", "apply h0", "exact h1"]],
+  "e": ["(P ∧ Q) → (P ∧ (Q ∨ R))", ["intro h0", "constructor", "exact h0.left", "left", "exact h0.right"]],
+  "f": ["(P → Q) → (Q → R) → P → R", ["intro h0", "intro h1", "intro h2", "apply h1", "apply h0", "exact h2"]],
+  "g": ["P → Q → R → (P ∧ (Q ∧ R))", ["intro h0", "intro h1", "intro h2", "constructor", "exact h0", "constructor", "exact h1", "exact h2"]],
+  "h": ["(P ∨ Q) → (P → R) → (Q → R) → R", ["intro h0", "intro h1", "intro h2", "cases h0 <;> rename_i h3", "apply h1", "exact h3", "apply h2", "exact h3"]]
+}

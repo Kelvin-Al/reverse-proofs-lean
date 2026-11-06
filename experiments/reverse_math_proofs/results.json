@@ -1,0 +1,652 @@
+{
+  "lean": "Lean (version 4.19.0, x86_64-unknown-linux-gnu, commit 6caaee842e94, Release)",
+  "summary": {
+    "nat_rewrite": {
+      "verified_edges": 7,
+      "rejected_edges": 0,
+      "proved": true
+    },
+    "nat_induction": {
+      "verified_edges": 7,
+      "rejected_edges": 0,
+      "proved": true
+    },
+    "list_induction": {
+      "verified_edges": 10,
+      "rejected_edges": 0,
+      "proved": true
+    },
+    "list_exists": {
+      "verified_edges": 7,
+      "rejected_edges": 0,
+      "proved": true
+    },
+    "tree_induction": {
+      "verified_edges": 9,
+      "rejected_edges": 0,
+      "proved": true
+    }
+  },
+  "lanes": {
+    "nat_rewrite": {
+      "states": [
+        [],
+        [
+          "(h0 h1 h2 : Nat) | (h0 + h2) + h1 = (h0 + h2) + h1"
+        ],
+        [
+          "(h0 h1 h2 : Nat) | h0 + (h2 + h1) = (h0 + h2) + h1"
+        ],
+        [
+          "(h0 h1 h2 : Nat) | h0 + (h1 + h2) = (h0 + h2) + h1"
+        ],
+        [
+          "(h0 h1 h2 : Nat) | (h0 + h1) + h2 = (h0 + h2) + h1"
+        ],
+        [
+          "(h0 h1 : Nat) | ∀ c : Nat, (h0 + h1) + c = (h0 + c) + h1"
+        ],
+        [
+          "(h0 : Nat) | ∀ b c : Nat, (h0 + b) + c = (h0 + c) + b"
+        ],
+        [
+          "| ∀ a b c : Nat, (a + b) + c = (a + c) + b"
+        ]
+      ],
+      "edges": [
+        {
+          "tactic": "rfl",
+          "proposed_state": [
+            "(h0 h1 h2 : Nat) | (h0 + h2) + h1 = (h0 + h2) + h1"
+          ],
+          "ok": true,
+          "diagnostic": "",
+          "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample : True := by\n  probe_edge [(∀ (h0 h1 h2 : Nat), (h0 + h2) + h1 = (h0 + h2) + h1)] to [] using rfl\n  exact True.intro\n"
+        },
+        {
+          "tactic": "rewrite [← Nat.add_assoc h0 h2 h1]",
+          "proposed_state": [
+            "(h0 h1 h2 : Nat) | h0 + (h2 + h1) = (h0 + h2) + h1"
+          ],
+          "ok": true,
+          "diagnostic": "",
+          "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample : True := by\n  probe_edge [(∀ (h0 h1 h2 : Nat), h0 + (h2 + h1) = (h0 + h2) + h1)] to [(∀ (h0 h1 h2 : Nat), (h0 + h2) + h1 = (h0 + h2) + h1)] using rewrite [← Nat.add_assoc h0 h2 h1]\n  exact True.intro\n"
+        },
+        {
+          "tactic": "rewrite [Nat.add_comm h1 h2]",
+          "proposed_state": [
+            "(h0 h1 h2 : Nat) | h0 + (h1 + h2) = (h0 + h2) + h1"
+          ],
+          "ok": true,
+          "diagnostic": "",
+          "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample : True := by\n  probe_edge [(∀ (h0 h1 h2 : Nat), h0 + (h1 + h2) = (h0 + h2) + h1)] to [(∀ (h0 h1 h2 : Nat), h0 + (h2 + h1) = (h0 + h2) + h1)] using rewrite [Nat.add_comm h1 h2]\n  exact True.intro\n"
+        },
+        {
+          "tactic": "rewrite [Nat.add_assoc h0 h1 h2]",
+          "proposed_state": [
+            "(h0 h1 h2 : Nat) | (h0 + h1) + h2 = (h0 + h2) + h1"
+          ],
+          "ok": true,
+          "diagnostic": "",
+          "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample : True := by\n  probe_edge [(∀ (h0 h1 h2 : Nat), (h0 + h1) + h2 = (h0 + h2) + h1)] to [(∀ (h0 h1 h2 : Nat), h0 + (h1 + h2) = (h0 + h2) + h1)] using rewrite [Nat.add_assoc h0 h1 h2]\n  exact True.intro\n"
+        },
+        {
+          "tactic": "intro h2",
+          "proposed_state": [
+            "(h0 h1 : Nat) | ∀ c : Nat, (h0 + h1) + c = (h0 + c) + h1"
+          ],
+          "ok": true,
+          "diagnostic": "",
+          "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample : True := by\n  probe_edge [(∀ (h0 h1 : Nat), ∀ c : Nat, (h0 + h1) + c = (h0 + c) + h1)] to [(∀ (h0 h1 h2 : Nat), (h0 + h1) + h2 = (h0 + h2) + h1)] using intro h2\n  exact True.intro\n"
+        },
+        {
+          "tactic": "intro h1",
+          "proposed_state": [
+            "(h0 : Nat) | ∀ b c : Nat, (h0 + b) + c = (h0 + c) + b"
+          ],
+          "ok": true,
+          "diagnostic": "",
+          "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample : True := by\n  probe_edge [(∀ (h0 : Nat), ∀ b c : Nat, (h0 + b) + c = (h0 + c) + b)] to [(∀ (h0 h1 : Nat), ∀ c : Nat, (h0 + h1) + c = (h0 + c) + h1)] using intro h1\n  exact True.intro\n"
+        },
+        {
+          "tactic": "intro h0",
+          "proposed_state": [
+            "| ∀ a b c : Nat, (a + b) + c = (a + c) + b"
+          ],
+          "ok": true,
+          "diagnostic": "",
+          "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample : True := by\n  probe_edge [∀ a b c : Nat, (a + b) + c = (a + c) + b] to [(∀ (h0 : Nat), ∀ b c : Nat, (h0 + b) + c = (h0 + c) + b)] using intro h0\n  exact True.intro\n"
+        }
+      ],
+      "status": "closed",
+      "target": "∀ a b c : Nat, (a + b) + c = (a + c) + b",
+      "tactics": [
+        "intro h0",
+        "intro h1",
+        "intro h2",
+        "rewrite [Nat.add_assoc h0 h1 h2]",
+        "rewrite [Nat.add_comm h1 h2]",
+        "rewrite [← Nat.add_assoc h0 h2 h1]",
+        "rfl"
+      ],
+      "proof": {
+        "ok": true,
+        "diagnostic": "'generated' does not depend on any axioms",
+        "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem generated : ∀ a b c : Nat, (a + b) + c = (a + c) + b := by\n  assert_state [∀ a b c : Nat, (a + b) + c = (a + c) + b]\n  intro h0\n  assert_state [(∀ (h0 : Nat), ∀ b c : Nat, (h0 + b) + c = (h0 + c) + b)]\n  intro h1\n  assert_state [(∀ (h0 h1 : Nat), ∀ c : Nat, (h0 + h1) + c = (h0 + c) + h1)]\n  intro h2\n  assert_state [(∀ (h0 h1 h2 : Nat), (h0 + h1) + h2 = (h0 + h2) + h1)]\n  rewrite [Nat.add_assoc h0 h1 h2]\n  assert_state [(∀ (h0 h1 h2 : Nat), h0 + (h1 + h2) = (h0 + h2) + h1)]\n  rewrite [Nat.add_comm h1 h2]\n  assert_state [(∀ (h0 h1 h2 : Nat), h0 + (h2 + h1) = (h0 + h2) + h1)]\n  rewrite [← Nat.add_assoc h0 h2 h1]\n  assert_state [(∀ (h0 h1 h2 : Nat), (h0 + h2) + h1 = (h0 + h2) + h1)]\n  rfl\n  assert_state []\n#print axioms generated\n"
+      }
+    },
+    "nat_induction": {
+      "states": [
+        [],
+        [
+          "(h0 h1 : Nat) (h2 : Nat.succ h0 + h1 = Nat.succ (h0 + h1)) | Nat.succ (Nat.succ (h0 + h1)) = Nat.succ (Nat.succ (h0 + h1))"
+        ],
+        [
+          "(h0 h1 : Nat) (h2 : Nat.succ h0 + h1 = Nat.succ (h0 + h1)) | Nat.succ (Nat.succ h0 + h1) = Nat.succ (Nat.succ (h0 + h1))"
+        ],
+        [
+          "(h0 h1 : Nat) (h2 : Nat.succ h0 + h1 = Nat.succ (h0 + h1)) | Nat.succ h0 + Nat.succ h1 = Nat.succ (h0 + Nat.succ h1)"
+        ],
+        [
+          "(h0 : Nat) | Nat.succ h0 + 0 = Nat.succ (h0 + 0)",
+          "(h0 h1 : Nat) (h2 : Nat.succ h0 + h1 = Nat.succ (h0 + h1)) | Nat.succ h0 + Nat.succ h1 = Nat.succ (h0 + Nat.succ h1)"
+        ],
+        [
+          "(h0 h3 : Nat) | Nat.succ h0 + h3 = Nat.succ (h0 + h3)"
+        ],
+        [
+          "(h0 : Nat) | ∀ b : Nat, Nat.succ h0 + b = Nat.succ (h0 + b)"
+        ],
+        [
+          "| ∀ a b : Nat, Nat.succ a + b = Nat.succ (a + b)"
+        ]
+      ],
+      "edges": [
+        {
+          "tactic": "rfl",
+          "proposed_state": [
+            "(h0 h1 : Nat) (h2 : Nat.succ h0 + h1 = Nat.succ (h0 + h1)) | Nat.succ (Nat.succ (h0 + h1)) = Nat.succ (Nat.succ (h0 + h1))"
+          ],
+          "ok": true,
+          "diagnostic": "",
+          "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample : True := by\n  probe_edge [(∀ (h0 h1 : Nat) (h2 : Nat.succ h0 + h1 = Nat.succ (h0 + h1)), Nat.succ (Nat.succ (h0 + h1)) = Nat.succ (Nat.succ (h0 + h1)))] to [] using rfl\n  exact True.intro\n"
+        },
+        {
+          "tactic": "rewrite [h2]",
+          "proposed_state": [
+            "(h0 h1 : Nat) (h2 : Nat.succ h0 + h1 = Nat.succ (h0 + h1)) | Nat.succ (Nat.succ h0 + h1) = Nat.succ (Nat.succ (h0 + h1))"
+          ],
+          "ok": true,
+          "diagnostic": "",
+          "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample : True := by\n  probe_edge [(∀ (h0 h1 : Nat) (h2 : Nat.succ h0 + h1 = Nat.succ (h0 + h1)), Nat.succ (Nat.succ h0 + h1) = Nat.succ (Nat.succ (h0 + h1)))] to [(∀ (h0 h1 : Nat) (h2 : Nat.succ h0 + h1 = Nat.succ (h0 + h1)), Nat.succ (Nat.succ (h0 + h1)) = Nat.succ (Nat.succ (h0 + h1)))] using rewrite [h2]\n  exact True.intro\n"
+        },
+        {
+          "tactic": "change Nat.succ (Nat.succ h0 + h1) = Nat.succ (Nat.succ (h0 + h1))",
+          "proposed_state": [
+            "(h0 h1 : Nat) (h2 : Nat.succ h0 + h1 = Nat.succ (h0 + h1)) | Nat.succ h0 + Nat.succ h1 = Nat.succ (h0 + Nat.succ h1)"
+          ],
+          "ok": true,
+          "diagnostic": "",
+          "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample : True := by\n  probe_edge [(∀ (h0 h1 : Nat) (h2 : Nat.succ h0 + h1 = Nat.succ (h0 + h1)), Nat.succ h0 + Nat.succ h1 = Nat.succ (h0 + Nat.succ h1))] to [(∀ (h0 h1 : Nat) (h2 : Nat.succ h0 + h1 = Nat.succ (h0 + h1)), Nat.succ (Nat.succ h0 + h1) = Nat.succ (Nat.succ (h0 + h1)))] using change Nat.succ (Nat.succ h0 + h1) = Nat.succ (Nat.succ (h0 + h1))\n  exact True.intro\n"
+        },
+        {
+          "tactic": "rfl",
+          "proposed_state": [
+            "(h0 : Nat) | Nat.succ h0 + 0 = Nat.succ (h0 + 0)",
+            "(h0 h1 : Nat) (h2 : Nat.succ h0 + h1 = Nat.succ (h0 + h1)) | Nat.succ h0 + Nat.succ h1 = Nat.succ (h0 + Nat.succ h1)"
+          ],
+          "ok": true,
+          "diagnostic": "",
+          "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample : True := by\n  probe_edge [(∀ (h0 : Nat), Nat.succ h0 + 0 = Nat.succ (h0 + 0)), (∀ (h0 h1 : Nat) (h2 : Nat.succ h0 + h1 = Nat.succ (h0 + h1)), Nat.succ h0 + Nat.succ h1 = Nat.succ (h0 + Nat.succ h1))] to [(∀ (h0 h1 : Nat) (h2 : Nat.succ h0 + h1 = Nat.succ (h0 + h1)), Nat.succ h0 + Nat.succ h1 = Nat.succ (h0 + Nat.succ h1))] using rfl\n  exact True.intro\n"
+        },
+        {
+          "tactic": "induct_nat h3 as h1 h2",
+          "proposed_state": [
+            "(h0 h3 : Nat) | Nat.succ h0 + h3 = Nat.succ (h0 + h3)"
+          ],
+          "ok": true,
+          "diagnostic": "",
+          "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample : True := by\n  probe_edge [(∀ (h0 h3 : Nat), Nat.succ h0 + h3 = Nat.succ (h0 + h3))] to [(∀ (h0 : Nat), Nat.succ h0 + 0 = Nat.succ (h0 + 0)), (∀ (h0 h1 : Nat) (h2 : Nat.succ h0 + h1 = Nat.succ (h0 + h1)), Nat.succ h0 + Nat.succ h1 = Nat.succ (h0 + Nat.succ h1))] using induct_nat h3 as h1 h2\n  exact True.intro\n"
+        },
+        {
+          "tactic": "intro h3",
+          "proposed_state": [
+            "(h0 : Nat) | ∀ b : Nat, Nat.succ h0 + b = Nat.succ (h0 + b)"
+          ],
+          "ok": true,
+          "diagnostic": "",
+          "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample : True := by\n  probe_edge [(∀ (h0 : Nat), ∀ b : Nat, Nat.succ h0 + b = Nat.succ (h0 + b))] to [(∀ (h0 h3 : Nat), Nat.succ h0 + h3 = Nat.succ (h0 + h3))] using intro h3\n  exact True.intro\n"
+        },
+        {
+          "tactic": "intro h0",
+          "proposed_state": [
+            "| ∀ a b : Nat, Nat.succ a + b = Nat.succ (a + b)"
+          ],
+          "ok": true,
+          "diagnostic": "",
+          "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample : True := by\n  probe_edge [∀ a b : Nat, Nat.succ a + b = Nat.succ (a + b)] to [(∀ (h0 : Nat), ∀ b : Nat, Nat.succ h0 + b = Nat.succ (h0 + b))] using intro h0\n  exact True.intro\n"
+        }
+      ],
+      "status": "closed",
+      "target": "∀ a b : Nat, Nat.succ a + b = Nat.succ (a + b)",
+      "tactics": [
+        "intro h0",
+        "intro h3",
+        "induct_nat h3 as h1 h2",
+        "rfl",
+        "change Nat.succ (Nat.succ h0 + h1) = Nat.succ (Nat.succ (h0 + h1))",
+        "rewrite [h2]",
+        "rfl"
+      ],
+      "proof": {
+        "ok": true,
+        "diagnostic": "'generated' does not depend on any axioms",
+        "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem generated : ∀ a b : Nat, Nat.succ a + b = Nat.succ (a + b) := by\n  assert_state [∀ a b : Nat, Nat.succ a + b = Nat.succ (a + b)]\n  intro h0\n  assert_state [(∀ (h0 : Nat), ∀ b : Nat, Nat.succ h0 + b = Nat.succ (h0 + b))]\n  intro h3\n  assert_state [(∀ (h0 h3 : Nat), Nat.succ h0 + h3 = Nat.succ (h0 + h3))]\n  induct_nat h3 as h1 h2\n  assert_state [(∀ (h0 : Nat), Nat.succ h0 + 0 = Nat.succ (h0 + 0)), (∀ (h0 h1 : Nat) (h2 : Nat.succ h0 + h1 = Nat.succ (h0 + h1)), Nat.succ h0 + Nat.succ h1 = Nat.succ (h0 + Nat.succ h1))]\n  rfl\n  assert_state [(∀ (h0 h1 : Nat) (h2 : Nat.succ h0 + h1 = Nat.succ (h0 + h1)), Nat.succ h0 + Nat.succ h1 = Nat.succ (h0 + Nat.succ h1))]\n  change Nat.succ (Nat.succ h0 + h1) = Nat.succ (Nat.succ (h0 + h1))\n  assert_state [(∀ (h0 h1 : Nat) (h2 : Nat.succ h0 + h1 = Nat.succ (h0 + h1)), Nat.succ (Nat.succ h0 + h1) = Nat.succ (Nat.succ (h0 + h1)))]\n  rewrite [h2]\n  assert_state [(∀ (h0 h1 : Nat) (h2 : Nat.succ h0 + h1 = Nat.succ (h0 + h1)), Nat.succ (Nat.succ (h0 + h1)) = Nat.succ (Nat.succ (h0 + h1)))]\n  rfl\n  assert_state []\n#print axioms generated\n"
+      }
+    },
+    "list_induction": {
+      "states": [
+        [],
+        [
+          "(h0 h1 : Type) (h2 : h0 → h1) (h4 : List h0) (h5 : h0) (h6 : List h0) (h7 : List.map h2 (h6 ++ h4) = List.map h2 h6 ++ List.map h2 h4) | h2 h5 :: (List.map h2 h6 ++ List.map h2 h4) = h2 h5 :: (List.map h2 h6 ++ List.map h2 h4)"
+        ],
+        [
+          "(h0 h1 : Type) (h2 : h0 → h1) (h4 : List h0) (h5 : h0) (h6 : List h0) (h7 : List.map h2 (h6 ++ h4) = List.map h2 h6 ++ List.map h2 h4) | h2 h5 :: List.map h2 (h6 ++ h4) = h2 h5 :: (List.map h2 h6 ++ List.map h2 h4)"
+        ],
+        [
+          "(h0 h1 : Type) (h2 : h0 → h1) (h4 : List h0) (h5 : h0) (h6 : List h0) (h7 : List.map h2 (h6 ++ h4) = List.map h2 h6 ++ List.map h2 h4) | List.map h2 ((h5 :: h6) ++ h4) = List.map h2 (h5 :: h6) ++ List.map h2 h4"
+        ],
+        [
+          "(h0 h1 : Type) (h2 : h0 → h1) (h4 : List h0) | List.map h2 (([] : List h0) ++ h4) = List.map h2 [] ++ List.map h2 h4",
+          "(h0 h1 : Type) (h2 : h0 → h1) (h4 : List h0) (h5 : h0) (h6 : List h0) (h7 : List.map h2 (h6 ++ h4) = List.map h2 h6 ++ List.map h2 h4) | List.map h2 ((h5 :: h6) ++ h4) = List.map h2 (h5 :: h6) ++ List.map h2 h4"
+        ],
+        [
+          "(h0 h1 : Type) (h2 : h0 → h1) (h3 h4 : List h0) | List.map h2 (h3 ++ h4) = List.map h2 h3 ++ List.map h2 h4"
+        ],
+        [
+          "(h0 h1 : Type) (h2 : h0 → h1) (h3 : List h0) | ∀ ys : List h0, List.map h2 (h3 ++ ys) = List.map h2 h3 ++ List.map h2 ys"
+        ],
+        [
+          "(h0 h1 : Type) (h2 : h0 → h1) | ∀ xs ys : List h0, List.map h2 (xs ++ ys) = List.map h2 xs ++ List.map h2 ys"
+        ],
+        [
+          "(h0 h1 : Type) | ∀ (f : h0 → h1) (xs ys : List h0), List.map f (xs ++ ys) = List.map f xs ++ List.map f ys"
+        ],
+        [
+          "(h0 : Type) | ∀ (β : Type) (f : h0 → β) (xs ys : List h0), List.map f (xs ++ ys) = List.map f xs ++ List.map f ys"
+        ],
+        [
+          "| ∀ (α β : Type) (f : α → β) (xs ys : List α), List.map f (xs ++ ys) = List.map f xs ++ List.map f ys"
+        ]
+      ],
+      "edges": [
+        {
+          "tactic": "rfl",
+          "proposed_state": [
+            "(h0 h1 : Type) (h2 : h0 → h1) (h4 : List h0) (h5 : h0) (h6 : List h0) (h7 : List.map h2 (h6 ++ h4) = List.map h2 h6 ++ List.map h2 h4) | h2 h5 :: (List.map h2 h6 ++ List.map h2 h4) = h2 h5 :: (List.map h2 h6 ++ List.map h2 h4)"
+          ],
+          "ok": true,
+          "diagnostic": "",
+          "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample : True := by\n  probe_edge [(∀ (h0 h1 : Type) (h2 : h0 → h1) (h4 : List h0) (h5 : h0) (h6 : List h0) (h7 : List.map h2 (h6 ++ h4) = List.map h2 h6 ++ List.map h2 h4), h2 h5 :: (List.map h2 h6 ++ List.map h2 h4) = h2 h5 :: (List.map h2 h6 ++ List.map h2 h4))] to [] using rfl\n  exact True.intro\n"
+        },
+        {
+          "tactic": "rewrite [h7]",
+          "proposed_state": [
+            "(h0 h1 : Type) (h2 : h0 → h1) (h4 : List h0) (h5 : h0) (h6 : List h0) (h7 : List.map h2 (h6 ++ h4) = List.map h2 h6 ++ List.map h2 h4) | h2 h5 :: List.map h2 (h6 ++ h4) = h2 h5 :: (List.map h2 h6 ++ List.map h2 h4)"
+          ],
+          "ok": true,
+          "diagnostic": "",
+          "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample : True := by\n  probe_edge [(∀ (h0 h1 : Type) (h2 : h0 → h1) (h4 : List h0) (h5 : h0) (h6 : List h0) (h7 : List.map h2 (h6 ++ h4) = List.map h2 h6 ++ List.map h2 h4), h2 h5 :: List.map h2 (h6 ++ h4) = h2 h5 :: (List.map h2 h6 ++ List.map h2 h4))] to [(∀ (h0 h1 : Type) (h2 : h0 → h1) (h4 : List h0) (h5 : h0) (h6 : List h0) (h7 : List.map h2 (h6 ++ h4) = List.map h2 h6 ++ List.map h2 h4), h2 h5 :: (List.map h2 h6 ++ List.map h2 h4) = h2 h5 :: (List.map h2 h6 ++ List.map h2 h4))] using rewrite [h7]\n  exact True.intro\n"
+        },
+        {
+          "tactic": "change h2 h5 :: List.map h2 (h6 ++ h4) = h2 h5 :: (List.map h2 h6 ++ List.map h2 h4)",
+          "proposed_state": [
+            "(h0 h1 : Type) (h2 : h0 → h1) (h4 : List h0) (h5 : h0) (h6 : List h0) (h7 : List.map h2 (h6 ++ h4) = List.map h2 h6 ++ List.map h2 h4) | List.map h2 ((h5 :: h6) ++ h4) = List.map h2 (h5 :: h6) ++ List.map h2 h4"
+          ],
+          "ok": true,
+          "diagnostic": "",
+          "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample : True := by\n  probe_edge [(∀ (h0 h1 : Type) (h2 : h0 → h1) (h4 : List h0) (h5 : h0) (h6 : List h0) (h7 : List.map h2 (h6 ++ h4) = List.map h2 h6 ++ List.map h2 h4), List.map h2 ((h5 :: h6) ++ h4) = List.map h2 (h5 :: h6) ++ List.map h2 h4)] to [(∀ (h0 h1 : Type) (h2 : h0 → h1) (h4 : List h0) (h5 : h0) (h6 : List h0) (h7 : List.map h2 (h6 ++ h4) = List.map h2 h6 ++ List.map h2 h4), h2 h5 :: List.map h2 (h6 ++ h4) = h2 h5 :: (List.map h2 h6 ++ List.map h2 h4))] using change h2 h5 :: List.map h2 (h6 ++ h4) = h2 h5 :: (List.map h2 h6 ++ List.map h2 h4)\n  exact True.intro\n"
+        },
+        {
+          "tactic": "rfl",
+          "proposed_state": [
+            "(h0 h1 : Type) (h2 : h0 → h1) (h4 : List h0) | List.map h2 (([] : List h0) ++ h4) = List.map h2 [] ++ List.map h2 h4",
+            "(h0 h1 : Type) (h2 : h0 → h1) (h4 : List h0) (h5 : h0) (h6 : List h0) (h7 : List.map h2 (h6 ++ h4) = List.map h2 h6 ++ List.map h2 h4) | List.map h2 ((h5 :: h6) ++ h4) = List.map h2 (h5 :: h6) ++ List.map h2 h4"
+          ],
+          "ok": true,
+          "diagnostic": "",
+          "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample : True := by\n  probe_edge [(∀ (h0 h1 : Type) (h2 : h0 → h1) (h4 : List h0), List.map h2 (([] : List h0) ++ h4) = List.map h2 [] ++ List.map h2 h4), (∀ (h0 h1 : Type) (h2 : h0 → h1) (h4 : List h0) (h5 : h0) (h6 : List h0) (h7 : List.map h2 (h6 ++ h4) = List.map h2 h6 ++ List.map h2 h4), List.map h2 ((h5 :: h6) ++ h4) = List.map h2 (h5 :: h6) ++ List.map h2 h4)] to [(∀ (h0 h1 : Type) (h2 : h0 → h1) (h4 : List h0) (h5 : h0) (h6 : List h0) (h7 : List.map h2 (h6 ++ h4) = List.map h2 h6 ++ List.map h2 h4), List.map h2 ((h5 :: h6) ++ h4) = List.map h2 (h5 :: h6) ++ List.map h2 h4)] using rfl\n  exact True.intro\n"
+        },
+        {
+          "tactic": "induct_list h3 as h5 h6 h7",
+          "proposed_state": [
+            "(h0 h1 : Type) (h2 : h0 → h1) (h3 h4 : List h0) | List.map h2 (h3 ++ h4) = List.map h2 h3 ++ List.map h2 h4"
+          ],
+          "ok": true,
+          "diagnostic": "",
+          "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample : True := by\n  probe_edge [(∀ (h0 h1 : Type) (h2 : h0 → h1) (h3 h4 : List h0), List.map h2 (h3 ++ h4) = List.map h2 h3 ++ List.map h2 h4)] to [(∀ (h0 h1 : Type) (h2 : h0 → h1) (h4 : List h0), List.map h2 (([] : List h0) ++ h4) = List.map h2 [] ++ List.map h2 h4), (∀ (h0 h1 : Type) (h2 : h0 → h1) (h4 : List h0) (h5 : h0) (h6 : List h0) (h7 : List.map h2 (h6 ++ h4) = List.map h2 h6 ++ List.map h2 h4), List.map h2 ((h5 :: h6) ++ h4) = List.map h2 (h5 :: h6) ++ List.map h2 h4)] using induct_list h3 as h5 h6 h7\n  exact True.intro\n"
+        },
+        {
+          "tactic": "intro h4",
+          "proposed_state": [
+            "(h0 h1 : Type) (h2 : h0 → h1) (h3 : List h0) | ∀ ys : List h0, List.map h2 (h3 ++ ys) = List.map h2 h3 ++ List.map h2 ys"
+          ],
+          "ok": true,
+          "diagnostic": "",
+          "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample : True := by\n  probe_edge [(∀ (h0 h1 : Type) (h2 : h0 → h1) (h3 : List h0), ∀ ys : List h0, List.map h2 (h3 ++ ys) = List.map h2 h3 ++ List.map h2 ys)] to [(∀ (h0 h1 : Type) (h2 : h0 → h1) (h3 h4 : List h0), List.map h2 (h3 ++ h4) = List.map h2 h3 ++ List.map h2 h4)] using intro h4\n  exact True.intro\n"
+        },
+        {
+          "tactic": "intro h3",
+          "proposed_state": [
+            "(h0 h1 : Type) (h2 : h0 → h1) | ∀ xs ys : List h0, List.map h2 (xs ++ ys) = List.map h2 xs ++ List.map h2 ys"
+          ],
+          "ok": true,
+          "diagnostic": "",
+          "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample : True := by\n  probe_edge [(∀ (h0 h1 : Type) (h2 : h0 → h1), ∀ xs ys : List h0, List.map h2 (xs ++ ys) = List.map h2 xs ++ List.map h2 ys)] to [(∀ (h0 h1 : Type) (h2 : h0 → h1) (h3 : List h0), ∀ ys : List h0, List.map h2 (h3 ++ ys) = List.map h2 h3 ++ List.map h2 ys)] using intro h3\n  exact True.intro\n"
+        },
+        {
+          "tactic": "intro h2",
+          "proposed_state": [
+            "(h0 h1 : Type) | ∀ (f : h0 → h1) (xs ys : List h0), List.map f (xs ++ ys) = List.map f xs ++ List.map f ys"
+          ],
+          "ok": true,
+          "diagnostic": "",
+          "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample : True := by\n  probe_edge [(∀ (h0 h1 : Type), ∀ (f : h0 → h1) (xs ys : List h0), List.map f (xs ++ ys) = List.map f xs ++ List.map f ys)] to [(∀ (h0 h1 : Type) (h2 : h0 → h1), ∀ xs ys : List h0, List.map h2 (xs ++ ys) = List.map h2 xs ++ List.map h2 ys)] using intro h2\n  exact True.intro\n"
+        },
+        {
+          "tactic": "intro h1",
+          "proposed_state": [
+            "(h0 : Type) | ∀ (β : Type) (f : h0 → β) (xs ys : List h0), List.map f (xs ++ ys) = List.map f xs ++ List.map f ys"
+          ],
+          "ok": true,
+          "diagnostic": "",
+          "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample : True := by\n  probe_edge [(∀ (h0 : Type), ∀ (β : Type) (f : h0 → β) (xs ys : List h0), List.map f (xs ++ ys) = List.map f xs ++ List.map f ys)] to [(∀ (h0 h1 : Type), ∀ (f : h0 → h1) (xs ys : List h0), List.map f (xs ++ ys) = List.map f xs ++ List.map f ys)] using intro h1\n  exact True.intro\n"
+        },
+        {
+          "tactic": "intro h0",
+          "proposed_state": [
+            "| ∀ (α β : Type) (f : α → β) (xs ys : List α), List.map f (xs ++ ys) = List.map f xs ++ List.map f ys"
+          ],
+          "ok": true,
+          "diagnostic": "",
+          "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample : True := by\n  probe_edge [∀ (α β : Type) (f : α → β) (xs ys : List α), List.map f (xs ++ ys) = List.map f xs ++ List.map f ys] to [(∀ (h0 : Type), ∀ (β : Type) (f : h0 → β) (xs ys : List h0), List.map f (xs ++ ys) = List.map f xs ++ List.map f ys)] using intro h0\n  exact True.intro\n"
+        }
+      ],
+      "status": "closed",
+      "target": "∀ (α β : Type) (f : α → β) (xs ys : List α), List.map f (xs ++ ys) = List.map f xs ++ List.map f ys",
+      "tactics": [
+        "intro h0",
+        "intro h1",
+        "intro h2",
+        "intro h3",
+        "intro h4",
+        "induct_list h3 as h5 h6 h7",
+        "rfl",
+        "change h2 h5 :: List.map h2 (h6 ++ h4) = h2 h5 :: (List.map h2 h6 ++ List.map h2 h4)",
+        "rewrite [h7]",
+        "rfl"
+      ],
+      "proof": {
+        "ok": true,
+        "diagnostic": "'generated' does not depend on any axioms",
+        "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem generated : ∀ (α β : Type) (f : α → β) (xs ys : List α), List.map f (xs ++ ys) = List.map f xs ++ List.map f ys := by\n  assert_state [∀ (α β : Type) (f : α → β) (xs ys : List α), List.map f (xs ++ ys) = List.map f xs ++ List.map f ys]\n  intro h0\n  assert_state [(∀ (h0 : Type), ∀ (β : Type) (f : h0 → β) (xs ys : List h0), List.map f (xs ++ ys) = List.map f xs ++ List.map f ys)]\n  intro h1\n  assert_state [(∀ (h0 h1 : Type), ∀ (f : h0 → h1) (xs ys : List h0), List.map f (xs ++ ys) = List.map f xs ++ List.map f ys)]\n  intro h2\n  assert_state [(∀ (h0 h1 : Type) (h2 : h0 → h1), ∀ xs ys : List h0, List.map h2 (xs ++ ys) = List.map h2 xs ++ List.map h2 ys)]\n  intro h3\n  assert_state [(∀ (h0 h1 : Type) (h2 : h0 → h1) (h3 : List h0), ∀ ys : List h0, List.map h2 (h3 ++ ys) = List.map h2 h3 ++ List.map h2 ys)]\n  intro h4\n  assert_state [(∀ (h0 h1 : Type) (h2 : h0 → h1) (h3 h4 : List h0), List.map h2 (h3 ++ h4) = List.map h2 h3 ++ List.map h2 h4)]\n  induct_list h3 as h5 h6 h7\n  assert_state [(∀ (h0 h1 : Type) (h2 : h0 → h1) (h4 : List h0), List.map h2 (([] : List h0) ++ h4) = List.map h2 [] ++ List.map h2 h4), (∀ (h0 h1 : Type) (h2 : h0 → h1) (h4 : List h0) (h5 : h0) (h6 : List h0) (h7 : List.map h2 (h6 ++ h4) = List.map h2 h6 ++ List.map h2 h4), List.map h2 ((h5 :: h6) ++ h4) = List.map h2 (h5 :: h6) ++ List.map h2 h4)]\n  rfl\n  assert_state [(∀ (h0 h1 : Type) (h2 : h0 → h1) (h4 : List h0) (h5 : h0) (h6 : List h0) (h7 : List.map h2 (h6 ++ h4) = List.map h2 h6 ++ List.map h2 h4), List.map h2 ((h5 :: h6) ++ h4) = List.map h2 (h5 :: h6) ++ List.map h2 h4)]\n  change h2 h5 :: List.map h2 (h6 ++ h4) = h2 h5 :: (List.map h2 h6 ++ List.map h2 h4)\n  assert_state [(∀ (h0 h1 : Type) (h2 : h0 → h1) (h4 : List h0) (h5 : h0) (h6 : List h0) (h7 : List.map h2 (h6 ++ h4) = List.map h2 h6 ++ List.map h2 h4), h2 h5 :: List.map h2 (h6 ++ h4) = h2 h5 :: (List.map h2 h6 ++ List.map h2 h4))]\n  rewrite [h7]\n  assert_state [(∀ (h0 h1 : Type) (h2 : h0 → h1) (h4 : List h0) (h5 : h0) (h6 : List h0) (h7 : List.map h2 (h6 ++ h4) = List.map h2 h6 ++ List.map h2 h4), h2 h5 :: (List.map h2 h6 ++ List.map h2 h4) = h2 h5 :: (List.map h2 h6 ++ List.map h2 h4))]\n  rfl\n  assert_state []\n#print axioms generated\n"
+      }
+    },
+    "list_exists": {
+      "states": [
+        [],
+        [
+          "(h0 : Type) (h1 : h0) (h2 : List h0) | List.tail (h1 :: h2) = h2"
+        ],
+        [
+          "(h0 : Type) (h1 : h0) (h2 : List h0) | List.length (h1 :: h2) = Nat.succ (List.length h2)",
+          "(h0 : Type) (h1 : h0) (h2 : List h0) | List.tail (h1 :: h2) = h2"
+        ],
+        [
+          "(h0 : Type) (h1 : h0) (h2 : List h0) | List.length (h1 :: h2) = Nat.succ (List.length h2) ∧ List.tail (h1 :: h2) = h2"
+        ],
+        [
+          "(h0 : Type) (h1 : h0) (h2 : List h0) | ∃ ys : List h0, List.length ys = Nat.succ (List.length h2) ∧ List.tail ys = h2"
+        ],
+        [
+          "(h0 : Type) (h1 : h0) | ∀ xs : List h0, ∃ ys : List h0, List.length ys = Nat.succ (List.length xs) ∧ List.tail ys = xs"
+        ],
+        [
+          "(h0 : Type) | ∀ (x : h0) (xs : List h0), ∃ ys : List h0, List.length ys = Nat.succ (List.length xs) ∧ List.tail ys = xs"
+        ],
+        [
+          "| ∀ (α : Type) (x : α) (xs : List α), ∃ ys : List α, List.length ys = Nat.succ (List.length xs) ∧ List.tail ys = xs"
+        ]
+      ],
+      "edges": [
+        {
+          "tactic": "rfl",
+          "proposed_state": [
+            "(h0 : Type) (h1 : h0) (h2 : List h0) | List.tail (h1 :: h2) = h2"
+          ],
+          "ok": true,
+          "diagnostic": "",
+          "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample : True := by\n  probe_edge [(∀ (h0 : Type) (h1 : h0) (h2 : List h0), List.tail (h1 :: h2) = h2)] to [] using rfl\n  exact True.intro\n"
+        },
+        {
+          "tactic": "rfl",
+          "proposed_state": [
+            "(h0 : Type) (h1 : h0) (h2 : List h0) | List.length (h1 :: h2) = Nat.succ (List.length h2)",
+            "(h0 : Type) (h1 : h0) (h2 : List h0) | List.tail (h1 :: h2) = h2"
+          ],
+          "ok": true,
+          "diagnostic": "",
+          "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample : True := by\n  probe_edge [(∀ (h0 : Type) (h1 : h0) (h2 : List h0), List.length (h1 :: h2) = Nat.succ (List.length h2)), (∀ (h0 : Type) (h1 : h0) (h2 : List h0), List.tail (h1 :: h2) = h2)] to [(∀ (h0 : Type) (h1 : h0) (h2 : List h0), List.tail (h1 :: h2) = h2)] using rfl\n  exact True.intro\n"
+        },
+        {
+          "tactic": "constructor",
+          "proposed_state": [
+            "(h0 : Type) (h1 : h0) (h2 : List h0) | List.length (h1 :: h2) = Nat.succ (List.length h2) ∧ List.tail (h1 :: h2) = h2"
+          ],
+          "ok": true,
+          "diagnostic": "",
+          "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample : True := by\n  probe_edge [(∀ (h0 : Type) (h1 : h0) (h2 : List h0), List.length (h1 :: h2) = Nat.succ (List.length h2) ∧ List.tail (h1 :: h2) = h2)] to [(∀ (h0 : Type) (h1 : h0) (h2 : List h0), List.length (h1 :: h2) = Nat.succ (List.length h2)), (∀ (h0 : Type) (h1 : h0) (h2 : List h0), List.tail (h1 :: h2) = h2)] using constructor\n  exact True.intro\n"
+        },
+        {
+          "tactic": "refine ⟨h1 :: h2, ?_⟩",
+          "proposed_state": [
+            "(h0 : Type) (h1 : h0) (h2 : List h0) | ∃ ys : List h0, List.length ys = Nat.succ (List.length h2) ∧ List.tail ys = h2"
+          ],
+          "ok": true,
+          "diagnostic": "",
+          "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample : True := by\n  probe_edge [(∀ (h0 : Type) (h1 : h0) (h2 : List h0), ∃ ys : List h0, List.length ys = Nat.succ (List.length h2) ∧ List.tail ys = h2)] to [(∀ (h0 : Type) (h1 : h0) (h2 : List h0), List.length (h1 :: h2) = Nat.succ (List.length h2) ∧ List.tail (h1 :: h2) = h2)] using refine ⟨h1 :: h2, ?_⟩\n  exact True.intro\n"
+        },
+        {
+          "tactic": "intro h2",
+          "proposed_state": [
+            "(h0 : Type) (h1 : h0) | ∀ xs : List h0, ∃ ys : List h0, List.length ys = Nat.succ (List.length xs) ∧ List.tail ys = xs"
+          ],
+          "ok": true,
+          "diagnostic": "",
+          "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample : True := by\n  probe_edge [(∀ (h0 : Type) (h1 : h0), ∀ xs : List h0, ∃ ys : List h0, List.length ys = Nat.succ (List.length xs) ∧ List.tail ys = xs)] to [(∀ (h0 : Type) (h1 : h0) (h2 : List h0), ∃ ys : List h0, List.length ys = Nat.succ (List.length h2) ∧ List.tail ys = h2)] using intro h2\n  exact True.intro\n"
+        },
+        {
+          "tactic": "intro h1",
+          "proposed_state": [
+            "(h0 : Type) | ∀ (x : h0) (xs : List h0), ∃ ys : List h0, List.length ys = Nat.succ (List.length xs) ∧ List.tail ys = xs"
+          ],
+          "ok": true,
+          "diagnostic": "",
+          "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample : True := by\n  probe_edge [(∀ (h0 : Type), ∀ (x : h0) (xs : List h0), ∃ ys : List h0, List.length ys = Nat.succ (List.length xs) ∧ List.tail ys = xs)] to [(∀ (h0 : Type) (h1 : h0), ∀ xs : List h0, ∃ ys : List h0, List.length ys = Nat.succ (List.length xs) ∧ List.tail ys = xs)] using intro h1\n  exact True.intro\n"
+        },
+        {
+          "tactic": "intro h0",
+          "proposed_state": [
+            "| ∀ (α : Type) (x : α) (xs : List α), ∃ ys : List α, List.length ys = Nat.succ (List.length xs) ∧ List.tail ys = xs"
+          ],
+          "ok": true,
+          "diagnostic": "",
+          "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample : True := by\n  probe_edge [∀ (α : Type) (x : α) (xs : List α), ∃ ys : List α, List.length ys = Nat.succ (List.length xs) ∧ List.tail ys = xs] to [(∀ (h0 : Type), ∀ (x : h0) (xs : List h0), ∃ ys : List h0, List.length ys = Nat.succ (List.length xs) ∧ List.tail ys = xs)] using intro h0\n  exact True.intro\n"
+        }
+      ],
+      "status": "closed",
+      "target": "∀ (α : Type) (x : α) (xs : List α), ∃ ys : List α, List.length ys = Nat.succ (List.length xs) ∧ List.tail ys = xs",
+      "tactics": [
+        "intro h0",
+        "intro h1",
+        "intro h2",
+        "refine ⟨h1 :: h2, ?_⟩",
+        "constructor",
+        "rfl",
+        "rfl"
+      ],
+      "proof": {
+        "ok": true,
+        "diagnostic": "'generated' does not depend on any axioms",
+        "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem generated : ∀ (α : Type) (x : α) (xs : List α), ∃ ys : List α, List.length ys = Nat.succ (List.length xs) ∧ List.tail ys = xs := by\n  assert_state [∀ (α : Type) (x : α) (xs : List α), ∃ ys : List α, List.length ys = Nat.succ (List.length xs) ∧ List.tail ys = xs]\n  intro h0\n  assert_state [(∀ (h0 : Type), ∀ (x : h0) (xs : List h0), ∃ ys : List h0, List.length ys = Nat.succ (List.length xs) ∧ List.tail ys = xs)]\n  intro h1\n  assert_state [(∀ (h0 : Type) (h1 : h0), ∀ xs : List h0, ∃ ys : List h0, List.length ys = Nat.succ (List.length xs) ∧ List.tail ys = xs)]\n  intro h2\n  assert_state [(∀ (h0 : Type) (h1 : h0) (h2 : List h0), ∃ ys : List h0, List.length ys = Nat.succ (List.length h2) ∧ List.tail ys = h2)]\n  refine ⟨h1 :: h2, ?_⟩\n  assert_state [(∀ (h0 : Type) (h1 : h0) (h2 : List h0), List.length (h1 :: h2) = Nat.succ (List.length h2) ∧ List.tail (h1 :: h2) = h2)]\n  constructor\n  assert_state [(∀ (h0 : Type) (h1 : h0) (h2 : List h0), List.length (h1 :: h2) = Nat.succ (List.length h2)), (∀ (h0 : Type) (h1 : h0) (h2 : List h0), List.tail (h1 :: h2) = h2)]\n  rfl\n  assert_state [(∀ (h0 : Type) (h1 : h0) (h2 : List h0), List.tail (h1 :: h2) = h2)]\n  rfl\n  assert_state []\n#print axioms generated\n"
+      }
+    },
+    "tree_induction": {
+      "states": [
+        [],
+        [
+          "(h0 : Type) (h3 h4 : PilotTree h0) (h5 : PilotTree.nodes (PilotTree.mirror h3) = PilotTree.nodes h3) (h6 : PilotTree.nodes (PilotTree.mirror h4) = PilotTree.nodes h4) | 1 + (PilotTree.nodes h3 + PilotTree.nodes h4) = 1 + (PilotTree.nodes h3 + PilotTree.nodes h4)"
+        ],
+        [
+          "(h0 : Type) (h3 h4 : PilotTree h0) (h5 : PilotTree.nodes (PilotTree.mirror h3) = PilotTree.nodes h3) (h6 : PilotTree.nodes (PilotTree.mirror h4) = PilotTree.nodes h4) | 1 + (PilotTree.nodes h4 + PilotTree.nodes h3) = 1 + (PilotTree.nodes h3 + PilotTree.nodes h4)"
+        ],
+        [
+          "(h0 : Type) (h3 h4 : PilotTree h0) (h5 : PilotTree.nodes (PilotTree.mirror h3) = PilotTree.nodes h3) (h6 : PilotTree.nodes (PilotTree.mirror h4) = PilotTree.nodes h4) | 1 + (PilotTree.nodes h4 + PilotTree.nodes (PilotTree.mirror h3)) = 1 + (PilotTree.nodes h3 + PilotTree.nodes h4)"
+        ],
+        [
+          "(h0 : Type) (h3 h4 : PilotTree h0) (h5 : PilotTree.nodes (PilotTree.mirror h3) = PilotTree.nodes h3) (h6 : PilotTree.nodes (PilotTree.mirror h4) = PilotTree.nodes h4) | 1 + (PilotTree.nodes (PilotTree.mirror h4) + PilotTree.nodes (PilotTree.mirror h3)) = 1 + (PilotTree.nodes h3 + PilotTree.nodes h4)"
+        ],
+        [
+          "(h0 : Type) (h3 h4 : PilotTree h0) (h5 : PilotTree.nodes (PilotTree.mirror h3) = PilotTree.nodes h3) (h6 : PilotTree.nodes (PilotTree.mirror h4) = PilotTree.nodes h4) | PilotTree.nodes (PilotTree.mirror (PilotTree.branch h3 h4)) = PilotTree.nodes (PilotTree.branch h3 h4)"
+        ],
+        [
+          "(h0 : Type) (h2 : h0) | PilotTree.nodes (PilotTree.mirror (PilotTree.leaf h2)) = PilotTree.nodes (PilotTree.leaf h2)",
+          "(h0 : Type) (h3 h4 : PilotTree h0) (h5 : PilotTree.nodes (PilotTree.mirror h3) = PilotTree.nodes h3) (h6 : PilotTree.nodes (PilotTree.mirror h4) = PilotTree.nodes h4) | PilotTree.nodes (PilotTree.mirror (PilotTree.branch h3 h4)) = PilotTree.nodes (PilotTree.branch h3 h4)"
+        ],
+        [
+          "(h0 : Type) (h1 : PilotTree h0) | PilotTree.nodes (PilotTree.mirror h1) = PilotTree.nodes h1"
+        ],
+        [
+          "(h0 : Type) | ∀ t : PilotTree h0, PilotTree.nodes (PilotTree.mirror t) = PilotTree.nodes t"
+        ],
+        [
+          "| ∀ (α : Type) (t : PilotTree α), PilotTree.nodes (PilotTree.mirror t) = PilotTree.nodes t"
+        ]
+      ],
+      "edges": [
+        {
+          "tactic": "rfl",
+          "proposed_state": [
+            "(h0 : Type) (h3 h4 : PilotTree h0) (h5 : PilotTree.nodes (PilotTree.mirror h3) = PilotTree.nodes h3) (h6 : PilotTree.nodes (PilotTree.mirror h4) = PilotTree.nodes h4) | 1 + (PilotTree.nodes h3 + PilotTree.nodes h4) = 1 + (PilotTree.nodes h3 + PilotTree.nodes h4)"
+          ],
+          "ok": true,
+          "diagnostic": "",
+          "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample : True := by\n  probe_edge [(∀ (h0 : Type) (h3 h4 : PilotTree h0) (h5 : PilotTree.nodes (PilotTree.mirror h3) = PilotTree.nodes h3) (h6 : PilotTree.nodes (PilotTree.mirror h4) = PilotTree.nodes h4), 1 + (PilotTree.nodes h3 + PilotTree.nodes h4) = 1 + (PilotTree.nodes h3 + PilotTree.nodes h4))] to [] using rfl\n  exact True.intro\n"
+        },
+        {
+          "tactic": "rewrite [Nat.add_comm (PilotTree.nodes h4) (PilotTree.nodes h3)]",
+          "proposed_state": [
+            "(h0 : Type) (h3 h4 : PilotTree h0) (h5 : PilotTree.nodes (PilotTree.mirror h3) = PilotTree.nodes h3) (h6 : PilotTree.nodes (PilotTree.mirror h4) = PilotTree.nodes h4) | 1 + (PilotTree.nodes h4 + PilotTree.nodes h3) = 1 + (PilotTree.nodes h3 + PilotTree.nodes h4)"
+          ],
+          "ok": true,
+          "diagnostic": "",
+          "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample : True := by\n  probe_edge [(∀ (h0 : Type) (h3 h4 : PilotTree h0) (h5 : PilotTree.nodes (PilotTree.mirror h3) = PilotTree.nodes h3) (h6 : PilotTree.nodes (PilotTree.mirror h4) = PilotTree.nodes h4), 1 + (PilotTree.nodes h4 + PilotTree.nodes h3) = 1 + (PilotTree.nodes h3 + PilotTree.nodes h4))] to [(∀ (h0 : Type) (h3 h4 : PilotTree h0) (h5 : PilotTree.nodes (PilotTree.mirror h3) = PilotTree.nodes h3) (h6 : PilotTree.nodes (PilotTree.mirror h4) = PilotTree.nodes h4), 1 + (PilotTree.nodes h3 + PilotTree.nodes h4) = 1 + (PilotTree.nodes h3 + PilotTree.nodes h4))] using rewrite [Nat.add_comm (PilotTree.nodes h4) (PilotTree.nodes h3)]\n  exact True.intro\n"
+        },
+        {
+          "tactic": "rewrite [h5]",
+          "proposed_state": [
+            "(h0 : Type) (h3 h4 : PilotTree h0) (h5 : PilotTree.nodes (PilotTree.mirror h3) = PilotTree.nodes h3) (h6 : PilotTree.nodes (PilotTree.mirror h4) = PilotTree.nodes h4) | 1 + (PilotTree.nodes h4 + PilotTree.nodes (PilotTree.mirror h3)) = 1 + (PilotTree.nodes h3 + PilotTree.nodes h4)"
+          ],
+          "ok": true,
+          "diagnostic": "",
+          "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample : True := by\n  probe_edge [(∀ (h0 : Type) (h3 h4 : PilotTree h0) (h5 : PilotTree.nodes (PilotTree.mirror h3) = PilotTree.nodes h3) (h6 : PilotTree.nodes (PilotTree.mirror h4) = PilotTree.nodes h4), 1 + (PilotTree.nodes h4 + PilotTree.nodes (PilotTree.mirror h3)) = 1 + (PilotTree.nodes h3 + PilotTree.nodes h4))] to [(∀ (h0 : Type) (h3 h4 : PilotTree h0) (h5 : PilotTree.nodes (PilotTree.mirror h3) = PilotTree.nodes h3) (h6 : PilotTree.nodes (PilotTree.mirror h4) = PilotTree.nodes h4), 1 + (PilotTree.nodes h4 + PilotTree.nodes h3) = 1 + (PilotTree.nodes h3 + PilotTree.nodes h4))] using rewrite [h5]\n  exact True.intro\n"
+        },
+        {
+          "tactic": "rewrite [h6]",
+          "proposed_state": [
+            "(h0 : Type) (h3 h4 : PilotTree h0) (h5 : PilotTree.nodes (PilotTree.mirror h3) = PilotTree.nodes h3) (h6 : PilotTree.nodes (PilotTree.mirror h4) = PilotTree.nodes h4) | 1 + (PilotTree.nodes (PilotTree.mirror h4) + PilotTree.nodes (PilotTree.mirror h3)) = 1 + (PilotTree.nodes h3 + PilotTree.nodes h4)"
+          ],
+          "ok": true,
+          "diagnostic": "",
+          "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample : True := by\n  probe_edge [(∀ (h0 : Type) (h3 h4 : PilotTree h0) (h5 : PilotTree.nodes (PilotTree.mirror h3) = PilotTree.nodes h3) (h6 : PilotTree.nodes (PilotTree.mirror h4) = PilotTree.nodes h4), 1 + (PilotTree.nodes (PilotTree.mirror h4) + PilotTree.nodes (PilotTree.mirror h3)) = 1 + (PilotTree.nodes h3 + PilotTree.nodes h4))] to [(∀ (h0 : Type) (h3 h4 : PilotTree h0) (h5 : PilotTree.nodes (PilotTree.mirror h3) = PilotTree.nodes h3) (h6 : PilotTree.nodes (PilotTree.mirror h4) = PilotTree.nodes h4), 1 + (PilotTree.nodes h4 + PilotTree.nodes (PilotTree.mirror h3)) = 1 + (PilotTree.nodes h3 + PilotTree.nodes h4))] using rewrite [h6]\n  exact True.intro\n"
+        },
+        {
+          "tactic": "change 1 + (PilotTree.nodes (PilotTree.mirror h4) + PilotTree.nodes (PilotTree.mirror h3)) = 1 + (PilotTree.nodes h3 + PilotTree.nodes h4)",
+          "proposed_state": [
+            "(h0 : Type) (h3 h4 : PilotTree h0) (h5 : PilotTree.nodes (PilotTree.mirror h3) = PilotTree.nodes h3) (h6 : PilotTree.nodes (PilotTree.mirror h4) = PilotTree.nodes h4) | PilotTree.nodes (PilotTree.mirror (PilotTree.branch h3 h4)) = PilotTree.nodes (PilotTree.branch h3 h4)"
+          ],
+          "ok": true,
+          "diagnostic": "",
+          "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample : True := by\n  probe_edge [(∀ (h0 : Type) (h3 h4 : PilotTree h0) (h5 : PilotTree.nodes (PilotTree.mirror h3) = PilotTree.nodes h3) (h6 : PilotTree.nodes (PilotTree.mirror h4) = PilotTree.nodes h4), PilotTree.nodes (PilotTree.mirror (PilotTree.branch h3 h4)) = PilotTree.nodes (PilotTree.branch h3 h4))] to [(∀ (h0 : Type) (h3 h4 : PilotTree h0) (h5 : PilotTree.nodes (PilotTree.mirror h3) = PilotTree.nodes h3) (h6 : PilotTree.nodes (PilotTree.mirror h4) = PilotTree.nodes h4), 1 + (PilotTree.nodes (PilotTree.mirror h4) + PilotTree.nodes (PilotTree.mirror h3)) = 1 + (PilotTree.nodes h3 + PilotTree.nodes h4))] using change 1 + (PilotTree.nodes (PilotTree.mirror h4) + PilotTree.nodes (PilotTree.mirror h3)) = 1 + (PilotTree.nodes h3 + PilotTree.nodes h4)\n  exact True.intro\n"
+        },
+        {
+          "tactic": "rfl",
+          "proposed_state": [
+            "(h0 : Type) (h2 : h0) | PilotTree.nodes (PilotTree.mirror (PilotTree.leaf h2)) = PilotTree.nodes (PilotTree.leaf h2)",
+            "(h0 : Type) (h3 h4 : PilotTree h0) (h5 : PilotTree.nodes (PilotTree.mirror h3) = PilotTree.nodes h3) (h6 : PilotTree.nodes (PilotTree.mirror h4) = PilotTree.nodes h4) | PilotTree.nodes (PilotTree.mirror (PilotTree.branch h3 h4)) = PilotTree.nodes (PilotTree.branch h3 h4)"
+          ],
+          "ok": true,
+          "diagnostic": "",
+          "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample : True := by\n  probe_edge [(∀ (h0 : Type) (h2 : h0), PilotTree.nodes (PilotTree.mirror (PilotTree.leaf h2)) = PilotTree.nodes (PilotTree.leaf h2)), (∀ (h0 : Type) (h3 h4 : PilotTree h0) (h5 : PilotTree.nodes (PilotTree.mirror h3) = PilotTree.nodes h3) (h6 : PilotTree.nodes (PilotTree.mirror h4) = PilotTree.nodes h4), PilotTree.nodes (PilotTree.mirror (PilotTree.branch h3 h4)) = PilotTree.nodes (PilotTree.branch h3 h4))] to [(∀ (h0 : Type) (h3 h4 : PilotTree h0) (h5 : PilotTree.nodes (PilotTree.mirror h3) = PilotTree.nodes h3) (h6 : PilotTree.nodes (PilotTree.mirror h4) = PilotTree.nodes h4), PilotTree.nodes (PilotTree.mirror (PilotTree.branch h3 h4)) = PilotTree.nodes (PilotTree.branch h3 h4))] using rfl\n  exact True.intro\n"
+        },
+        {
+          "tactic": "induct_tree h1 as h2 h3 h4 h5 h6",
+          "proposed_state": [
+            "(h0 : Type) (h1 : PilotTree h0) | PilotTree.nodes (PilotTree.mirror h1) = PilotTree.nodes h1"
+          ],
+          "ok": true,
+          "diagnostic": "",
+          "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample : True := by\n  probe_edge [(∀ (h0 : Type) (h1 : PilotTree h0), PilotTree.nodes (PilotTree.mirror h1) = PilotTree.nodes h1)] to [(∀ (h0 : Type) (h2 : h0), PilotTree.nodes (PilotTree.mirror (PilotTree.leaf h2)) = PilotTree.nodes (PilotTree.leaf h2)), (∀ (h0 : Type) (h3 h4 : PilotTree h0) (h5 : PilotTree.nodes (PilotTree.mirror h3) = PilotTree.nodes h3) (h6 : PilotTree.nodes (PilotTree.mirror h4) = PilotTree.nodes h4), PilotTree.nodes (PilotTree.mirror (PilotTree.branch h3 h4)) = PilotTree.nodes (PilotTree.branch h3 h4))] using induct_tree h1 as h2 h3 h4 h5 h6\n  exact True.intro\n"
+        },
+        {
+          "tactic": "intro h1",
+          "proposed_state": [
+            "(h0 : Type) | ∀ t : PilotTree h0, PilotTree.nodes (PilotTree.mirror t) = PilotTree.nodes t"
+          ],
+          "ok": true,
+          "diagnostic": "",
+          "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample : True := by\n  probe_edge [(∀ (h0 : Type), ∀ t : PilotTree h0, PilotTree.nodes (PilotTree.mirror t) = PilotTree.nodes t)] to [(∀ (h0 : Type) (h1 : PilotTree h0), PilotTree.nodes (PilotTree.mirror h1) = PilotTree.nodes h1)] using intro h1\n  exact True.intro\n"
+        },
+        {
+          "tactic": "intro h0",
+          "proposed_state": [
+            "| ∀ (α : Type) (t : PilotTree α), PilotTree.nodes (PilotTree.mirror t) = PilotTree.nodes t"
+          ],
+          "ok": true,
+          "diagnostic": "",
+          "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample : True := by\n  probe_edge [∀ (α : Type) (t : PilotTree α), PilotTree.nodes (PilotTree.mirror t) = PilotTree.nodes t] to [(∀ (h0 : Type), ∀ t : PilotTree h0, PilotTree.nodes (PilotTree.mirror t) = PilotTree.nodes t)] using intro h0\n  exact True.intro\n"
+        }
+      ],
+      "status": "closed",
+      "target": "∀ (α : Type) (t : PilotTree α), PilotTree.nodes (PilotTree.mirror t) = PilotTree.nodes t",
+      "tactics": [
+        "intro h0",
+        "intro h1",
+        "induct_tree h1 as h2 h3 h4 h5 h6",
+        "rfl",
+        "change 1 + (PilotTree.nodes (PilotTree.mirror h4) + PilotTree.nodes (PilotTree.mirror h3)) = 1 + (PilotTree.nodes h3 + PilotTree.nodes h4)",
+        "rewrite [h6]",
+        "rewrite [h5]",
+        "rewrite [Nat.add_comm (PilotTree.nodes h4) (PilotTree.nodes h3)]",
+        "rfl"
+      ],
+      "proof": {
+        "ok": true,
+        "diagnostic": "'generated' does not depend on any axioms",
+        "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem generated : ∀ (α : Type) (t : PilotTree α), PilotTree.nodes (PilotTree.mirror t) = PilotTree.nodes t := by\n  assert_state [∀ (α : Type) (t : PilotTree α), PilotTree.nodes (PilotTree.mirror t) = PilotTree.nodes t]\n  intro h0\n  assert_state [(∀ (h0 : Type), ∀ t : PilotTree h0, PilotTree.nodes (PilotTree.mirror t) = PilotTree.nodes t)]\n  intro h1\n  assert_state [(∀ (h0 : Type) (h1 : PilotTree h0), PilotTree.nodes (PilotTree.mirror h1) = PilotTree.nodes h1)]\n  induct_tree h1 as h2 h3 h4 h5 h6\n  assert_state [(∀ (h0 : Type) (h2 : h0), PilotTree.nodes (PilotTree.mirror (PilotTree.leaf h2)) = PilotTree.nodes (PilotTree.leaf h2)), (∀ (h0 : Type) (h3 h4 : PilotTree h0) (h5 : PilotTree.nodes (PilotTree.mirror h3) = PilotTree.nodes h3) (h6 : PilotTree.nodes (PilotTree.mirror h4) = PilotTree.nodes h4), PilotTree.nodes (PilotTree.mirror (PilotTree.branch h3 h4)) = PilotTree.nodes (PilotTree.branch h3 h4))]\n  rfl\n  assert_state [(∀ (h0 : Type) (h3 h4 : PilotTree h0) (h5 : PilotTree.nodes (PilotTree.mirror h3) = PilotTree.nodes h3) (h6 : PilotTree.nodes (PilotTree.mirror h4) = PilotTree.nodes h4), PilotTree.nodes (PilotTree.mirror (PilotTree.branch h3 h4)) = PilotTree.nodes (PilotTree.branch h3 h4))]\n  change 1 + (PilotTree.nodes (PilotTree.mirror h4) + PilotTree.nodes (PilotTree.mirror h3)) = 1 + (PilotTree.nodes h3 + PilotTree.nodes h4)\n  assert_state [(∀ (h0 : Type) (h3 h4 : PilotTree h0) (h5 : PilotTree.nodes (PilotTree.mirror h3) = PilotTree.nodes h3) (h6 : PilotTree.nodes (PilotTree.mirror h4) = PilotTree.nodes h4), 1 + (PilotTree.nodes (PilotTree.mirror h4) + PilotTree.nodes (PilotTree.mirror h3)) = 1 + (PilotTree.nodes h3 + PilotTree.nodes h4))]\n  rewrite [h6]\n  assert_state [(∀ (h0 : Type) (h3 h4 : PilotTree h0) (h5 : PilotTree.nodes (PilotTree.mirror h3) = PilotTree.nodes h3) (h6 : PilotTree.nodes (PilotTree.mirror h4) = PilotTree.nodes h4), 1 + (PilotTree.nodes h4 + PilotTree.nodes (PilotTree.mirror h3)) = 1 + (PilotTree.nodes h3 + PilotTree.nodes h4))]\n  rewrite [h5]\n  assert_state [(∀ (h0 : Type) (h3 h4 : PilotTree h0) (h5 : PilotTree.nodes (PilotTree.mirror h3) = PilotTree.nodes h3) (h6 : PilotTree.nodes (PilotTree.mirror h4) = PilotTree.nodes h4), 1 + (PilotTree.nodes h4 + PilotTree.nodes h3) = 1 + (PilotTree.nodes h3 + PilotTree.nodes h4))]\n  rewrite [Nat.add_comm (PilotTree.nodes h4) (PilotTree.nodes h3)]\n  assert_state [(∀ (h0 : Type) (h3 h4 : PilotTree h0) (h5 : PilotTree.nodes (PilotTree.mirror h3) = PilotTree.nodes h3) (h6 : PilotTree.nodes (PilotTree.mirror h4) = PilotTree.nodes h4), 1 + (PilotTree.nodes h3 + PilotTree.nodes h4) = 1 + (PilotTree.nodes h3 + PilotTree.nodes h4))]\n  rfl\n  assert_state []\n#print axioms generated\n"
+      }
+    }
+  },
+  "controls": {
+    "correct_ih": {
+      "ok": true,
+      "diagnostic": "",
+      "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample : True := by\n  probe_edge [(∀ (h0 : Nat), Nat.succ 0 + h0 = Nat.succ (0 + h0))] to [Nat.succ 0 + 0 = Nat.succ (0 + 0), (∀ (h1 : Nat) (h2 : Nat.succ 0 + h1 = Nat.succ (0 + h1)), Nat.succ 0 + Nat.succ h1 = Nat.succ (0 + Nat.succ h1))] using induct_nat h0 as h1 h2\n  exact True.intro\n"
+    },
+    "wrong_ih": {
+      "ok": false,
+      "diagnostic": "control_wrong_ih.lean:6:2: error: expected state ∀ (h1 : Nat),\n  h1 = h1 →\n    Nat.succ 0 + h1.succ =\n      (0 +\n          h1.succ).succ, got ∀ (h1 : Nat), Nat.succ 0 + h1 = (0 + h1).succ → Nat.succ 0 + (h1 + 1) = (0 + (h1 + 1)).succ",
+      "source": "import Verifier\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\nexample : True := by\n  probe_edge [(∀ (h0 : Nat), Nat.succ 0 + h0 = Nat.succ (0 + h0))] to [Nat.succ 0 + 0 = Nat.succ (0 + 0), (∀ (h1 : Nat) (h2 : h1 = h1), Nat.succ 0 + Nat.succ h1 = Nat.succ (0 + Nat.succ h1))] using induct_nat h0 as h1 h2\n  exact True.intro\n"
+    }
+  }
+}

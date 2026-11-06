@@ -1,0 +1,42 @@
+{
+  "a": [
+    "right",
+    [
+      "h0:P → R,h4:R | Q ∨ R"
+    ]
+  ],
+  "b": [
+    "exact h4",
+    [
+      "h0:P → R,h1:Q → R,h4:Q | Q",
+      "h0:P → R,h1:Q → R,h4:R | R"
+    ]
+  ],
+  "c": [
+    "exact h4",
+    [
+      "h4:R ∧ S | R ∧ S",
+      "h4:(R ∧ S) ∧ Q | R ∧ S"
+    ]
+  ],
+  "d": [
+    "exact h4",
+    [
+      "h0:(P ∨ Q) → R,h4:R | R",
+      "h0:(P ∨ Q) → R,h4:R ∧ S | R"
+    ]
+  ],
+  "e": [
+    "left",
+    [
+      "h4:Q ∧ S | Q ∨ P"
+    ]
+  ],
+  "f": [
+    "exact h4.right",
+    [
+      "h4:P ∧ R | R",
+      "h4:(R ∧ Q) ∧ S | R"
+    ]
+  ]
+}

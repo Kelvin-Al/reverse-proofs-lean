@@ -1,0 +1,42 @@
+{
+  "a": [
+    "cases h5 <;> rename_i h4",
+    [
+      "h0:P → R,h5:P ∨ R | Q ∨ R"
+    ]
+  ],
+  "b": [
+    "cases h4 <;> rename_i h4",
+    [
+      "h0:P → R,h1:Q → R,h4:P ∨ Q | R",
+      "h0:P → R,h1:Q → R,h4:R | R"
+    ]
+  ],
+  "c": [
+    "intro h6",
+    [
+      "| ((P ∧ (R ∧ S)) ∨ ((R ∧ S) ∨ ((R ∧ S) ∧ Q))) → (R ∧ S)"
+    ]
+  ],
+  "d": [
+    "apply h0",
+    [
+      "h0:(P ∨ Q) → R,h4:Q | R",
+      "h0:(P ∨ Q) → R,h5:R ∨ (R ∧ S) | R"
+    ]
+  ],
+  "e": [
+    "exact h4",
+    [
+      "h4:Q | Q",
+      "h5:(P ∧ S) ∨ (Q ∧ S) | Q ∨ P"
+    ]
+  ],
+  "f": [
+    "cases h5 <;> rename_i h4",
+    [
+      "h5:R ∨ (R ∧ P) | R",
+      "h5:(P ∧ R) ∨ ((R ∧ Q) ∧ S) | R"
+    ]
+  ]
+}

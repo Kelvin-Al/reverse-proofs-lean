@@ -1,0 +1,5 @@
+{
+  "e": ["intro h0", ["| (P → Q) → (P ∨ Q) → Q"]],
+  "f": ["intro h2", ["h0:R | (P ∨ Q) → (Q ∨ P)"]],
+  "g": ["intro h1", ["h0:P → Q | (Q → R) → P → (R ∨ S)"]]
+}

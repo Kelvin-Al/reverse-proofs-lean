@@ -1,0 +1,9 @@
+{
+  "a": ["intro h1", ["h0:P | Q → (Q ∧ P)"]],
+  "b": ["constructor", ["h0:P ∧ Q | (R ∨ P) ∧ Q"]],
+  "c": ["intro h1", ["h0:P → Q | P → (R ∨ Q)"]],
+  "e": ["cases h2 <;> rename_i h1", ["h0:P → Q,h2:P ∨ Q | Q"]],
+  "f": ["right", ["h0:R,h1:P | Q ∨ P", "h0:R,h1:Q | Q ∨ P"]],
+  "g": ["left", ["h0:P → Q,h1:Q → R,h2:P | R ∨ S"]],
+  "h": ["left", ["h0:P ∧ Q | (Q ∧ P) ∨ R"]]
+}

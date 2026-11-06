@@ -1,0 +1,45 @@
+{
+  "a": [
+    "apply h0",
+    [
+      "h0:P → R,h4:P | R",
+      "h0:P → R,h4:R | Q ∨ R"
+    ]
+  ],
+  "b": [
+    "exact h4",
+    [
+      "h0:P → R,h1:Q → R,h4:P | P",
+      "h0:P → R,h1:Q → R,h4:Q | R",
+      "h0:P → R,h1:Q → R,h4:R | R"
+    ]
+  ],
+  "c": [
+    "exact h5.right",
+    [
+      "h5:P ∧ (R ∧ S) | R ∧ S",
+      "h5:(R ∧ S) ∨ ((R ∧ S) ∧ Q) | R ∧ S"
+    ]
+  ],
+  "d": [
+    "exact h4",
+    [
+      "h0:(P ∨ Q) → R,h4:Q | Q",
+      "h0:(P ∨ Q) → R,h5:R ∨ (R ∧ S) | R"
+    ]
+  ],
+  "e": [
+    "right",
+    [
+      "h4:P ∧ S | Q ∨ P",
+      "h4:Q ∧ S | Q ∨ P"
+    ]
+  ],
+  "f": [
+    "exact h4.left",
+    [
+      "h4:R ∧ P | R",
+      "h5:(P ∧ R) ∨ ((R ∧ Q) ∧ S) | R"
+    ]
+  ]
+}

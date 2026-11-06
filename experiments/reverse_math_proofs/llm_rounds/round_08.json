@@ -1,0 +1,14 @@
+{
+  "list_induction": [
+    "intro h2",
+    [
+      "(h0 h1 : Type) | ∀ (f : h0 → h1) (xs ys : List h0), List.map f (xs ++ ys) = List.map f xs ++ List.map f ys"
+    ]
+  ],
+  "tree_induction": [
+    "intro h1",
+    [
+      "(h0 : Type) | ∀ t : PilotTree h0, PilotTree.nodes (PilotTree.mirror t) = PilotTree.nodes t"
+    ]
+  ]
+}

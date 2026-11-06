@@ -1,0 +1,32 @@
+{
+  "swap": [
+    ["(P ∧ Q) → (Q ∧ (P ∨ R))", "fun h => (fun z => And.intro z.left (Or.inl z.right)) (seed h)"],
+    ["((P ∧ Q) ∨ (R ∧ Q)) → (Q ∧ (P ∨ R))", "fun h => Or.elim h (fun a => (fun z => And.intro z.left (Or.inl z.right)) (seed a)) (fun b => And.intro b.right (Or.inr b.left))"],
+    ["(P ∧ Q) → ((Q ∧ P) → R) → R", "fun h k => k (seed h)"],
+    ["(P ∧ (Q ∧ R)) → ((Q ∧ P) ∧ R)", "fun h => And.intro (seed (And.intro h.left h.right.left)) h.right.right"],
+    ["((R → P) ∧ (R → Q)) → R → (Q ∧ P)", "fun h r => seed (And.intro (h.left r) (h.right r))"],
+    ["(P ∧ Q) → (R ∨ (Q ∧ P))", "fun h => Or.inr (seed h)"],
+    ["((Q ∧ P) → R ∨ S) → P → Q → (R ∨ S)", "fun k p q => k (seed (And.intro p q))"],
+    ["((P ∧ Q) → R) → ((P ∧ Q) → S) → (P ∧ Q) → ((Q ∧ P) ∧ (R ∧ S))", "fun f g h => And.intro (seed h) (And.intro (f h) (g h))"]
+  ],
+  "cases": [
+    ["((P ∨ Q) ∧ ((P → R) ∧ (Q → R))) → R", "fun h => seed h.left h.right.left h.right.right"],
+    ["((P → R) ∧ (Q → S)) → (P ∨ Q) → (R ∨ S)", "fun h d => (fun k => k (Or.elim d (fun p => Or.inl (h.left p)) (fun q => Or.inr (h.right q))) (fun q => Or.inr (h.right q))) (seed d)"],
+    ["(P ∨ Q) → (P → R) → (Q → R) → (R → S) → S", "fun h f g k => k (seed h f g)"],
+    ["((S → (P ∨ Q)) ∧ (P → R) ∧ (Q → R)) → S → R", "fun h s => seed (h.left s) h.right.left h.right.right"],
+    ["(P ∨ Q) → ((P → R) ∧ (Q → R)) → (R ∧ (P ∨ Q))", "fun h k => And.intro (seed h k.left k.right) h"],
+    ["((P ∨ Q) ∨ S) → (P → R) → (Q → R) → (S → R) → R", "fun h f g k => Or.elim h (fun d => seed d f g) k"],
+    ["((P ∧ S) ∨ (Q ∧ S)) → (P → R) → (Q → R) → R", "fun h f g => seed (Or.elim h (fun a => Or.inl a.left) (fun b => Or.inr b.left)) f g"],
+    ["(P ∨ Q) → (P → R) → ((Q → R) ∨ R) → R", "fun h f k => seed h f (fun q => Or.elim k (fun g => g q) (fun r => r))"]
+  ],
+  "compose": [
+    ["((P → Q) ∧ (Q → R)) → P → R", "fun h => seed h.left h.right"],
+    ["(P → Q) → (Q → R) → (R → S) → P → S", "fun f g k p => k (seed f g p)"],
+    ["((P ∧ S) → Q) → (Q → R) → P → S → R", "fun f g p s => seed (fun x => f (And.intro x s)) g p"],
+    ["(P → Q) → (Q → R) → (P ∨ R) → R", "fun f g h => Or.elim h (seed f g) (fun r => r)"],
+    ["(P → Q) → (Q → R) → (P ∧ S) → (R ∧ S)", "fun f g h => And.intro (seed f g h.left) h.right"],
+    ["(P → Q) → (Q → R) → ((P → R) → S) → S", "fun f g k => k (seed f g)"],
+    ["((P → Q) ∨ R) → (Q → R) → P → R", "fun h g p => Or.elim h (fun f => seed f g p) (fun r => r)"],
+    ["(P → Q) → (Q → R) → (S → P) → S → (R ∨ Q)", "fun f g k s => Or.inl (seed f g (k s))"]
+  ]
+}

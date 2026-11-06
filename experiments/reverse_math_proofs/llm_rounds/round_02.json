@@ -1,0 +1,33 @@
+{
+  "nat_rewrite": [
+    "rewrite [← Nat.add_assoc h0 h2 h1]",
+    [
+      "(h0 h1 h2 : Nat) | h0 + (h2 + h1) = (h0 + h2) + h1"
+    ]
+  ],
+  "nat_induction": [
+    "rewrite [h2]",
+    [
+      "(h0 h1 : Nat) (h2 : Nat.succ h0 + h1 = Nat.succ (h0 + h1)) | Nat.succ (Nat.succ h0 + h1) = Nat.succ (Nat.succ (h0 + h1))"
+    ]
+  ],
+  "list_induction": [
+    "rewrite [h7]",
+    [
+      "(h0 h1 : Type) (h2 : h0 → h1) (h4 : List h0) (h5 : h0) (h6 : List h0) (h7 : List.map h2 (h6 ++ h4) = List.map h2 h6 ++ List.map h2 h4) | h2 h5 :: List.map h2 (h6 ++ h4) = h2 h5 :: (List.map h2 h6 ++ List.map h2 h4)"
+    ]
+  ],
+  "list_exists": [
+    "rfl",
+    [
+      "(h0 : Type) (h1 : h0) (h2 : List h0) | List.length (h1 :: h2) = Nat.succ (List.length h2)",
+      "(h0 : Type) (h1 : h0) (h2 : List h0) | List.tail (h1 :: h2) = h2"
+    ]
+  ],
+  "tree_induction": [
+    "rewrite [Nat.add_comm (PilotTree.nodes h4) (PilotTree.nodes h3)]",
+    [
+      "(h0 : Type) (h3 h4 : PilotTree h0) (h5 : PilotTree.nodes (PilotTree.mirror h3) = PilotTree.nodes h3) (h6 : PilotTree.nodes (PilotTree.mirror h4) = PilotTree.nodes h4) | 1 + (PilotTree.nodes h4 + PilotTree.nodes h3) = 1 + (PilotTree.nodes h3 + PilotTree.nodes h4)"
+    ]
+  ]
+}

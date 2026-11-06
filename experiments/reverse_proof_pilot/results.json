@@ -1,0 +1,601 @@
+{
+  "lean": "Lean (version 4.19.0, x86_64-unknown-linux-gnu, commit 6caaee842e94, Release)",
+  "proposals_sha256": "6b66801519edd496abdc63d849801b102bc6b6bea7482c6fa1a443aad8eae996",
+  "summary": {
+    "rules": {
+      "overall": {
+        "attempts": 24,
+        "accepted": 24,
+        "unique_up_to_atom_renaming": 24,
+        "unique_connective_skeletons": 24,
+        "mean_connectives": 6.62
+      },
+      "by_seed": {
+        "swap": {
+          "attempts": 8,
+          "accepted": 8,
+          "unique_up_to_atom_renaming": 8,
+          "unique_connective_skeletons": 8,
+          "mean_connectives": 4.75
+        },
+        "cases": {
+          "attempts": 8,
+          "accepted": 8,
+          "unique_up_to_atom_renaming": 8,
+          "unique_connective_skeletons": 8,
+          "mean_connectives": 8.12
+        },
+        "compose": {
+          "attempts": 8,
+          "accepted": 8,
+          "unique_up_to_atom_renaming": 8,
+          "unique_connective_skeletons": 8,
+          "mean_connectives": 7
+        }
+      }
+    },
+    "llm": {
+      "overall": {
+        "attempts": 24,
+        "accepted": 23,
+        "unique_up_to_atom_renaming": 23,
+        "unique_connective_skeletons": 23,
+        "mean_connectives": 6.74
+      },
+      "by_seed": {
+        "swap": {
+          "attempts": 8,
+          "accepted": 8,
+          "unique_up_to_atom_renaming": 8,
+          "unique_connective_skeletons": 8,
+          "mean_connectives": 6
+        },
+        "cases": {
+          "attempts": 8,
+          "accepted": 7,
+          "unique_up_to_atom_renaming": 7,
+          "unique_connective_skeletons": 7,
+          "mean_connectives": 7.71
+        },
+        "compose": {
+          "attempts": 8,
+          "accepted": 8,
+          "unique_up_to_atom_renaming": 8,
+          "unique_connective_skeletons": 8,
+          "mean_connectives": 6.62
+        }
+      }
+    },
+    "connective_skeleton_overlap": {
+      "shared": 1,
+      "rules_only": 23,
+      "llm_only": 22
+    }
+  },
+  "controls": [
+    {
+      "method": "control",
+      "seed": "swap",
+      "index": 1,
+      "target": "(P ∧ Q) → (Q ∧ P)",
+      "term": "seed",
+      "accepted": true,
+      "diagnostic": "'candidate' does not depend on any axioms",
+      "lean_source": "import Lean\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem candidate (P Q R S : Prop) : ((P ∧ Q) → (Q ∧ P)) := by\n  refine ((show ((P ∧ Q) → (Q ∧ P)) from ?_))\n  guard_target =ₛ ((P ∧ Q) → (Q ∧ P))\n  exact fun h => And.intro h.right h.left\n#print axioms candidate\n"
+    },
+    {
+      "method": "control",
+      "seed": "swap",
+      "index": 2,
+      "target": "P → Q",
+      "term": "seed",
+      "accepted": false,
+      "diagnostic": "control_swap_2.lean:6:11: error: type mismatch\n  this\nhas type\n  P ∧ Q → Q ∧ P : Prop\nbut is expected to have type\n  P → Q : Prop\n'candidate' depends on axioms: [sorryAx]",
+      "lean_source": "import Lean\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem candidate (P Q R S : Prop) : (P → Q) := by\n  refine ((show ((P ∧ Q) → (Q ∧ P)) from ?_))\n  guard_target =ₛ ((P ∧ Q) → (Q ∧ P))\n  exact fun h => And.intro h.right h.left\n#print axioms candidate\n"
+    }
+  ],
+  "candidates": [
+    {
+      "method": "rules",
+      "seed": "swap",
+      "index": 1,
+      "target": "((P ∧ Q) ∧ S) → ((Q ∧ P) ∧ S)",
+      "term": "fun h => And.intro (seed h.left) h.right",
+      "accepted": true,
+      "diagnostic": "'candidate' does not depend on any axioms",
+      "lean_source": "import Lean\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem candidate (P Q R S : Prop) : (((P ∧ Q) ∧ S) → ((Q ∧ P) ∧ S)) := by\n  refine (fun h => And.intro ( (show ((P ∧ Q) → (Q ∧ P)) from ?_) h.left ) h.right)\n  guard_target =ₛ ((P ∧ Q) → (Q ∧ P))\n  exact fun h => And.intro h.right h.left\n#print axioms candidate\n"
+    },
+    {
+      "method": "rules",
+      "seed": "swap",
+      "index": 2,
+      "target": "(S ∧ (P ∧ Q)) → (Q ∧ P)",
+      "term": "fun h => seed h.right",
+      "accepted": true,
+      "diagnostic": "'candidate' does not depend on any axioms",
+      "lean_source": "import Lean\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem candidate (P Q R S : Prop) : ((S ∧ (P ∧ Q)) → (Q ∧ P)) := by\n  refine (fun h => (show ((P ∧ Q) → (Q ∧ P)) from ?_) h.right)\n  guard_target =ₛ ((P ∧ Q) → (Q ∧ P))\n  exact fun h => And.intro h.right h.left\n#print axioms candidate\n"
+    },
+    {
+      "method": "rules",
+      "seed": "swap",
+      "index": 3,
+      "target": "((P ∧ Q) ∨ (Q ∧ P)) → (Q ∧ P)",
+      "term": "fun h => Or.elim h seed (fun b => b)",
+      "accepted": true,
+      "diagnostic": "'candidate' does not depend on any axioms",
+      "lean_source": "import Lean\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem candidate (P Q R S : Prop) : (((P ∧ Q) ∨ (Q ∧ P)) → (Q ∧ P)) := by\n  refine (fun h => Or.elim h (show ((P ∧ Q) → (Q ∧ P)) from ?_) ( fun b => b ))\n  guard_target =ₛ ((P ∧ Q) → (Q ∧ P))\n  exact fun h => And.intro h.right h.left\n#print axioms candidate\n"
+    },
+    {
+      "method": "rules",
+      "seed": "swap",
+      "index": 4,
+      "target": "(P ∧ Q) → ((Q ∧ P) ∨ S)",
+      "term": "fun h => Or.inl (seed h)",
+      "accepted": true,
+      "diagnostic": "'candidate' does not depend on any axioms",
+      "lean_source": "import Lean\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem candidate (P Q R S : Prop) : ((P ∧ Q) → ((Q ∧ P) ∨ S)) := by\n  refine (fun h => Or.inl ( (show ((P ∧ Q) → (Q ∧ P)) from ?_) h ))\n  guard_target =ₛ ((P ∧ Q) → (Q ∧ P))\n  exact fun h => And.intro h.right h.left\n#print axioms candidate\n"
+    },
+    {
+      "method": "rules",
+      "seed": "swap",
+      "index": 5,
+      "target": "(P ∧ Q) → ((Q ∧ P) → S) → S",
+      "term": "fun h k => k (seed h)",
+      "accepted": true,
+      "diagnostic": "'candidate' does not depend on any axioms",
+      "lean_source": "import Lean\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem candidate (P Q R S : Prop) : ((P ∧ Q) → (((Q ∧ P) → S) → S)) := by\n  refine (fun h k => k ( (show ((P ∧ Q) → (Q ∧ P)) from ?_) h ))\n  guard_target =ₛ ((P ∧ Q) → (Q ∧ P))\n  exact fun h => And.intro h.right h.left\n#print axioms candidate\n"
+    },
+    {
+      "method": "rules",
+      "seed": "swap",
+      "index": 6,
+      "target": "(S → (P ∧ Q)) → S → (Q ∧ P)",
+      "term": "fun k s => seed (k s)",
+      "accepted": true,
+      "diagnostic": "'candidate' does not depend on any axioms",
+      "lean_source": "import Lean\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem candidate (P Q R S : Prop) : ((S → (P ∧ Q)) → (S → (Q ∧ P))) := by\n  refine (fun k s => (show ((P ∧ Q) → (Q ∧ P)) from ?_) ( k s ))\n  guard_target =ₛ ((P ∧ Q) → (Q ∧ P))\n  exact fun h => And.intro h.right h.left\n#print axioms candidate\n"
+    },
+    {
+      "method": "rules",
+      "seed": "swap",
+      "index": 7,
+      "target": "(P ∧ Q) → ((Q ∧ P) ∧ (P ∧ Q))",
+      "term": "fun h => And.intro (seed h) h",
+      "accepted": true,
+      "diagnostic": "'candidate' does not depend on any axioms",
+      "lean_source": "import Lean\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem candidate (P Q R S : Prop) : ((P ∧ Q) → ((Q ∧ P) ∧ (P ∧ Q))) := by\n  refine (fun h => And.intro ( (show ((P ∧ Q) → (Q ∧ P)) from ?_) h ) h)\n  guard_target =ₛ ((P ∧ Q) → (Q ∧ P))\n  exact fun h => And.intro h.right h.left\n#print axioms candidate\n"
+    },
+    {
+      "method": "rules",
+      "seed": "swap",
+      "index": 8,
+      "target": "(((P ∧ Q) → (Q ∧ P)) → S) → S",
+      "term": "fun k => k seed",
+      "accepted": true,
+      "diagnostic": "'candidate' does not depend on any axioms",
+      "lean_source": "import Lean\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem candidate (P Q R S : Prop) : ((((P ∧ Q) → (Q ∧ P)) → S) → S) := by\n  refine (fun k => k (show ((P ∧ Q) → (Q ∧ P)) from ?_))\n  guard_target =ₛ ((P ∧ Q) → (Q ∧ P))\n  exact fun h => And.intro h.right h.left\n#print axioms candidate\n"
+    },
+    {
+      "method": "llm",
+      "seed": "swap",
+      "index": 1,
+      "target": "(P ∧ Q) → (Q ∧ (P ∨ R))",
+      "term": "fun h => (fun z => And.intro z.left (Or.inl z.right)) (seed h)",
+      "accepted": true,
+      "diagnostic": "'candidate' does not depend on any axioms",
+      "lean_source": "import Lean\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem candidate (P Q R S : Prop) : ((P ∧ Q) → (Q ∧ (P ∨ R))) := by\n  refine (fun h => ( fun z => And.intro z.left ( Or.inl z.right ) ) ( (show ((P ∧ Q) → (Q ∧ P)) from ?_) h ))\n  guard_target =ₛ ((P ∧ Q) → (Q ∧ P))\n  exact fun h => And.intro h.right h.left\n#print axioms candidate\n"
+    },
+    {
+      "method": "llm",
+      "seed": "swap",
+      "index": 2,
+      "target": "((P ∧ Q) ∨ (R ∧ Q)) → (Q ∧ (P ∨ R))",
+      "term": "fun h => Or.elim h (fun a => (fun z => And.intro z.left (Or.inl z.right)) (seed a)) (fun b => And.intro b.right (Or.inr b.left))",
+      "accepted": true,
+      "diagnostic": "'candidate' does not depend on any axioms",
+      "lean_source": "import Lean\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem candidate (P Q R S : Prop) : (((P ∧ Q) ∨ (R ∧ Q)) → (Q ∧ (P ∨ R))) := by\n  refine (fun h => Or.elim h ( fun a => ( fun z => And.intro z.left ( Or.inl z.right ) ) ( (show ((P ∧ Q) → (Q ∧ P)) from ?_) a ) ) ( fun b => And.intro b.right ( Or.inr b.left ) ))\n  guard_target =ₛ ((P ∧ Q) → (Q ∧ P))\n  exact fun h => And.intro h.right h.left\n#print axioms candidate\n"
+    },
+    {
+      "method": "llm",
+      "seed": "swap",
+      "index": 3,
+      "target": "(P ∧ Q) → ((Q ∧ P) → R) → R",
+      "term": "fun h k => k (seed h)",
+      "accepted": true,
+      "diagnostic": "'candidate' does not depend on any axioms",
+      "lean_source": "import Lean\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem candidate (P Q R S : Prop) : ((P ∧ Q) → (((Q ∧ P) → R) → R)) := by\n  refine (fun h k => k ( (show ((P ∧ Q) → (Q ∧ P)) from ?_) h ))\n  guard_target =ₛ ((P ∧ Q) → (Q ∧ P))\n  exact fun h => And.intro h.right h.left\n#print axioms candidate\n"
+    },
+    {
+      "method": "llm",
+      "seed": "swap",
+      "index": 4,
+      "target": "(P ∧ (Q ∧ R)) → ((Q ∧ P) ∧ R)",
+      "term": "fun h => And.intro (seed (And.intro h.left h.right.left)) h.right.right",
+      "accepted": true,
+      "diagnostic": "'candidate' does not depend on any axioms",
+      "lean_source": "import Lean\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem candidate (P Q R S : Prop) : ((P ∧ (Q ∧ R)) → ((Q ∧ P) ∧ R)) := by\n  refine (fun h => And.intro ( (show ((P ∧ Q) → (Q ∧ P)) from ?_) ( And.intro h.left h.right.left ) ) h.right.right)\n  guard_target =ₛ ((P ∧ Q) → (Q ∧ P))\n  exact fun h => And.intro h.right h.left\n#print axioms candidate\n"
+    },
+    {
+      "method": "llm",
+      "seed": "swap",
+      "index": 5,
+      "target": "((R → P) ∧ (R → Q)) → R → (Q ∧ P)",
+      "term": "fun h r => seed (And.intro (h.left r) (h.right r))",
+      "accepted": true,
+      "diagnostic": "'candidate' does not depend on any axioms",
+      "lean_source": "import Lean\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem candidate (P Q R S : Prop) : (((R → P) ∧ (R → Q)) → (R → (Q ∧ P))) := by\n  refine (fun h r => (show ((P ∧ Q) → (Q ∧ P)) from ?_) ( And.intro ( h.left r ) ( h.right r ) ))\n  guard_target =ₛ ((P ∧ Q) → (Q ∧ P))\n  exact fun h => And.intro h.right h.left\n#print axioms candidate\n"
+    },
+    {
+      "method": "llm",
+      "seed": "swap",
+      "index": 6,
+      "target": "(P ∧ Q) → (R ∨ (Q ∧ P))",
+      "term": "fun h => Or.inr (seed h)",
+      "accepted": true,
+      "diagnostic": "'candidate' does not depend on any axioms",
+      "lean_source": "import Lean\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem candidate (P Q R S : Prop) : ((P ∧ Q) → (R ∨ (Q ∧ P))) := by\n  refine (fun h => Or.inr ( (show ((P ∧ Q) → (Q ∧ P)) from ?_) h ))\n  guard_target =ₛ ((P ∧ Q) → (Q ∧ P))\n  exact fun h => And.intro h.right h.left\n#print axioms candidate\n"
+    },
+    {
+      "method": "llm",
+      "seed": "swap",
+      "index": 7,
+      "target": "((Q ∧ P) → R ∨ S) → P → Q → (R ∨ S)",
+      "term": "fun k p q => k (seed (And.intro p q))",
+      "accepted": true,
+      "diagnostic": "'candidate' does not depend on any axioms",
+      "lean_source": "import Lean\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem candidate (P Q R S : Prop) : (((Q ∧ P) → (R ∨ S)) → (P → (Q → (R ∨ S)))) := by\n  refine (fun k p q => k ( (show ((P ∧ Q) → (Q ∧ P)) from ?_) ( And.intro p q ) ))\n  guard_target =ₛ ((P ∧ Q) → (Q ∧ P))\n  exact fun h => And.intro h.right h.left\n#print axioms candidate\n"
+    },
+    {
+      "method": "llm",
+      "seed": "swap",
+      "index": 8,
+      "target": "((P ∧ Q) → R) → ((P ∧ Q) → S) → (P ∧ Q) → ((Q ∧ P) ∧ (R ∧ S))",
+      "term": "fun f g h => And.intro (seed h) (And.intro (f h) (g h))",
+      "accepted": true,
+      "diagnostic": "'candidate' does not depend on any axioms",
+      "lean_source": "import Lean\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem candidate (P Q R S : Prop) : (((P ∧ Q) → R) → (((P ∧ Q) → S) → ((P ∧ Q) → ((Q ∧ P) ∧ (R ∧ S))))) := by\n  refine (fun f g h => And.intro ( (show ((P ∧ Q) → (Q ∧ P)) from ?_) h ) ( And.intro ( f h ) ( g h ) ))\n  guard_target =ₛ ((P ∧ Q) → (Q ∧ P))\n  exact fun h => And.intro h.right h.left\n#print axioms candidate\n"
+    },
+    {
+      "method": "rules",
+      "seed": "cases",
+      "index": 1,
+      "target": "((P ∨ Q) ∧ S) → (((P → R) → ((Q → R) → R)) ∧ S)",
+      "term": "fun h => And.intro (seed h.left) h.right",
+      "accepted": true,
+      "diagnostic": "'candidate' does not depend on any axioms",
+      "lean_source": "import Lean\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem candidate (P Q R S : Prop) : (((P ∨ Q) ∧ S) → (((P → R) → ((Q → R) → R)) ∧ S)) := by\n  refine (fun h => And.intro ( (show ((P ∨ Q) → ((P → R) → ((Q → R) → R))) from ?_) h.left ) h.right)\n  guard_target =ₛ ((P ∨ Q) → ((P → R) → ((Q → R) → R)))\n  exact fun h f g => Or.elim h f g\n#print axioms candidate\n"
+    },
+    {
+      "method": "rules",
+      "seed": "cases",
+      "index": 2,
+      "target": "(S ∧ (P ∨ Q)) → ((P → R) → ((Q → R) → R))",
+      "term": "fun h => seed h.right",
+      "accepted": true,
+      "diagnostic": "'candidate' does not depend on any axioms",
+      "lean_source": "import Lean\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem candidate (P Q R S : Prop) : ((S ∧ (P ∨ Q)) → ((P → R) → ((Q → R) → R))) := by\n  refine (fun h => (show ((P ∨ Q) → ((P → R) → ((Q → R) → R))) from ?_) h.right)\n  guard_target =ₛ ((P ∨ Q) → ((P → R) → ((Q → R) → R)))\n  exact fun h f g => Or.elim h f g\n#print axioms candidate\n"
+    },
+    {
+      "method": "rules",
+      "seed": "cases",
+      "index": 3,
+      "target": "((P ∨ Q) ∨ ((P → R) → ((Q → R) → R))) → ((P → R) → ((Q → R) → R))",
+      "term": "fun h => Or.elim h seed (fun b => b)",
+      "accepted": true,
+      "diagnostic": "'candidate' does not depend on any axioms",
+      "lean_source": "import Lean\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem candidate (P Q R S : Prop) : (((P ∨ Q) ∨ ((P → R) → ((Q → R) → R))) → ((P → R) → ((Q → R) → R))) := by\n  refine (fun h => Or.elim h (show ((P ∨ Q) → ((P → R) → ((Q → R) → R))) from ?_) ( fun b => b ))\n  guard_target =ₛ ((P ∨ Q) → ((P → R) → ((Q → R) → R)))\n  exact fun h f g => Or.elim h f g\n#print axioms candidate\n"
+    },
+    {
+      "method": "rules",
+      "seed": "cases",
+      "index": 4,
+      "target": "(P ∨ Q) → (((P → R) → ((Q → R) → R)) ∨ S)",
+      "term": "fun h => Or.inl (seed h)",
+      "accepted": true,
+      "diagnostic": "'candidate' does not depend on any axioms",
+      "lean_source": "import Lean\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem candidate (P Q R S : Prop) : ((P ∨ Q) → (((P → R) → ((Q → R) → R)) ∨ S)) := by\n  refine (fun h => Or.inl ( (show ((P ∨ Q) → ((P → R) → ((Q → R) → R))) from ?_) h ))\n  guard_target =ₛ ((P ∨ Q) → ((P → R) → ((Q → R) → R)))\n  exact fun h f g => Or.elim h f g\n#print axioms candidate\n"
+    },
+    {
+      "method": "rules",
+      "seed": "cases",
+      "index": 5,
+      "target": "(P ∨ Q) → (((P → R) → ((Q → R) → R)) → S) → S",
+      "term": "fun h k => k (seed h)",
+      "accepted": true,
+      "diagnostic": "'candidate' does not depend on any axioms",
+      "lean_source": "import Lean\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem candidate (P Q R S : Prop) : ((P ∨ Q) → ((((P → R) → ((Q → R) → R)) → S) → S)) := by\n  refine (fun h k => k ( (show ((P ∨ Q) → ((P → R) → ((Q → R) → R))) from ?_) h ))\n  guard_target =ₛ ((P ∨ Q) → ((P → R) → ((Q → R) → R)))\n  exact fun h f g => Or.elim h f g\n#print axioms candidate\n"
+    },
+    {
+      "method": "rules",
+      "seed": "cases",
+      "index": 6,
+      "target": "(S → (P ∨ Q)) → S → ((P → R) → ((Q → R) → R))",
+      "term": "fun k s => seed (k s)",
+      "accepted": true,
+      "diagnostic": "'candidate' does not depend on any axioms",
+      "lean_source": "import Lean\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem candidate (P Q R S : Prop) : ((S → (P ∨ Q)) → (S → ((P → R) → ((Q → R) → R)))) := by\n  refine (fun k s => (show ((P ∨ Q) → ((P → R) → ((Q → R) → R))) from ?_) ( k s ))\n  guard_target =ₛ ((P ∨ Q) → ((P → R) → ((Q → R) → R)))\n  exact fun h f g => Or.elim h f g\n#print axioms candidate\n"
+    },
+    {
+      "method": "rules",
+      "seed": "cases",
+      "index": 7,
+      "target": "(P ∨ Q) → (((P → R) → ((Q → R) → R)) ∧ (P ∨ Q))",
+      "term": "fun h => And.intro (seed h) h",
+      "accepted": true,
+      "diagnostic": "'candidate' does not depend on any axioms",
+      "lean_source": "import Lean\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem candidate (P Q R S : Prop) : ((P ∨ Q) → (((P → R) → ((Q → R) → R)) ∧ (P ∨ Q))) := by\n  refine (fun h => And.intro ( (show ((P ∨ Q) → ((P → R) → ((Q → R) → R))) from ?_) h ) h)\n  guard_target =ₛ ((P ∨ Q) → ((P → R) → ((Q → R) → R)))\n  exact fun h f g => Or.elim h f g\n#print axioms candidate\n"
+    },
+    {
+      "method": "rules",
+      "seed": "cases",
+      "index": 8,
+      "target": "(((P ∨ Q) → ((P → R) → ((Q → R) → R))) → S) → S",
+      "term": "fun k => k seed",
+      "accepted": true,
+      "diagnostic": "'candidate' does not depend on any axioms",
+      "lean_source": "import Lean\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem candidate (P Q R S : Prop) : ((((P ∨ Q) → ((P → R) → ((Q → R) → R))) → S) → S) := by\n  refine (fun k => k (show ((P ∨ Q) → ((P → R) → ((Q → R) → R))) from ?_))\n  guard_target =ₛ ((P ∨ Q) → ((P → R) → ((Q → R) → R)))\n  exact fun h f g => Or.elim h f g\n#print axioms candidate\n"
+    },
+    {
+      "method": "llm",
+      "seed": "cases",
+      "index": 1,
+      "target": "((P ∨ Q) ∧ ((P → R) ∧ (Q → R))) → R",
+      "term": "fun h => seed h.left h.right.left h.right.right",
+      "accepted": true,
+      "diagnostic": "'candidate' does not depend on any axioms",
+      "lean_source": "import Lean\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem candidate (P Q R S : Prop) : (((P ∨ Q) ∧ ((P → R) ∧ (Q → R))) → R) := by\n  refine (fun h => (show ((P ∨ Q) → ((P → R) → ((Q → R) → R))) from ?_) h.left h.right.left h.right.right)\n  guard_target =ₛ ((P ∨ Q) → ((P → R) → ((Q → R) → R)))\n  exact fun h f g => Or.elim h f g\n#print axioms candidate\n"
+    },
+    {
+      "method": "llm",
+      "seed": "cases",
+      "index": 2,
+      "target": "((P → R) ∧ (Q → S)) → (P ∨ Q) → (R ∨ S)",
+      "term": "fun h d => (fun k => k (Or.elim d (fun p => Or.inl (h.left p)) (fun q => Or.inr (h.right q))) (fun q => Or.inr (h.right q))) (seed d)",
+      "accepted": false,
+      "diagnostic": "llm_cases_2.lean:6:57: error: type mismatch\n  Or.inl (h.left p)\nhas type\n  R ∨ ?m.87 : Prop\nbut is expected to have type\n  P → R : Prop\nllm_cases_2.lean:6:90: error: type mismatch\n  Or.inr (h.right q)\nhas type\n  ?m.224 ∨ S : Prop\nbut is expected to have type\n  P → R : Prop\nllm_cases_2.lean:6:126: error: type mismatch\n  Or.inr (h.right q)\nhas type\n  ?m.339 ∨ S : Prop\nbut is expected to have type\n  R : Prop\nllm_cases_2.lean:7:2: error: target of main goal is\n  R ∨ S\nnot\n  P ∨ Q → (P → R) → (Q → R) → R\n'candidate' depends on axioms: [sorryAx]",
+      "lean_source": "import Lean\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem candidate (P Q R S : Prop) : (((P → R) ∧ (Q → S)) → ((P ∨ Q) → (R ∨ S))) := by\n  refine (fun h d => ( fun k => k ( Or.elim d ( fun p => Or.inl ( h.left p ) ) ( fun q => Or.inr ( h.right q ) ) ) ( fun q => Or.inr ( h.right q ) ) ) ( (show ((P ∨ Q) → ((P → R) → ((Q → R) → R))) from ?_) d ))\n  guard_target =ₛ ((P ∨ Q) → ((P → R) → ((Q → R) → R)))\n  exact fun h f g => Or.elim h f g\n#print axioms candidate\n"
+    },
+    {
+      "method": "llm",
+      "seed": "cases",
+      "index": 3,
+      "target": "(P ∨ Q) → (P → R) → (Q → R) → (R → S) → S",
+      "term": "fun h f g k => k (seed h f g)",
+      "accepted": true,
+      "diagnostic": "'candidate' does not depend on any axioms",
+      "lean_source": "import Lean\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem candidate (P Q R S : Prop) : ((P ∨ Q) → ((P → R) → ((Q → R) → ((R → S) → S)))) := by\n  refine (fun h f g k => k ( (show ((P ∨ Q) → ((P → R) → ((Q → R) → R))) from ?_) h f g ))\n  guard_target =ₛ ((P ∨ Q) → ((P → R) → ((Q → R) → R)))\n  exact fun h f g => Or.elim h f g\n#print axioms candidate\n"
+    },
+    {
+      "method": "llm",
+      "seed": "cases",
+      "index": 4,
+      "target": "((S → (P ∨ Q)) ∧ (P → R) ∧ (Q → R)) → S → R",
+      "term": "fun h s => seed (h.left s) h.right.left h.right.right",
+      "accepted": true,
+      "diagnostic": "'candidate' does not depend on any axioms",
+      "lean_source": "import Lean\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem candidate (P Q R S : Prop) : (((S → (P ∨ Q)) ∧ ((P → R) ∧ (Q → R))) → (S → R)) := by\n  refine (fun h s => (show ((P ∨ Q) → ((P → R) → ((Q → R) → R))) from ?_) ( h.left s ) h.right.left h.right.right)\n  guard_target =ₛ ((P ∨ Q) → ((P → R) → ((Q → R) → R)))\n  exact fun h f g => Or.elim h f g\n#print axioms candidate\n"
+    },
+    {
+      "method": "llm",
+      "seed": "cases",
+      "index": 5,
+      "target": "(P ∨ Q) → ((P → R) ∧ (Q → R)) → (R ∧ (P ∨ Q))",
+      "term": "fun h k => And.intro (seed h k.left k.right) h",
+      "accepted": true,
+      "diagnostic": "'candidate' does not depend on any axioms",
+      "lean_source": "import Lean\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem candidate (P Q R S : Prop) : ((P ∨ Q) → (((P → R) ∧ (Q → R)) → (R ∧ (P ∨ Q)))) := by\n  refine (fun h k => And.intro ( (show ((P ∨ Q) → ((P → R) → ((Q → R) → R))) from ?_) h k.left k.right ) h)\n  guard_target =ₛ ((P ∨ Q) → ((P → R) → ((Q → R) → R)))\n  exact fun h f g => Or.elim h f g\n#print axioms candidate\n"
+    },
+    {
+      "method": "llm",
+      "seed": "cases",
+      "index": 6,
+      "target": "((P ∨ Q) ∨ S) → (P → R) → (Q → R) → (S → R) → R",
+      "term": "fun h f g k => Or.elim h (fun d => seed d f g) k",
+      "accepted": true,
+      "diagnostic": "'candidate' does not depend on any axioms",
+      "lean_source": "import Lean\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem candidate (P Q R S : Prop) : (((P ∨ Q) ∨ S) → ((P → R) → ((Q → R) → ((S → R) → R)))) := by\n  refine (fun h f g k => Or.elim h ( fun d => (show ((P ∨ Q) → ((P → R) → ((Q → R) → R))) from ?_) d f g ) k)\n  guard_target =ₛ ((P ∨ Q) → ((P → R) → ((Q → R) → R)))\n  exact fun h f g => Or.elim h f g\n#print axioms candidate\n"
+    },
+    {
+      "method": "llm",
+      "seed": "cases",
+      "index": 7,
+      "target": "((P ∧ S) ∨ (Q ∧ S)) → (P → R) → (Q → R) → R",
+      "term": "fun h f g => seed (Or.elim h (fun a => Or.inl a.left) (fun b => Or.inr b.left)) f g",
+      "accepted": true,
+      "diagnostic": "'candidate' does not depend on any axioms",
+      "lean_source": "import Lean\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem candidate (P Q R S : Prop) : (((P ∧ S) ∨ (Q ∧ S)) → ((P → R) → ((Q → R) → R))) := by\n  refine (fun h f g => (show ((P ∨ Q) → ((P → R) → ((Q → R) → R))) from ?_) ( Or.elim h ( fun a => Or.inl a.left ) ( fun b => Or.inr b.left ) ) f g)\n  guard_target =ₛ ((P ∨ Q) → ((P → R) → ((Q → R) → R)))\n  exact fun h f g => Or.elim h f g\n#print axioms candidate\n"
+    },
+    {
+      "method": "llm",
+      "seed": "cases",
+      "index": 8,
+      "target": "(P ∨ Q) → (P → R) → ((Q → R) ∨ R) → R",
+      "term": "fun h f k => seed h f (fun q => Or.elim k (fun g => g q) (fun r => r))",
+      "accepted": true,
+      "diagnostic": "'candidate' does not depend on any axioms",
+      "lean_source": "import Lean\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem candidate (P Q R S : Prop) : ((P ∨ Q) → ((P → R) → (((Q → R) ∨ R) → R))) := by\n  refine (fun h f k => (show ((P ∨ Q) → ((P → R) → ((Q → R) → R))) from ?_) h f ( fun q => Or.elim k ( fun g => g q ) ( fun r => r ) ))\n  guard_target =ₛ ((P ∨ Q) → ((P → R) → ((Q → R) → R)))\n  exact fun h f g => Or.elim h f g\n#print axioms candidate\n"
+    },
+    {
+      "method": "rules",
+      "seed": "compose",
+      "index": 1,
+      "target": "((P → Q) ∧ S) → (((Q → R) → (P → R)) ∧ S)",
+      "term": "fun h => And.intro (seed h.left) h.right",
+      "accepted": true,
+      "diagnostic": "'candidate' does not depend on any axioms",
+      "lean_source": "import Lean\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem candidate (P Q R S : Prop) : (((P → Q) ∧ S) → (((Q → R) → (P → R)) ∧ S)) := by\n  refine (fun h => And.intro ( (show ((P → Q) → ((Q → R) → (P → R))) from ?_) h.left ) h.right)\n  guard_target =ₛ ((P → Q) → ((Q → R) → (P → R)))\n  exact fun f g p => g (f p)\n#print axioms candidate\n"
+    },
+    {
+      "method": "rules",
+      "seed": "compose",
+      "index": 2,
+      "target": "(S ∧ (P → Q)) → ((Q → R) → (P → R))",
+      "term": "fun h => seed h.right",
+      "accepted": true,
+      "diagnostic": "'candidate' does not depend on any axioms",
+      "lean_source": "import Lean\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem candidate (P Q R S : Prop) : ((S ∧ (P → Q)) → ((Q → R) → (P → R))) := by\n  refine (fun h => (show ((P → Q) → ((Q → R) → (P → R))) from ?_) h.right)\n  guard_target =ₛ ((P → Q) → ((Q → R) → (P → R)))\n  exact fun f g p => g (f p)\n#print axioms candidate\n"
+    },
+    {
+      "method": "rules",
+      "seed": "compose",
+      "index": 3,
+      "target": "((P → Q) ∨ ((Q → R) → (P → R))) → ((Q → R) → (P → R))",
+      "term": "fun h => Or.elim h seed (fun b => b)",
+      "accepted": true,
+      "diagnostic": "'candidate' does not depend on any axioms",
+      "lean_source": "import Lean\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem candidate (P Q R S : Prop) : (((P → Q) ∨ ((Q → R) → (P → R))) → ((Q → R) → (P → R))) := by\n  refine (fun h => Or.elim h (show ((P → Q) → ((Q → R) → (P → R))) from ?_) ( fun b => b ))\n  guard_target =ₛ ((P → Q) → ((Q → R) → (P → R)))\n  exact fun f g p => g (f p)\n#print axioms candidate\n"
+    },
+    {
+      "method": "rules",
+      "seed": "compose",
+      "index": 4,
+      "target": "(P → Q) → (((Q → R) → (P → R)) ∨ S)",
+      "term": "fun h => Or.inl (seed h)",
+      "accepted": true,
+      "diagnostic": "'candidate' does not depend on any axioms",
+      "lean_source": "import Lean\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem candidate (P Q R S : Prop) : ((P → Q) → (((Q → R) → (P → R)) ∨ S)) := by\n  refine (fun h => Or.inl ( (show ((P → Q) → ((Q → R) → (P → R))) from ?_) h ))\n  guard_target =ₛ ((P → Q) → ((Q → R) → (P → R)))\n  exact fun f g p => g (f p)\n#print axioms candidate\n"
+    },
+    {
+      "method": "rules",
+      "seed": "compose",
+      "index": 5,
+      "target": "(P → Q) → (((Q → R) → (P → R)) → S) → S",
+      "term": "fun h k => k (seed h)",
+      "accepted": true,
+      "diagnostic": "'candidate' does not depend on any axioms",
+      "lean_source": "import Lean\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem candidate (P Q R S : Prop) : ((P → Q) → ((((Q → R) → (P → R)) → S) → S)) := by\n  refine (fun h k => k ( (show ((P → Q) → ((Q → R) → (P → R))) from ?_) h ))\n  guard_target =ₛ ((P → Q) → ((Q → R) → (P → R)))\n  exact fun f g p => g (f p)\n#print axioms candidate\n"
+    },
+    {
+      "method": "rules",
+      "seed": "compose",
+      "index": 6,
+      "target": "(S → (P → Q)) → S → ((Q → R) → (P → R))",
+      "term": "fun k s => seed (k s)",
+      "accepted": true,
+      "diagnostic": "'candidate' does not depend on any axioms",
+      "lean_source": "import Lean\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem candidate (P Q R S : Prop) : ((S → (P → Q)) → (S → ((Q → R) → (P → R)))) := by\n  refine (fun k s => (show ((P → Q) → ((Q → R) → (P → R))) from ?_) ( k s ))\n  guard_target =ₛ ((P → Q) → ((Q → R) → (P → R)))\n  exact fun f g p => g (f p)\n#print axioms candidate\n"
+    },
+    {
+      "method": "rules",
+      "seed": "compose",
+      "index": 7,
+      "target": "(P → Q) → (((Q → R) → (P → R)) ∧ (P → Q))",
+      "term": "fun h => And.intro (seed h) h",
+      "accepted": true,
+      "diagnostic": "'candidate' does not depend on any axioms",
+      "lean_source": "import Lean\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem candidate (P Q R S : Prop) : ((P → Q) → (((Q → R) → (P → R)) ∧ (P → Q))) := by\n  refine (fun h => And.intro ( (show ((P → Q) → ((Q → R) → (P → R))) from ?_) h ) h)\n  guard_target =ₛ ((P → Q) → ((Q → R) → (P → R)))\n  exact fun f g p => g (f p)\n#print axioms candidate\n"
+    },
+    {
+      "method": "rules",
+      "seed": "compose",
+      "index": 8,
+      "target": "(((P → Q) → ((Q → R) → (P → R))) → S) → S",
+      "term": "fun k => k seed",
+      "accepted": true,
+      "diagnostic": "'candidate' does not depend on any axioms",
+      "lean_source": "import Lean\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem candidate (P Q R S : Prop) : ((((P → Q) → ((Q → R) → (P → R))) → S) → S) := by\n  refine (fun k => k (show ((P → Q) → ((Q → R) → (P → R))) from ?_))\n  guard_target =ₛ ((P → Q) → ((Q → R) → (P → R)))\n  exact fun f g p => g (f p)\n#print axioms candidate\n"
+    },
+    {
+      "method": "llm",
+      "seed": "compose",
+      "index": 1,
+      "target": "((P → Q) ∧ (Q → R)) → P → R",
+      "term": "fun h => seed h.left h.right",
+      "accepted": true,
+      "diagnostic": "'candidate' does not depend on any axioms",
+      "lean_source": "import Lean\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem candidate (P Q R S : Prop) : (((P → Q) ∧ (Q → R)) → (P → R)) := by\n  refine (fun h => (show ((P → Q) → ((Q → R) → (P → R))) from ?_) h.left h.right)\n  guard_target =ₛ ((P → Q) → ((Q → R) → (P → R)))\n  exact fun f g p => g (f p)\n#print axioms candidate\n"
+    },
+    {
+      "method": "llm",
+      "seed": "compose",
+      "index": 2,
+      "target": "(P → Q) → (Q → R) → (R → S) → P → S",
+      "term": "fun f g k p => k (seed f g p)",
+      "accepted": true,
+      "diagnostic": "'candidate' does not depend on any axioms",
+      "lean_source": "import Lean\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem candidate (P Q R S : Prop) : ((P → Q) → ((Q → R) → ((R → S) → (P → S)))) := by\n  refine (fun f g k p => k ( (show ((P → Q) → ((Q → R) → (P → R))) from ?_) f g p ))\n  guard_target =ₛ ((P → Q) → ((Q → R) → (P → R)))\n  exact fun f g p => g (f p)\n#print axioms candidate\n"
+    },
+    {
+      "method": "llm",
+      "seed": "compose",
+      "index": 3,
+      "target": "((P ∧ S) → Q) → (Q → R) → P → S → R",
+      "term": "fun f g p s => seed (fun x => f (And.intro x s)) g p",
+      "accepted": true,
+      "diagnostic": "'candidate' does not depend on any axioms",
+      "lean_source": "import Lean\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem candidate (P Q R S : Prop) : (((P ∧ S) → Q) → ((Q → R) → (P → (S → R)))) := by\n  refine (fun f g p s => (show ((P → Q) → ((Q → R) → (P → R))) from ?_) ( fun x => f ( And.intro x s ) ) g p)\n  guard_target =ₛ ((P → Q) → ((Q → R) → (P → R)))\n  exact fun f g p => g (f p)\n#print axioms candidate\n"
+    },
+    {
+      "method": "llm",
+      "seed": "compose",
+      "index": 4,
+      "target": "(P → Q) → (Q → R) → (P ∨ R) → R",
+      "term": "fun f g h => Or.elim h (seed f g) (fun r => r)",
+      "accepted": true,
+      "diagnostic": "'candidate' does not depend on any axioms",
+      "lean_source": "import Lean\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem candidate (P Q R S : Prop) : ((P → Q) → ((Q → R) → ((P ∨ R) → R))) := by\n  refine (fun f g h => Or.elim h ( (show ((P → Q) → ((Q → R) → (P → R))) from ?_) f g ) ( fun r => r ))\n  guard_target =ₛ ((P → Q) → ((Q → R) → (P → R)))\n  exact fun f g p => g (f p)\n#print axioms candidate\n"
+    },
+    {
+      "method": "llm",
+      "seed": "compose",
+      "index": 5,
+      "target": "(P → Q) → (Q → R) → (P ∧ S) → (R ∧ S)",
+      "term": "fun f g h => And.intro (seed f g h.left) h.right",
+      "accepted": true,
+      "diagnostic": "'candidate' does not depend on any axioms",
+      "lean_source": "import Lean\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem candidate (P Q R S : Prop) : ((P → Q) → ((Q → R) → ((P ∧ S) → (R ∧ S)))) := by\n  refine (fun f g h => And.intro ( (show ((P → Q) → ((Q → R) → (P → R))) from ?_) f g h.left ) h.right)\n  guard_target =ₛ ((P → Q) → ((Q → R) → (P → R)))\n  exact fun f g p => g (f p)\n#print axioms candidate\n"
+    },
+    {
+      "method": "llm",
+      "seed": "compose",
+      "index": 6,
+      "target": "(P → Q) → (Q → R) → ((P → R) → S) → S",
+      "term": "fun f g k => k (seed f g)",
+      "accepted": true,
+      "diagnostic": "'candidate' does not depend on any axioms",
+      "lean_source": "import Lean\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem candidate (P Q R S : Prop) : ((P → Q) → ((Q → R) → (((P → R) → S) → S))) := by\n  refine (fun f g k => k ( (show ((P → Q) → ((Q → R) → (P → R))) from ?_) f g ))\n  guard_target =ₛ ((P → Q) → ((Q → R) → (P → R)))\n  exact fun f g p => g (f p)\n#print axioms candidate\n"
+    },
+    {
+      "method": "llm",
+      "seed": "compose",
+      "index": 7,
+      "target": "((P → Q) ∨ R) → (Q → R) → P → R",
+      "term": "fun h g p => Or.elim h (fun f => seed f g p) (fun r => r)",
+      "accepted": true,
+      "diagnostic": "'candidate' does not depend on any axioms",
+      "lean_source": "import Lean\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem candidate (P Q R S : Prop) : (((P → Q) ∨ R) → ((Q → R) → (P → R))) := by\n  refine (fun h g p => Or.elim h ( fun f => (show ((P → Q) → ((Q → R) → (P → R))) from ?_) f g p ) ( fun r => r ))\n  guard_target =ₛ ((P → Q) → ((Q → R) → (P → R)))\n  exact fun f g p => g (f p)\n#print axioms candidate\n"
+    },
+    {
+      "method": "llm",
+      "seed": "compose",
+      "index": 8,
+      "target": "(P → Q) → (Q → R) → (S → P) → S → (R ∨ Q)",
+      "term": "fun f g k s => Or.inl (seed f g (k s))",
+      "accepted": true,
+      "diagnostic": "'candidate' does not depend on any axioms",
+      "lean_source": "import Lean\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem candidate (P Q R S : Prop) : ((P → Q) → ((Q → R) → ((S → P) → (S → (R ∨ Q))))) := by\n  refine (fun f g k s => Or.inl ( (show ((P → Q) → ((Q → R) → (P → R))) from ?_) f g ( k s ) ))\n  guard_target =ₛ ((P → Q) → ((Q → R) → (P → R)))\n  exact fun f g p => g (f p)\n#print axioms candidate\n"
+    }
+  ],
+  "post_hoc_instantiation_probe": {
+    "fixed_seed": {
+      "method": "probe",
+      "seed": "cases",
+      "index": 1,
+      "target": "((P → R) ∧ (Q → S)) → (P ∨ Q) → (R ∨ S)",
+      "term": "fun h d => seed d (fun p => Or.inl (h.left p)) (fun q => Or.inr (h.right q))",
+      "accepted": false,
+      "diagnostic": "probe_cases_1.lean:6:87: error: type mismatch\n  Or.inl (h.left p)\nhas type\n  R ∨ ?m.60 : Prop\nbut is expected to have type\n  R : Prop\nprobe_cases_1.lean:6:120: error: type mismatch\n  Or.inr (h.right q)\nhas type\n  ?m.191 ∨ S : Prop\nbut is expected to have type\n  R : Prop\nprobe_cases_1.lean:7:2: error: no goals to be solved\n'candidate' depends on axioms: [sorryAx]",
+      "lean_source": "import Lean\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem candidate (P Q R S : Prop) : (((P → R) ∧ (Q → S)) → ((P ∨ Q) → (R ∨ S))) := by\n  refine (fun h d => (show ((P ∨ Q) → ((P → R) → ((Q → R) → R))) from ?_) d ( fun p => Or.inl ( h.left p ) ) ( fun q => Or.inr ( h.right q ) ))\n  guard_target =ₛ ((P ∨ Q) → ((P → R) → ((Q → R) → R)))\n  exact fun h f g => Or.elim h f g\n#print axioms candidate\n"
+    },
+    "instantiated_seed": {
+      "method": "probe",
+      "seed": "cases",
+      "index": 2,
+      "target": "((P → R) ∧ (Q → S)) → (P ∨ Q) → (R ∨ S)",
+      "term": "fun h d => seed d (fun p => Or.inl (h.left p)) (fun q => Or.inr (h.right q))",
+      "accepted": true,
+      "diagnostic": "'candidate' does not depend on any axioms",
+      "lean_source": "import Lean\nset_option autoImplicit false\nset_option warningAsError true\nset_option linter.unusedVariables false\ntheorem candidate (P Q R S : Prop) : (((P → R) ∧ (Q → S)) → ((P ∨ Q) → (R ∨ S))) := by\n  refine (fun h d => (show ((P ∨ Q) → ((P → (R ∨ S)) → ((Q → (R ∨ S)) → (R ∨ S)))) from ?_) d ( fun p => Or.inl ( h.left p ) ) ( fun q => Or.inr ( h.right q ) ))\n  guard_target =ₛ ((P ∨ Q) → ((P → (R ∨ S)) → ((Q → (R ∨ S)) → (R ∨ S))))\n  exact fun h f g => Or.elim h f g\n#print axioms candidate\n"
+    }
+  }
+}

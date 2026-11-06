@@ -1,0 +1,32 @@
+{
+  "nat_rewrite": [
+    "intro h2",
+    [
+      "(h0 h1 : Nat) | ∀ c : Nat, (h0 + h1) + c = (h0 + c) + h1"
+    ]
+  ],
+  "nat_induction": [
+    "induct_nat h3 as h1 h2",
+    [
+      "(h0 h3 : Nat) | Nat.succ h0 + h3 = Nat.succ (h0 + h3)"
+    ]
+  ],
+  "list_induction": [
+    "induct_list h3 as h5 h6 h7",
+    [
+      "(h0 h1 : Type) (h2 : h0 → h1) (h3 h4 : List h0) | List.map h2 (h3 ++ h4) = List.map h2 h3 ++ List.map h2 h4"
+    ]
+  ],
+  "list_exists": [
+    "intro h2",
+    [
+      "(h0 : Type) (h1 : h0) | ∀ xs : List h0, ∃ ys : List h0, List.length ys = Nat.succ (List.length xs) ∧ List.tail ys = xs"
+    ]
+  ],
+  "tree_induction": [
+    "change 1 + (PilotTree.nodes (PilotTree.mirror h4) + PilotTree.nodes (PilotTree.mirror h3)) = 1 + (PilotTree.nodes h3 + PilotTree.nodes h4)",
+    [
+      "(h0 : Type) (h3 h4 : PilotTree h0) (h5 : PilotTree.nodes (PilotTree.mirror h3) = PilotTree.nodes h3) (h6 : PilotTree.nodes (PilotTree.mirror h4) = PilotTree.nodes h4) | PilotTree.nodes (PilotTree.mirror (PilotTree.branch h3 h4)) = PilotTree.nodes (PilotTree.branch h3 h4)"
+    ]
+  ]
+}

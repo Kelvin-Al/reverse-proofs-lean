@@ -1,0 +1,8 @@
+{
+ "a":["(P ∨ (Q ∨ R)) → (P ∨ (Q ∨ R))",["intro h6","cases h6 <;> rename_i h5","left","exact h5","cases h5 <;> rename_i h4","right","left","exact h4","right","right","exact h4"]],
+ "b":["(P → R) → (Q → R) → ((P ∨ Q) ∨ R) → R",["intro h0","intro h1","intro h6","cases h6 <;> rename_i h5","cases h5 <;> rename_i h4","apply h0","exact h4","apply h1","exact h4","exact h5"]],
+ "c":["((P ∧ Q) ∨ ((Q ∧ R) ∨ (S ∧ Q))) → Q",["intro h6","cases h6 <;> rename_i h5","exact h5.right","cases h5 <;> rename_i h4","exact h4.left","exact h4.right"]],
+ "d":["((P ∨ Q) ∨ (R ∨ S)) → ((S ∨ R) ∨ (Q ∨ P))",["intro h6","cases h6 <;> rename_i h5","cases h5 <;> rename_i h4","right","right","exact h4","right","left","exact h4","cases h5 <;> rename_i h4","left","right","exact h4","left","left","exact h4"]],
+ "e":["(((P ∧ Q) ∨ (Q ∧ P)) ∨ ((P ∧ R) ∨ (S ∧ P))) → P",["intro h6","cases h6 <;> rename_i h5","cases h5 <;> rename_i h4","exact h4.left","exact h4.right","cases h5 <;> rename_i h4","exact h4.left","exact h4.right"]],
+ "f":["(P → R) → (Q → R) → ((P ∨ (P ∧ S)) ∨ (Q ∨ R)) → R",["intro h0","intro h1","intro h6","cases h6 <;> rename_i h5","cases h5 <;> rename_i h4","apply h0","exact h4","apply h0","exact h4.left","cases h5 <;> rename_i h4","apply h1","exact h4","exact h4"]]
+}

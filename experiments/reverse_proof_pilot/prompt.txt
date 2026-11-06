@@ -1,0 +1,19 @@
+Generate eight distinct one-step reverse proof extensions for each of the
+three seeds below. You are given the seed's proposition and proof. Propose
+a new proposition (target) and a single Lean 4 term (term) that proves
+the target and uses the placeholder identifier seed exactly once. It will
+be replaced with a typed proof hole for the seed proposition, and the
+original seed proof will be replayed. Available connectives are → ∧ ∨, with
+at most 12 connective occurrences, and only P Q R S : Prop. Use proof-term
+syntax (fun, applications, And.intro, And.left, And.right, Or.inl, Or.inr,
+Or.elim and dot projection). No automation, additional holes, or axioms.
+Favor genuinely different connective arrangements and substantive reuse
+of the seed over adding unused hypotheses. Return only JSON, a mapping
+from seed name to eight [target, term] pairs. One batch, no verifier feedback.
+
+swap: (P ∧ Q) → (Q ∧ P)
+  fun h => And.intro h.right h.left
+cases: (P ∨ Q) → (P → R) → (Q → R) → R
+  fun h f g => Or.elim h f g
+compose: (P → Q) → (Q → R) → P → R
+  fun f g p => g (f p)
