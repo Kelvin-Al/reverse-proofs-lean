@@ -25,6 +25,10 @@ Use `--lean /absolute/path/to/lean` to select a Lean binary explicitly. Use `--o
 
 See [Generated.lean](experiments/reverse_math_proofs/Generated.lean) for the five resulting Lean declarations. They cover an arithmetic rearrangement, an identity proved by induction on a natural number, the interaction of list mapping and concatenation, a list existence statement with an explicit witness, and preservation of node count under binary-tree mirroring.
 
-The recorded LLM proposals came from a prompted dialogue model. The scripts reproduce validation of those proposals. A model inference service and a training pipeline are outside the scope of this prototype. The examples are small and include familiar results. The experiments demonstrate the feasibility of this workflow within the tested fragments.
+The recorded LLM proposals came from a prompted dialogue model. The scripts reproduce validation of those proposals. The examples are small and include familiar results. The experiments demonstrate the feasibility of this workflow within the tested fragments.
+
+## Small learned policy
+
+The [training baseline](training/README.md) fits 98 weights from scratch to rank inverse tactic families. It uses the verified propositional traces and checks the decoded steps and complete proofs with Lean.
 
 See [DISCUSSION.md](DISCUSSION.md) for the draft discussion on proof-state representation and reverse generation.

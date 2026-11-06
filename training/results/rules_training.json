@@ -1,0 +1,64 @@
+{
+  "parameters": 98,
+  "methods": [
+    "rules"
+  ],
+  "fit": {
+    "epochs": 400,
+    "initial_loss": 1.9459101490553141,
+    "last_epoch_loss": 0.702917892124984
+  },
+  "train": {
+    "traces": [
+      "reverse_proof_generator/rules/b",
+      "reverse_proof_generator/rules/c",
+      "reverse_proof_generator/rules/d",
+      "reverse_proof_generator/rules/e",
+      "reverse_proof_generator/rules/g",
+      "reverse_proof_generator/rules/h",
+      "controlled_reverse_proofs/rules/a",
+      "controlled_reverse_proofs/rules/b",
+      "controlled_reverse_proofs/rules/c",
+      "controlled_reverse_proofs/rules/d",
+      "controlled_reverse_proofs/rules/e"
+    ],
+    "steps": 76
+  },
+  "holdout": {
+    "traces": [
+      "reverse_proof_generator/rules/a",
+      "reverse_proof_generator/rules/f",
+      "controlled_reverse_proofs/rules/f"
+    ],
+    "steps": 20
+  },
+  "lean": "Lean (version 4.19.0, x86_64-w64-windows-gnu, commit 6caaee842e94, Release)",
+  "frequency": {
+    "steps": 20,
+    "novel_steps": 20,
+    "top1": 7,
+    "top3": 17,
+    "novel_top1": 7,
+    "decoder_covers_family": 19,
+    "masked_top1": 7,
+    "lean_accepted": 20,
+    "novel_lean_accepted": 20,
+    "rollouts": 12,
+    "proved": 0,
+    "distinct_novel_theorems": 0
+  },
+  "trained": {
+    "steps": 20,
+    "novel_steps": 20,
+    "top1": 15,
+    "top3": 19,
+    "novel_top1": 15,
+    "decoder_covers_family": 19,
+    "masked_top1": 16,
+    "lean_accepted": 20,
+    "novel_lean_accepted": 20,
+    "rollouts": 12,
+    "proved": 2,
+    "distinct_novel_theorems": 1
+  }
+}
